@@ -1,0 +1,549 @@
+input#comment_attachment {
+
+    border: 1px solid #cbcbcb;
+
+    padding: 6px 6px;
+
+    width: 100%;
+
+    margin-bottom: 10px;
+
+}
+
+/*loader css*/
+.loading-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+}
+.data_loader
+{
+    display: none;
+    width:200px;
+    height: 200px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    text-align:center;
+    margin-left: -50px;
+    margin-top: -100px;
+    z-index:2;
+    overflow: auto;
+}
+/*end loader css*/
+
+
+
+/*<-------------------------------------Start Contact.php----------------------------------->*/
+
+
+
+
+
+.contact-message{
+
+    margin: 0;
+
+}
+
+.addConForm {
+
+    margin-bottom: 20px;
+
+}
+
+.addConForm h3.text-primary {
+
+    margin-top: 0;
+
+}
+
+.addConForm .cancelBtn {
+
+    margin-left: 30px;
+
+}
+
+.addConForm {
+
+    margin-bottom: 20px;
+
+    background: #fff;
+
+    padding: 10px 20px 20px;
+
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.28);
+
+}
+
+.addConForm fieldset {
+
+    box-shadow: none;
+
+}
+
+.addConForm fieldset label {
+
+    margin-top: 15px;
+
+}
+
+.form_sec_search label.control-label {
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+}
+
+
+
+/*<-------------------------------------ENd Contact.php----------------------------------->*/
+
+
+
+/*<--------------------------------University------------------------------>*/
+
+
+
+.universityP{
+
+    margin-bottom: 0px;
+
+}
+
+.agenda fieldset {
+
+    padding: 0;
+
+}
+
+.agenda .manage-deadline h2 {
+
+    margin: 0;
+
+}
+
+
+
+
+
+
+
+@media(max-width: 991px) and (min-width: 768px){
+
+    .daterangepicker.dropdown-menu.ltr.opensleft.show-calendar {
+
+        left: 0 !important;
+
+        right: 0 !important;
+
+        margin: 0 auto;
+
+        width: 80%;
+
+        top: 162px !important;
+
+    }
+
+    .daterangepicker.opensleft:before {
+
+        left: 0;
+
+        right: 0;
+
+        margin: 0 auto;
+
+        width: 20px;
+
+    }
+
+    .daterangepicker.opensleft:after {
+
+        left: 0;
+
+        right: 0;
+
+        margin: 0 auto;
+
+        width: 20px;
+
+    }
+
+}
+
+@media(max-width: 991px){
+
+    .navbar-brand{
+
+        width: 162px;
+
+        margin-right: 45px;
+
+    }
+
+    .orderBtn label.btn.btn-success {
+
+        padding: 10px 7px;
+
+        font-size: 12px;
+
+    }
+
+    .row.orders .col-xs-12 {
+
+        border-bottom: 1px solid #002e5b0d;
+
+        padding-top: 10px;
+
+        padding-bottom: 10px;
+
+    }
+
+    .row.orders hr.clearfix {
+
+        border: 0;
+
+        margin-top: 0;
+
+    }
+    
+    .lg-outer .lg-video-cont {
+        height: 100%;
+    }
+    .lg-outer .lg-video{
+        height: 100% !important;
+    }
+
+    .lg-toolbar{
+        background-color: rgba(0, 0, 0, 0.7) !important;
+    }
+
+
+}
+
+
+
+
+
+@media(max-width: 767px){
+
+    body{
+
+        margin-top: 0 !important;
+
+    }
+
+    body.login{
+
+        background-attachment: fixed;
+
+    }
+
+    .navbar-brand {
+
+        width: 185px;
+
+        margin-right: 45px;
+
+    }
+
+    .navbar {
+
+        padding: 10px 15px;
+
+    }
+
+    header.loginHeader {
+
+        position: static;
+
+    }
+
+    .navbar-header {
+
+        display: inline-block;
+
+    }
+
+    ul.notification {
+
+        padding: 0;
+
+        display: inline-block;
+
+        float: right;
+
+        margin: 11px 20px 0px 0;
+
+    }
+
+    ul.notification > li {
+
+        list-style: none;
+
+        font-size: 20px;
+
+        position: static;
+
+    }
+
+    #noti {
+
+        max-height: 500px;
+
+        overflow-y: auto;
+
+        left: 0;
+
+        right: 0;
+
+        float: none !important;
+
+        width: 90%;
+
+        margin: 0 auto;
+
+    }
+
+    ul#noti li {
+
+        padding: 1px 10px;
+
+    }
+
+    .navbar-top-links li.dropdown.bell {
+
+        display: none;
+
+    }
+
+    .nav > li{
+
+        margin: 1px 0 0;
+
+    }
+
+
+
+    footer.loginFooter{
+
+        position: static;
+
+    }
+
+    .copyright {
+
+        text-align: center;
+
+        padding-bottom: 10px;
+
+    }
+
+    .socials ul{
+
+        text-align: center;
+
+    }
+
+    header.loginHeader {
+
+        text-align: center;
+
+    }
+
+    .heeader-text p{
+
+        text-align: center;
+
+        line-height: normal;
+
+        margin: 20px 0 10px;
+
+    }
+
+    .logo img{
+
+        max-width: 100%;
+
+    }
+
+    section.login_content{
+
+        padding: 45px 0;
+
+    }
+
+    main.bg-color {
+
+        height: auto;
+
+    }
+
+    .navbar-top-links .dropdown-messages,
+
+    .navbar-top-links .dropdown-tasks,
+
+    .navbar-top-links .dropdown-alerts {
+
+        margin-left: auto;
+
+    }
+
+    .innerheader.navbar-fixed-top{
+
+        position: static;
+
+    }
+
+    .section.deadline-sec {
+
+        padding: 0 0 15px;
+
+    }
+
+    .form_sec_search .form-group label.control-label {
+
+        margin-top: 10px;
+
+    }
+
+    .text-right.orderBtn {
+
+        text-align: left;
+
+    }
+
+    .daterangepicker.dropdown-menu.ltr.opensleft.show-calendar{
+
+        width: 96%;
+
+    }
+
+    .manage-deadline h2{
+
+        font-size: 23px;
+
+    }
+
+    a.btn.btn-primary.addContact {
+
+        padding: 3px 10px;
+
+        font-size: 13px;
+
+    }
+
+    h1{
+
+        font-size: 18px
+
+    }
+
+    span[class="1"],
+
+    span[class="2"],
+
+    span[class="3"],
+
+    span[class="4"],
+
+    span[class="5"],
+
+    span[class="6"],
+
+    span[class="7"],
+
+    span[class="8"],
+
+    span[class="9"],
+
+    span[class="10"],
+
+    span[class="11"],
+
+    span[class="12"]{
+
+        max-width: 40px;
+
+        text-overflow: initial;
+
+    }
+    .t-assignV .row.orders h5 {
+        color: #002f5a;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+        line-height: normal;
+    }
+    .t-assignV .row.orders h5 label {
+        font-weight: normal;
+         margin-bottom: 0;
+
+    }
+    .t-assignV .row.orders .form-group {
+        margin-bottom: 0;
+    }
+    .plr{
+        padding: 0;
+    }
+
+}
+
+
+
+@media(max-width:420px){
+
+    .navbar-brand {
+
+        width: 160px;
+
+        margin-right: 20px;
+
+    }
+
+    .navbar-toggle {
+
+        margin-right: 0;
+
+    }
+
+    ul.notification{
+
+        margin: 11px 10px 0px 0;
+
+    }
+
+    #noti{
+
+        width: 95%;
+
+    }
+
+    h3#myModalLabel {
+
+        font-size: 18px;
+
+    }
+
+    form#comments {
+
+        padding-top: 15px;
+
+    }
+
+    .orderFormSec a.btn.btn-primary.add {
+
+        position: absolute;
+
+        left: -19px;
+
+    }
+
+}
+
+
+
+
+

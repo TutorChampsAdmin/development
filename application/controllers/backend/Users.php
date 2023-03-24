@@ -1,0 +1,51 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Users extends CI_Controller {
+	
+	function __construct()
+	{   
+		ini_set('memory_limit', '-1');
+		parent::__construct();
+		
+		$this->load->model('User');
+		date_default_timezone_set('Asia/Calcutta');
+		if($this->session->userdata('b_user_id') == ''){
+        		redirect(BACKEND_FOLDER);
+        }
+
+	}
+	
+	public function index($id = ''){   
+        
+        if($this->input->get('get_list')){
+        	$rowperpage = 30;
+			$postData = json_decode($this->input->get('data'));
+			$rowno = $postData->rowno;
+			if($rowno != 0){
+			 	$rowno = ($rowno-1) * $rowperpage;
+			}
+
+		   $search_string   = $postData->search_string;
+	
+		   $userList   = $this->User->userList($rowperpage,$rowno, $search_string); 
+		   $total_users  = $this->User->userListCount($search_string);
+		   $data  = ['total_users' => $total_users ,'rowperpage' => $rowperpage,'userList' => $userList];
+		   die(json_encode($data));
+        }else{
+        	$data['mainbodyContent'] = $this->load->view('backend/users',$data,TRUE);
+			$this->load->view('backend/master_view',$data);
+        }
+
+	}
+
+
+	public function update_user($id){
+		$this->User->update_user(array('id' => $id),array('status' => '0'));
+	}
+
+
+	public function delete_user($id){
+		$this->User->delete_data_by_id(array('id' => $id),'user');
+	}
+}

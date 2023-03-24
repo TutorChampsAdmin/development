@@ -1,0 +1,67 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+class Tutor_modal extends CI_Model{
+	function __construct() {
+	    $this->table = 'posts';
+	}
+	
+	
+	public function get_page_details($slug , $type){
+        $this->db->select(array('p.*', 'pc.name as category_name'));
+        $this->db->from($this->table.' p');
+        $this->db->where('url_slug', trim($slug));
+         $this->db->join('post_categories pc', 'pc.id = p.category_id', 'left');
+        $this->db->where('p.type', trim($type));
+        $this->db->where('p.status', '1');
+        $query = $this->db->get();
+        return $query->row();
+        
+   }
+
+   public function postList($limit,$start,$type, $id = '', $search_string = ''){
+        $this->db->limit($limit,$start);
+        $this->db->select(array('p.*','u.first_name','u.last_name', 'pc.name as category_name'));
+        $this->db->from($this->table.' p');
+        $this->db->join('user u', 'u.id = p.created_by', 'left');
+        $this->db->join('post_categories pc', 'pc.id = p.category_id', 'left');
+        $this->db->where('p.type', trim($type));
+        if(trim($id) != ''){
+            $this->db->where('p.id', trim($id));
+        }
+        
+        if(trim($search_string) != ''){
+            $this->db->group_start();
+            $this->db->like('p.title',$search_string);
+            $this->db->or_like('p.url_slug',$search_string);
+            $this->db->or_like('p.description',$search_string);
+            $this->db->group_end();
+        }
+        $query = $this->db->get();
+        if(trim($id) == ''){
+            return $query->result_array();
+        }else{
+            return $query->row();
+        }
+        
+   }
+
+   public function postListCount($type, $id = '', $search_string = '') {
+        $this->db->from($this->table);
+        $this->db->where('type', trim($type));
+        if(trim($id) != ''){
+            $this->db->where('id', trim($id));
+        }
+        
+        if(trim($search_string) != ''){
+            $this->db->group_start();
+            $this->db->like('title',$search_string);
+            $this->db->or_like('url_slug',$search_string);
+            $this->db->or_like('description',$search_string);
+            $this->db->group_end();
+        }
+        $query = $this->db->get();
+        return $query->num_rows();
+         
+   }
+
+
+}
