@@ -1,0 +1,58 @@
+/*
+ColorBox Core Style
+The following rules are the styles that are consistant between themes.
+Avoid changing this area to maintain compatability with future versions of ColorBox.
+*/
+#colorbox{-webkit-box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.7);
+    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.7);}
+#colorbox, #newLayoutcboxOverlay, #newLayoutcboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#newLayoutcboxOverlay{position:fixed; width:100%; height:100%;}
+#newLayoutcboxMiddleLeft, #newLayoutcboxBottomLeft{clear:left;}
+#newLayoutcboxContent{position:relative; overflow:hidden; }
+#newLayoutcboxLoadedContent{overflow:auto;}
+#newLayoutcboxLoadedContent iframe{display:block; width:100%; height:100%; border:0; max-height: 100vh;}
+#newLayoutcboxTitle{margin:0;}
+#newLayoutcboxLoadingOverlay, #newLayoutcboxLoadingGraphic{position:absolute; top:0; left:0; width:100%;}
+#newLayoutcboxPrevious, #newLayoutcboxNext, #newLayoutcboxClose, #newLayoutcboxSlideshow{cursor:pointer;}
+.newLayoutcboxElement{outline:none;}
+/*
+Example user style
+The following rules are ordered and tabbed in a way that represents theajax_css.php
+order/nesting of the generated HTML, so that the structure easier to understand.
+*/
+#newLayoutcboxOverlay{background-color:rgba(0,0,0,0.5); opacity: 0.7; filter: alpha(opacity=70);}
+
+#newLayoutcboxTopLeft{width:21px; height:21px; }
+#newLayoutcboxTopRight{width:21px; height:21px; }
+#newLayoutcboxBottomLeft{width:21px; height:21px; }
+#newLayoutcboxBottomRight{width:21px; height:21px; }
+#newLayoutcboxMiddleLeft{width:21px; }
+#newLayoutcboxMiddleRight{width:21px; }
+#newLayoutcboxTopCenter{height:21px; }
+#newLayoutcboxBottomCenter{height:21px; }
+#newLayoutcboxContent{background:#fff; border-radius:3px;}
+#newLayoutcboxLoadedContent{width:100% !important;}
+#newLayoutcboxTitle{position:absolute; bottom:4px; left:0; text-align:center; width:100%; color:#949494;}
+#newLayoutcboxCurrent{position:absolute; bottom:4px; left:58px; color:#949494;}
+#newLayoutcboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
+#newLayoutcboxPrevious{position:absolute; bottom:0; left:0px;  width:25px; height:25px; text-indent:-9999px;}
+#newLayoutcboxPrevious.hover{background-position:-75px -25px;}
+#newLayoutcboxNext{position:absolute; bottom:0; left:27px;  width:25px; height:25px; text-indent:-9999px;}
+#newLayoutcboxNext.hover{background-position:-50px -25px;}
+#newLayoutcboxLoadingOverlay{background:url(../images/loading.svg) no-repeat center center;}
+#newLayoutcboxLoadingGraphic{background:url(../images/loading.svg)) no-repeat center center;}
+#newLayoutcboxClose{position:absolute; top:10px; right:10px; width:25px; height:25px; text-indent:-9999px;}
+#newLayoutcboxClose.hover{}
+
+/*
+The following fixes png-transparency for IE6.
+It is also necessary for png-transparency in IE7 & IE8 to avoid 'black halos' with the fade transition
+
+Since this method does not support CSS background-positioning, it is incompatible with CSS sprites.
+Colorbox preloads navigation hover classes to account for this.
+
+!! Important Note: AlphaImageLoader src paths are relative to the HTML document,
+while regular CSS background images are relative to the CSS document.
+*/
+

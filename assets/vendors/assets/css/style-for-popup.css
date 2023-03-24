@@ -1,0 +1,330 @@
+a, a:focus, a:hover{text-decoration: none; outline: none;}
+
+
+
+:root {  --gray: #545454; --white:#fff; --bggray:rgba(241, 239, 239, 0.51); --blue: #058dc3; --yellow: #e2c912; --fbcolor:#3b5998; --whatsappcolor: #25d366; --email: #db493c ;}
+
+	
+.no_msg{ text-align: center; }
+.portalpopup .modal-dialog { max-width: 72%; position: relative;} 
+.portalpopup .modal-body{padding: 0}
+.bg-color {background: var(--gray);padding: 0px 25px;position: relative;}
+.clientdetails {width: 33%;display: inline-flex;padding: 5px 0;}
+#textlist {
+    text-align: right;
+    display: inline-block;
+    width: auto;
+    float: right;
+    max-width: 66%;
+    position: absolute;
+    bottom: auto;
+    right: 0;
+    background: #f8f7f7;
+    height: 100%;
+    top: 0px;
+    }
+#textlist li{   cursor: pointer;   height: 100%;   border-left: 1px solid #ececec;   position: relative;transition: all 500ms ease;float: left; display: inline-block;}
+.nav-tabs {  border-bottom: none;}
+
+#textlist li:hover em, #textlist li:focus em{ color: var( --gray);}
+li.zendeskiocn svg{fill: var(--yellow);}
+li.fbicon svg{fill: var(--fbcolor);}
+li.emailicon svg{fill: var(--email);}
+li.whatsappicon svg{fill: var(--whatsappcolor);}
+li.messageiocn svg{fill: var(--blue);}
+
+li.zendeskiocn span{color: var(--yellow);}
+li.fbicon span{color: var(--fbcolor);}
+li.emailicon span{color: var(--email);}
+li.whatsappicon span{color: var(--whatsappcolor);}
+li.messageiocn span{color: var(--blue);}
+
+
+#textlist li a svg {    margin-top: 2px; width: 20px;   height: 20px; }
+#textlist li a{
+	display: block;
+	font-size: 15px;
+	text-transform: uppercase;
+	margin-right: 0;
+	padding: 5px 12px;
+	line-height: 1.42857143;
+	border: none;
+	border-radius: 0;
+	/* background: #f8f7f7; */
+	font-weight: bold;
+	}
+#textlist li a em {    color: #545454;
+    font-style: normal;
+    z-index: 1;
+    font-size: 12px;
+    text-align: center;
+    line-height: 17px;
+    width: 100%;
+    display: block;}
+
+.top-lead{    position: absolute;
+    bottom: 0;right: 0;
+    z-index: 99;
+    padding: 0;
+    border-radius: 3px;
+    min-width: 200px;
+    text-align: left;
+    top: auto;}
+#textlist li a span {       font-weight: 400;
+    font-size: 14px; display: inline-block;    vertical-align: top;      margin: 3px  5px 0px 5px;}
+#textlist li.active {background: #fff;transition: all 500ms ease;}
+#textlist li:hover, #textlist li:focus{transition: all 500ms ease;  background: #fff}
+#textlist li:hover a, #textlist li:focus a, #textlist li.active a{color: var(--gray); transition: all 500ms ease;}
+/*#textlist li:hover a svg, #textlist li:focus a svg, #textlist li.active a svg{fill: var(--gray); transition: all 500ms ease;}*/
+.portalpopup .modal-content{      border: none;}
+.clientdetails h3 {    margin: 0 0 1px;  font-size: 17px;   color: var(--white);  white-space: nowrap;   overflow: hidden;   text-overflow: ellipsis;    max-width: 304px;}
+.clientdetails h4 { margin:0; font-size: 14px;  color:  var(--white);  vertical-align: top;}
+.clientdetails h4 img {width: 19px; cursor: pointer;}
+.clientdetails h4 span{display: inline-block;  position: relative;  top: 2px;  margin-right: 8px;}
+.portalpopup button.close {color: #ffffff;position: absolute;top: -20px;background: #545454;font-size: 25px;right: -15px;opacity: 1;border-radius: 50%;width: 30px;height: 30px;z-index: 99;}
+.messagediv {  padding: 0px 25px;min-height: 400px; max-height: 400px; overflow-y: auto;}
+.portalpopup  .tab-content{padding: 25px 0 44px;}
+.messagediv .msgbox:after{position: absolute;content: "";width: 0;height: 0;border-color: transparent var(--bggray) transparent transparent;
+top: 0;border-style: solid;border-width: 0 15px 15px 0;   }
+.receiver-section{float: left;}
+.sender-section{float: right;}
+.sender-section:after  {right: -14px;  transform: rotate(271deg);}
+.receiver-section:after { left: -14px;}
+.messagediv h5 {margin: 0;display: inline-block;vertical-align: top;position: absolute;left: -23px;top: 16px;}
+.messagediv h5 svg{width: 45px; height: 45px}
+.msgbox {   margin-left: 23px; clear: both; min-width: 55%;    margin-bottom: 25px;max-width: 75%;background-color:var(--bggray);width:fit-content;height:fit-content;position: relative;padding: 15px 10px;}
+.rightsection{width: 100%;display: inline-block;padding-left: 0; position: relative;overflow-x: hidden;overflow-y: hidden;}
+.scroll-div {
+    overflow-y: auto;
+    max-height: 220px;
+    z-index: 99;
+    position: relative;
+    margin-bottom: 40px !important;
+}
+
+.messagediv p { font-size: 12px;
+    line-height: 18px;    word-break: break-all;  margin: 0 0 17px;vertical-align: top;color: var(--gray);}
+.rightsection h3 {margin: 0;
+    text-align: right;
+    float: right;
+    display:flex;
+    width: 100%;}
+ .frd_info_and_att{    font-size: 13px; margin-top: 5px;}   
+    .close:not(:disabled):not(.disabled):focus, .close:not(:disabled):not(.disabled):hover{opacity: 1;     color: #fff;}
+.rightsection h3 span.date {font-size: 12px;margin-right: 6px;}
+.rightsection h3 svg {width: 16px;height: 16px;position: relative;top: 2px;}
+.rightsection h3 span.date svg {position: relative;top: -3px;    margin-right: 5px;}
+.cke-box{position: relative;}
+
+.portalpopup button.close span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    text-shadow: none;
+}
+.textareasec{background: #f1efef;   padding: 16px 25px;}
+.textareasec textarea{width: 100%;  display: none !important;  min-height: 66px;}
+.textareasec .btn{vertical-align: top;padding: 5px 17px;color: #fff;font-size: 17px;text-transform: uppercase;letter-spacing: 1px;border-radius: 2px;margin: 28px 0 11px;float: right;}
+.bluebtn{background: var(--blue);  border: var(--blue); }
+.portalpopup .modal-footer {padding: 0 25px 12px;text-align: left;border-top: none;position: absolute;bottom: 0;left: 0;}
+.portalpopup .modal-footer .btn-default{color: #545454;  border-color: #545454;vertical-align: top; padding: 5px 17px;  font-size: 16px;  text-transform: uppercase; letter-spacing: 1px;  border-radius: 2px;  float: right;}
+.opendiv-menu {/*right: 0;position: absolute;z-index: 1;padding: 0;border-radius: 3px;min-width: 200px;text-align: left;top: auto; */visibility: hidden;
+	opacity: 0}
+.opendiv-menu ul {margin: 0;}
+.opendiv-menu ul li {transition: all 500ms ease;display: block;margin: 0;padding: 5px 12px;vertical-align: top;}
+.opendiv-menu ul li:hover {    background: #545454; transition: all 500ms ease;}
+.opendiv-menu ul li a {color: #fff; display: block;}
+.opendiv-menu ul li a svg {width: 17px;height: 17px;fill: #ffffff;position: relative;top: -1px;margin-right: 6px;}
+.popupicon{cursor: pointer;}
+.client-info {visibility: hidden;opacity: 0;position: absolute;top: 84px;background: #fdfdfd;  z-index: 9;  
+	box-shadow: 0px 0px 7px rgb(84, 84, 84); padding: 0; border-radius: 3px;    left: 23px;}
+.openlabeldiv{visibility: visible; opacity: 1; transition: all 500ms ease;}
+.client-info li {display: block !important;
+    padding: 4px 6px 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 288px !important;
+    vertical-align: top;
+    border-bottom: 1px solid #f1f1f1;
+    min-width: 227px;}
+.client-info li a { display: block;  color: #2f2a2a;}
+.client-info li:last-child{border-bottom: none;}
+.client-info li label{margin-bottom: 0}
+.client-info li svg {width: 23px;height: 23px;position: relative;top: 5px;margin-right: 8px;}
+.client-info ul{padding: 0; margin: 0}
+.clientname{    margin-left: 8px;}
+.messagediv span.date{color: var(--blue);}
+.messagediv  svg{fill: var(--blue)}
+.messageopen{background: var(--blue)}
+.yellpwbtn{background: var(--yellow);  border: var(--yellow); }
+.yellpwbtn ul li{border-bottom: 1px solid #c1c1c1;}
+.zendeskopen{background: var(--yellow);}
+.zendeskopen ul li{    border-bottom: 1px solid #fff3f3;}
+#zendesk .messagediv span.date{    color:var(--yellow);}
+#zendesk .messagediv h3 span.date svg, #zendesk .messagediv svg.popupicon{    fill: var(--yellow);}
+.clientprofile{text-align: center;    padding:  0 0;}
+.clientprofile svg{width: 42px; height: 42px}
+.fbopen{background: var(--fbcolor);}
+.fbopen ul li{border-bottom: 1px solid #fff3f3;}
+.facebookdiv .rightsection h3 span.date{color: var(--fbcolor);}
+.facebookdiv .date svg{fill: var(--fbcolor);}
+.facebookdiv .popupicon {  fill: var(--fbcolor);}
+.fbbtn{background: var(--fbcolor);    border: var(--fbcolor);}
+
+
+.whatsappbtn{background: var(--whatsappcolor);    border: var(--whatsappcolor);}
+.appopen{background: var(--whatsappcolor);}
+.appopen ul li{border-bottom: 1px solid #fff3f3;}
+.whatsappdiv .rightsection h3 span.date{color: var(--whatsappcolor);}
+.whatsappdiv .date svg{fill: var(--whatsappcolor);}
+.whatsappdiv .popupicon {  fill: var(--whatsappcolor);}
+.whatsappbtn{background: var(--whatsappcolor);    border: var(--whatsappcolor);}
+
+.mailbtn{background: var(--email);    border: var(--email);}
+.mailopen{background: var(--email);}
+.mailopen ul li{border-bottom: 1px solid #fff3f3;}
+.maildiv .rightsection h3 span.date{color: var(--email);}
+.maildiv .date svg{fill: var(--email);}
+.maildiv .popupicon {  fill: var(--email);}
+.mailbtn{background: var(--email);    border: var(--email);}
+/*.bgclass{background-color: rgb(226, 226, 226)}*/
+/*.messagediv .bgclass:after{border-color: transparent #e2e2e2    transparent transparent;}*/
+.forworddiv {margin-bottom: 22px;align-items: center; opacity: 0; visibility: hidden; display: none;}
+.forworddiv h4 {margin: 0;font-size: 16px;width: 133px;}
+.showforword{opacity: 1; display: flex; visibility: visible;}
+
+
+.leadchecked {position: absolute;color: #545454;font-size: 12px;text-align: right;padding: 0;margin: 0;width: 98%;bottom: -17px; display: none;;}
+.leadchecked li {    color: #0f6d0e; margin: 0px 1px;}
+.leadchecked li  i {      position: relative;    top: 2px;  font-size: 12px;    color: #0f6d0f;}
+.leadcheckedshow{display: block;}
+
+
+.attachpopup-div{width: 21%;margin: 50px auto}
+.attachpopup-div .modal-header{background: #717171;  padding: 10px 15px; color: #fff;}
+.attachpopup-div ul {padding: 0;overflow-y: scroll;height: 149px;margin: 0;}
+.attachpopup-div ul li { border-bottom: 1px solid #ddd; display: flex; padding: 2px 4px;font-size: 12px;}
+.attachpopup-div ul li:last-child{border-bottom: none}
+.attachpopup-div ul li input {position: relative;top: -2px;}
+.attachpopup-div ul li label {font-weight: normal;margin-left: 3px;}
+.attachpopup-div .btn{    vertical-align: top;padding: 4px 10px;font-size: 13px;text-transform: uppercase;border-radius: inherit; color: #545454; border-radius: 3px;}
+.attachpopup-div .closebtn{float: left;    border: 1px solid #545454;}
+.attachpopup-div .submitbtn{    background: #329201; color: #fff;}
+.entercomment textarea{border: 1px solid #ddd; width: 100%; padding: 5px 10px;}
+.portalpopup {overflow-y: scroll !important;}
+.showforword .multiselect-native-select .btn-group {
+    display: none;
+}
+.frd_info_and_att p{ border-top: 1px dotted #ccc;margin: 0px 0px 5px; }
+.frd_info_and_att p span{font-size:12px; }
+.unread { font-weight: 700; }
+#loadmore_messages{text-align:center;cursor:pointer;font-size: 12px;margin-top: -20px;color: #fff;background: #058dc3;
+max-width: 240px;margin: auto;margin-bottom: 10px;margin-top: -15px;}
+.reply-sub{    font-size: 16px !important;
+font-weight: 500;
+color: #058dc3;}
+.forworddiv.showforword h4 {position: relative;margin: 0 0 6px;}
+.forworddiv h4 a {color: #fff;background: red;width: 20px;height: 20px;display: inline-block;border-radius: 50%;
+	text-align: center;font-size: 16px;line-height: 17px;}
+.msg-details{height: 150px;overflow-x: hidden;overflow-y: scroll}
+.frd_info_and_att.msg-details {height: auto;overflow-x: hidden;overflow-y: hidden;}
+.frd_info_and_att.msg-details span {color: green;}
+
+
+@media screen and (max-width: 1734px) {
+	#textlist li a{font-size: 12px;letter-spacing: 1px;padding: 5px 10px 5px 7px;}
+	#textlist li a svg{ width: 22px;height: 22px;}
+	#textlist li a em{ font-size: 11px;}
+}
+
+@media screen and (max-width: 1513px) {
+	.bg-color{padding: 0 13px;}
+	#textlist li a svg { width: 19px;  height: 19px;}
+	#textlist li a{padding: 5px 8px 5px 5px;}
+}
+@media screen and (max-width: 1374px) {
+	#textlist li a {    font-size: 10px;}
+	.attachpopup-div {    width: 29%;}
+}
+
+
+@media screen and (max-width: 1313px) {
+	.portalpopup .modal-dialog { width: 74%;}
+
+}
+@media screen and (max-width: 1280px) {
+.portalpopup .modal-dialog {
+    width: 85%;
+    max-width: 85%;
+}
+}
+
+@media screen and (max-width: 1199px) {
+	.portalpopup .modal-dialog {  width: 82%;}
+	.attachpopup-div { width: 36%;}
+	.attachpopup-div { width: 40%;}
+}
+
+@media screen and (max-width: 1055px) {
+	.clientdetails h4 img{    width: 18px;}
+	.clientdetails h3{font-size: 17px;}
+	.clientdetails h4{font-size: 15px;}
+	#textlist li a svg { width: 17px;  height: 17px;}
+	#textlist li a {font-size: 10px;}
+}
+@media screen and (max-width: 991px) {
+	#textlist li a svg {width: 19px;  height: 19px;}
+	#textlist li a { font-size: 12px;}
+	#textlist{    position: relative;
+    right: 0;    text-align: left;  float: none; width: 100%;  max-width: 100%;    border-bottom: none;}
+	.clientdetails{width: 100%;     margin-bottom: 19px;}
+	.bg-color { padding: 15px 13px 11px;}
+	.textareasec {    padding: 16px 15px;}
+	.attachpopup-div { width: 47%;}
+}
+
+@media screen and (max-width: 767px) {
+	#textlist li a span{display: none;}
+	#textlist li a svg {  width: 25px;    height: 25px;}
+	#textlist li a {     text-align: center; padding: 5px 28px 5px 18px;}
+	.portalpopup .modal-dialog { max-width: 90%; width: 90%;  margin: 37px auto;}
+	.attachpopup-div {  width: 67%;}
+	#textlist{    right: 0; position: static;}
+	.leadchecked li{font-size: 11px;}
+} 
+
+@media screen and (max-width: 667px) {
+	
+	.msgbox{    max-width: 85%;}
+
+}
+@media screen and (max-width: 580px) {
+	.attachpopup-div {   width: 85%;}
+	.leadchecked li i{font-size: 14px;}
+	.leadchecked{    bottom: -32px;    width: 100%;}
+	.msgbox{    margin-bottom: 32px;}
+}
+
+@media screen and (max-width: 480px) {
+	#textlist li a svg { width: 20px;  height: 20px;}
+	#textlist li a { padding: 5px 20px 5px 18px;}
+	.textareasec{text-align: center;}	
+	.messagediv { padding: 0px 15px;}
+	.rightsection h3 span.date {  font-size: 11px;}
+	.messagediv p{font-size: 12px}
+	.msgbox{    max-width: 87%;}
+	.rightsection h3 svg{width: 14px; height: 14px}
+	.client-info{    width: 96%;    left: 5px;}
+	.client-info li svg {    margin-right: 3px;  width: 19px;  height: 19px;}
+	.client-info li{font-size: 13px}
+}
+
+@media screen and (max-width: 360px) {
+	#textlist li a svg {  width: 18px;  height: 18px;}
+	#textlist li a {  padding: 5px 16px 5px 15px;}
+
+	
+}
