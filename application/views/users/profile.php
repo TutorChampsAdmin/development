@@ -106,9 +106,9 @@
 								</form>
 
 								<ul class="nav nav-tabs tab_sec">
-								    <li><a data-toggle="tab" href="#menu1" class="active">Menu 1</a></li>
-								    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-								    <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+								    <li><a data-toggle="tab" href="#menu1" class="active">Personal Information</a></li>
+								    <li><a data-toggle="tab" href="#menu2">Billing Address</a></li>
+								    <li><a data-toggle="tab" href="#menu3">Change Password</a></li>
 								  </ul>
 
 								  <div class="tab-content">
@@ -137,23 +137,23 @@
 								      		</div>
 
 
-								      		<div class="fields_outer_div">
-								      			<div class="form_fields">
-													<label>Birthday</label>
-													<input class="Birthday input" type="datetime-local" id="birthday" name="Birthday" placeholder="Birthday">
-												</div>
-												<div class="form_fields">
-													<label>Gender</label>
-												  	<div class="radio_con">
-														<label for="male">
-															<input style="display: inline-block;" type="radio" id="male" name="Gender" value="male">Male
-														</label>
-														<label for="female">
-														   <input style="display: inline-block;" type="radio" id="female" name="Gender" value="female">female
-														</label>
-													</div>
-												</div>
-								      		</div>
+								    <!--  		<div class="fields_outer_div">-->
+								    <!--  			<div class="form_fields">-->
+												<!--	<label>Birthday</label>-->
+												<!--	<input class="Birthday input" type="datetime-local" id="birthday" name="Birthday" placeholder="Birthday">-->
+												<!--</div>-->
+												<!--<div class="form_fields">-->
+												<!--	<label>Gender</label>-->
+												<!--  	<div class="radio_con">-->
+												<!--		<label for="male">-->
+												<!--			<input style="display: inline-block;" type="radio" id="male" name="Gender" value="male">Male-->
+												<!--		</label>-->
+												<!--		<label for="female">-->
+												<!--		   <input style="display: inline-block;" type="radio" id="female" name="Gender" value="female">female-->
+												<!--		</label>-->
+												<!--	</div>-->
+												<!--</div>-->
+								    <!--  		</div>-->
 
 								      		<div class="fields_outer_div">
 								      			<div class="form_fields">
@@ -166,27 +166,83 @@
 												</div>
 								      		</div>
 
+								    <!--  		<div class="fields_outer_div">-->
+								    <!--  			<div class="form_fields">-->
+								    <!--  				<label>Course Name</label>-->
+												<!--	<input name="CourseName" class="input" placeholder="Course Name" type="text">-->
+												<!--</div>-->
+												<!--<div class="form_fields">-->
+								    <!--  				<label>Time Zone</label>-->
+												<!--	<input name="TimeZone" class="input" placeholder="" type="text">-->
+												<!--</div>-->
+								    <!--  		</div>-->
+
+								    <!--  		<div class="fields_outer_div">-->
+								    <!--  			<div class="form_fields">-->
+								    <!--  				<label for="EmailNotif"> -->
+								    <!--  					<input type="checkbox" id="EmailNotif" name="EmailNotif" value="EmailNotif"> Get Email Notifications-->
+								    <!--  				</label>-->
+												<!--</div>-->
+												<!--<div class="form_fields">-->
+								    <!--  				<label for="WhatsappNotif"> -->
+								    <!--  					<input type="checkbox" id="WhatsappNotif" name="WhatsappNotif" value="WhatsappNotif" checked> Get Whatsapp Notifications-->
+								    <!--  				</label>-->
+												<!--</div>-->
+								    <!--  		</div>-->
+
+								      		<div class="text-center mt-4">
+												<button id="" type="submit" class="r_btn">Save Details</button>
+											</div>
+
+								      	</form>
+								    </div>
+								    <div id="menu2" class="tab-pane fade">
+								      <form class="order_form">
+								      		<div>
+								      			<h3>Billing Address</h3>
+								      		</div>
+
 								      		<div class="fields_outer_div">
 								      			<div class="form_fields">
-								      				<label>Course Name</label>
-													<input name="CourseName" class="input" placeholder="Course Name" type="text">
+								      				<label>Name</label>
+													<input name="Name" class="input" placeholder="Name" type="text">
 												</div>
 												<div class="form_fields">
-								      				<label>Time Zone</label>
-													<input name="TimeZone" class="input" placeholder="" type="text">
+													<label>Email</label>
+													<input name="email" class="input" placeholder="Email" type="email">
 												</div>
 								      		</div>
 
 								      		<div class="fields_outer_div">
 								      			<div class="form_fields">
-								      				<label for="EmailNotif"> 
-								      					<input type="checkbox" id="EmailNotif" name="EmailNotif" value="EmailNotif"> Get Email Notifications
-								      				</label>
+								      				<label>Phone</label>
+													<input class="phone_num input" name="phone_num" type="number" id="phone_num" placeholder="9876543210" />
 												</div>
 												<div class="form_fields">
-								      				<label for="WhatsappNotif"> 
-								      					<input type="checkbox" id="WhatsappNotif" name="WhatsappNotif" value="WhatsappNotif" checked> Get Whatsapp Notifications
-								      				</label>
+													<label>Address</label>
+													<input class="input" name="Address" type="text" id="Address" placeholder="Address" />
+												</div>
+								      		</div>
+
+								      		<div class="fields_outer_div">
+								      			<div class="form_fields">
+								      				<label>Zip Code</label>
+													<input class="phone_num input" name="" type="number" id="ZipCode" placeholder="Zip Code" />
+												</div>
+												<div class="form_fields">
+													<label>Country</label>
+													<input class="input" name="" type="text" id="Country"  placeholder="Country" />
+												</div>
+								      		</div>
+
+								      		<div class="fields_outer_div">
+								      			<div class="form_fields">
+								      				<label>State</label>
+													<input name="" class="input" placeholder="State" type="text">
+												</div>
+												<div class="form_fields">
+								      				<label>City</label>
+													<input name="" class="input" placeholder="City" type="text">
 												</div>
 								      		</div>
 
@@ -195,10 +251,6 @@
 											</div>
 
 								      	</form>
-								    </div>
-								    <div id="menu2" class="tab-pane fade">
-								      <h3>Menu 2</h3>
-								      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
 								    </div>
 								    <div id="menu3" class="tab-pane fade">
 								      <h3>Menu 3</h3>

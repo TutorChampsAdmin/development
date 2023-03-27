@@ -10,13 +10,13 @@
 						<form id="hwform" method="POST" action="<?php echo base_url('dashboard/order/');?>" enctype="multipart/form-data">
 							<div class="form_innBox">
 								<div class="form_fields">
-									<textarea name="desc" class="textarea" placeholder="Type your question here" required></textarea>
+									<textarea name="desc" id="desc" class="textarea" placeholder="Type your question here" required></textarea>
 								</div>
 								<div class="form_fields">
 									<div class="upload_MFile">
 										<span class="fileinput-button" id="fileinput-button">
 								            <span><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i><br><span>Drop your file or Browse</span> </span>
-								            <input type="file" name="assignment" id="files" multiple accept="image/jpeg, image/png, image/gif," required><br />
+								            <input type="file"  name="assignment" id="files" multiple accept="image/jpeg, image/png, image/gif," required><br />
 								        </span>
 								        <output id="Filelist"></output>
 								    </div>
@@ -38,6 +38,8 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="<?php echo base_url();?>assets/js/custom.js"></script>
+
+  
 	<script>
         if ('{{ ordered }}' == 'True'){
 			$("#check").click()
@@ -178,6 +180,7 @@ function getdata(){
 			$("#hwform").submit(function(e){
 				e.preventDefault();
 				$("#loading").css({"display":"block"});
+				console.log("form submitted");
 				var form = $("#hwform")[0];
 				var data = new FormData(form);
 				data.append("order_from_dashboard",'order_from_dashboard')
@@ -190,10 +193,12 @@ function getdata(){
 					processData: false,
 					contentType: false,
 					success:function(data){
+					    console.log("success submit");
 						$("#loading").css({"display":"none"});
 						$('#hwform').trigger('reset');
-						alert('Order successful');
-						 window.location.href = '<?php echo base_url();?>dashboard/new-user/order-successful';
+						var response = JSON.parse(data);
+						var order_id = response.order_id; 
+						 window.location.href = '<?php echo base_url();?>dashboard/tracking/'+order_id;
 					}
 				})
 			})

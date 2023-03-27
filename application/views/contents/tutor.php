@@ -66,10 +66,19 @@
       right: 0;
 
     }
+           #loading{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #fff url('<?php echo base_url();?>assets/front/images/loader.gif') no-repeat center  ;
+        z-index: 999;
+        display: none;
+        opacity: 0.7;
+    }
   </style>
 </head>
 <body>
-
+    <div id="loading"></div>
   <!-- Navbar -->
   <div class="navbar">
     <div class="topnav" id="myTopnav">
@@ -192,7 +201,8 @@
         <h1 class="popup-heading" id="h">Reset Password</h1>
         <p id="cont">Forgotten your password? Enter your email address below, and we'll email instructions for setting a new one.</p>
         <center>
-		      <form method="post" id="reset" action="/password_reset/">
+		      	<form method="POST" id="reset" action="<?php echo base_url('password_reset/');?>">
+                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
 			       <div class="input-field">
 				      <i class="ph-at"></i>
               			<input name="email" id="emailid" type="email" required><br>
@@ -413,43 +423,85 @@
       });
 
     </script>
-<script>
-	$('#reset').submit(function(e){
-		e.preventDefault();
-    //console.log("form submit")
-		var form = $('#reset')[0];
-		var form_data = new FormData(form);
-		var actionurl = $("#reset").attr("action");
-		$('.button-forgotpw').html('Please wait...');
-		$.ajax({
-			type:"POST",
-			url:actionurl,
-			data:form_data,
-			cache: false,
-			processData: false,
-			contentType: false,
-			success:function(data){ 
-			    var response = JSON.parse(data);
-				if(response.status=="success"){ 
-					$("#h").text("Password reset sent");
-					$("#cont").text(response.message);
-					$("#reset").css("display","none");
-				}else{
-				    $("#cont").text(response);
-				}
-				$('.button-forgotpw').html('Mail Me <span class="arrow"></span>');
-			}
+// <script>
+// 	$('#reset').submit(function(e){
+// 		e.preventDefault();
+//         $("#loading").css({'display','block'})
+// 		var form = $('#reset')[0];
+// 		var form_data = new FormData(form);
+// 		var actionurl = $("#reset").attr("action");
+// 		$('.button-forgotpw').html('Please wait...');
+// 		$.ajax({
+// 			type:"POST",
+// 			url:actionurl,
+// 			data:form_data,
+// 			cache: false,
+// 			processData: false,
+// 			contentType: false,
+// 			success:function(data){ 
+// 			       $("#loading").css({'display','none'})
+// 			    var response = JSON.parse(data);
+// 				if(response.status=="success"){ 
+// 					$("#h").text("Password reset sent");
+// 					$("#cont").text(response.message);
+// 					$("#reset").css("display","none");
+// 				}else{
+// 				    $("#cont").text(response);
+// 				}
+// 				$('.button-forgotpw').html('Mail Me <span class="arrow"></span>');
+// 			}
 			
-		})
-		.done(function(){
-			console.log("done")
-		})
-		.fail(function(){
-			console.log("fail")
-		})
+// 		})
+// 		.done(function(){
+// 			console.log("done")
+// 		})
+// 		.fail(function(){
+// 			console.log("fail")
+// 		})
 		
-	})
+// 	})
     
+// </script>
+<script>
+    
+    $('#reset').submit(function(e){
+            e.preventDefault();
+            //  $("#loading").css({'display','block'})
+            var form = $('#reset')[0];
+            var form_data = new FormData(form);
+            form_data.append("reset_pass",'reset_pass')
+            var actionurl = $("#reset").attr("action");
+            // $('.button-forgotpw').html('Please wait...');
+            $.ajax({
+                type:"POST",
+                url:actionurl,
+                data:form_data,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success:function(data){
+                    //  $("#loading").css({'display','none'})
+                    var response = JSON.parse(data);
+                    console.log("success");
+                    if(response.status=="success"){
+                        $("#h").text("Password reset sent")
+                        $("#cont").text(response.message)
+                        $("#reset").css("display","none");
+                    }else{
+                        $("#cont").text(response.message)
+                    }
+                }
+                // $('.button-forgotpw').html('Mail Me <span class="arrow"></span>');
+
+            })
+            .done(function(){
+                console.log("done")
+            })
+            .fail(function(){
+                console.log("fail")
+            })
+
+        })
 </script>
   <!-- Work in brief -->
   <div class="work" id="work">

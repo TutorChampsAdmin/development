@@ -93,7 +93,7 @@
                 </div>
             </section>
         </main>
-        <script src="<?php echo base_url('assets/backend/js/jquery-1.8.3.min.js');?>" type="text/javascript"></script>
+        <script src="<?php echo base_url();?>assets/front/js/jquery.js"></script>
         <script src="<?php echo base_url('assets/backend/js/classie.js');?>" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js"></script>  
     </body>
@@ -171,7 +171,7 @@ function validate_login()
 					$('#login_msg').show();
 				    $("#login_msg").html(response.message);
 					$("#login_msg").css({"color": response.color});
-                    location.href = "<?php echo base_url(BACKEND_FOLDER.'/pages')?>";
+                    window.href = "<?php echo base_url(BACKEND_FOLDER.'/pages')?>";
 				}
 				if(response.status == 'password'){
 					$('#b_login_btn').prop('disabled', false);

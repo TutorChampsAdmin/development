@@ -12,10 +12,21 @@
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&amp;display=swap"
 		rel="stylesheet">
 	<link rel="shortcut icon" href="<?php echo base_url();?>assets/img/fav.png" type="image/x-icon">
+	<style>
+	     #loading{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #fff url('<?php echo base_url();?>assets/front/images/loader.gif') no-repeat center  ;
+        z-index: 999;
+        display: none;
+        opacity: 0.7;
+    }
+	</style>
 </head>
 
 <body>
-
+<div id="loading"></div>
 	<header class="header">
 		<div class="container">
 			<div class="row" style="align-items: center;">
@@ -63,3 +74,23 @@
 			</div>		
 		</div>
 	</header>
+	
+	<div class="body_sec">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="dashboardContainer clientDashboard">
+						<div class="sidebar sidebar_menu">
+
+							<ul class="sidebar_menu">
+								<li><a id="home" class="active" href="javascript:void(0)"><i class="fa fa-home"></i> Home</a></li>
+								<li><a id="live_session" href="javascript:void(0)"><i class="fa fa-history" aria-hidden="true"></i> Order History</a></li>
+								<li><a id="project_lab" href="javascript:void(0)"><i class="fa fa-bug"></i> Reward Points</a></li>
+								<li><a id="profile" href="javascript:void(0)"><i class="fa fa-user"></i> Refer & Earn</a></li>
+								<li><a id="profile" href="javascript:void(0)"><i class="fa fa-question-circle"></i> FAQs</a></li>
+								<div class="sidebar_bottomLink">
+									<li><a id="" href="javascript:void(0)"><i class="fa fa-question-circle"></i> Help</a></li>
+									<li><a id="" href="<?php echo base_url('dashboard/logout/');?>"><i class="fa fa-cog"></i> Logout</a></li>
+								</div>
+							</ul>
+						</div>

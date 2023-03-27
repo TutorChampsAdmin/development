@@ -1,24 +1,4 @@
 <?php $this->load->view('users/head'); ?>
-	<div class="body_sec">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="dashboardContainer clientDashboard">
-						<div class="sidebar sidebar_menu">
-
-							<ul class="sidebar_menu">
-								<li><a id="home" class="active" href="javascript:void(0)"><i class="fa fa-home"></i> Home</a></li>
-								<li><a id="live_session" href="javascript:void(0)"><i class="fa fa-history" aria-hidden="true"></i> Order History</a></li>
-								<li><a id="project_lab" href="javascript:void(0)"><i class="fa fa-bug"></i> Reward Points</a></li>
-								<li><a id="profile" href="javascript:void(0)"><i class="fa fa-user"></i> Refer & Earn</a></li>
-								<li><a id="profile" href="javascript:void(0)"><i class="fa fa-question-circle"></i> FAQs</a></li>
-								<div class="sidebar_bottomLink">
-									<li><a id="" href="javascript:void(0)"><i class="fa fa-question-circle"></i> Help</a></li>
-									<li><a id="" href="<?php echo base_url('dashboard/logout/');?>"><i class="fa fa-cog"></i> Logout</a></li>
-								</div>
-							</ul>
-						</div>
-
 						<div class="mainContent DashboardContent">
 							<div class="dTbale homeContant active_" style="margin-top: 0px;">
 								<div class="head_content">
@@ -185,7 +165,7 @@
 												<?php 
 						foreach($orders as $order){ if($order['duration'] == ''){?>
 							<tr style="font-size: 15px; color: #000;width: 100%; border-top: 2px solid #43b97e;text-align: center;">
-							<td><?php echo $order['order_id'] ?></td>
+							<td><a href = "<?php echo base_url(); ?>dashboard/tracking/<?php echo $order['order_id']; ?>"><?php echo $order['order_id'] ?></a></td>
 							<?php if($order['assignment'] != ''){ ?>
 								<td><a href="<?php echo base_url().$order['assignment'];?>">Preview</a> </td>
 							<?php }else{ ?>
