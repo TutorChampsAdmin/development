@@ -148,7 +148,11 @@
 			</div>
 		</div>
 	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<script>
+    $("#live_session").addClass('active');
+</script>
 <?php $this->load->view('users/footer'); ?>
 
  
