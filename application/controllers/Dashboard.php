@@ -177,6 +177,20 @@ class Dashboard extends CI_Controller {
             $insert_id = $this->User_dashboard->insert('orders',$data);
             
             if($insert_id){
+                $commentsData = [
+                    'message'       =>  $this->input->post('desc'),     
+                    'first_comment' => '1',   
+                    'order_id'      => $insert_id,    
+                    'user_role'     => '8',     
+                    'added_on'      => date('Y-m-d H:i:s'),     
+                    'added_by'      => $this->session->userdata('logged_in_id'),     
+                    'to_users'      => $this->session->userdata('logged_in_id').',1',
+                    'to_user_role'  => '1,8',
+                    'to_writer'     => '0',
+                    'to_customer'   => '1',
+               ];
+               
+               $this->User_dashboard->insert('order_comments',$commentsData);
                 $this->User_dashboard->update__data('orders',array('id' =>$insert_id,'user_id' => $this->user_id), array('order_id' => 'TC-HW-'.$insert_id));
                 $data = ['order_id'=>'TC-HW-'.$insert_id];
                 die(json_encode($data));
