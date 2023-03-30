@@ -178,7 +178,7 @@ class Dashboard extends CI_Controller {
             
             if($insert_id){
                 $commentsData = [
-                    'message'       =>  $this->input->post('desc'),     
+                    'message'       =>  "Welcome To TutorChamps. Let Us know How We Can Help You In This Assignment",     
                     'first_comment' => '1',   
                     'order_id'      => $insert_id,    
                     'user_role'     => '8',     
