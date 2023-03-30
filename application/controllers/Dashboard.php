@@ -183,7 +183,7 @@ class Dashboard extends CI_Controller {
                     'order_id'      => $insert_id,    
                     'user_role'     => '8',     
                     'added_on'      => date('Y-m-d H:i:s'),     
-                    'added_by'      => $this->session->userdata('logged_in_id'),     
+                    'added_by'      => '1',     
                     'to_users'      => $this->session->userdata('logged_in_id').',1',
                     'to_user_role'  => '1,8',
                     'to_writer'     => '0',

@@ -271,7 +271,7 @@
     $("#order_dropdown").on('change',function(){
         var content = $("#order_dropdown option:selected").text();
         $("#Ongoing").css({'display':'none'});
-        $("#all").css({'display':'none'});
+        $("#All").css({'display':'none'});
         $("#Pending").css({'display':'none'});
         $("#Cancelled").css({'display':'none'});
         $("#Refunded").css({'display':'none'});
