@@ -1,24 +1,4 @@
 <?php $this->load->view('users/head');?>
-	<div class="body_sec">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="dashboardContainer clientDashboard">
-						<div class="sidebar sidebar_menu">
-
-							<ul class="sidebar_menu">
-								<li><a id="home" href="javascript:void(0)"><i class="fa fa-home"></i> Home</a></li>
-								<li><a id="live_session" class="active" href="javascript:void(0)"><i class="fa fa-history" aria-hidden="true"></i> Order History</a></li>
-								<li><a id="project_lab" href="javascript:void(0)"><i class="fa fa-bug"></i> Reward Points</a></li>
-								<li><a id="profile" href="javascript:void(0)"><i class="fa fa-user"></i> Refer & Earn</a></li>
-								<li><a id="profile" href="javascript:void(0)"><i class="fa fa-question-circle"></i> FAQs</a></li>
-								<div class="sidebar_bottomLink">
-									<li><a id="" href="javascript:void(0)"><i class="fa fa-question-circle"></i> Help</a></li>
-									<li><a id="" href="<?php echo base_url('dashboard/logout/');?>"><i class="fa fa-cog"></i> Logout</a></li>
-								</div>
-							</ul>
-						</div>
-
 						<div class="mainContent DashboardContent">
 							
 							<div class="live_session_content" style="height: auto;">
@@ -33,7 +13,7 @@
 						            </ul>
 									<div class="banner_form_con">
 										<form class="order_form" >
-											<div class="first_step opened_Box">
+											<div class="first_step opened_Box" style="display:none;">
 												<div class="form_head">
 													<h3><?php echo $order[0]['order_id'];?> - Cost Accounting  <input type="button" id="next" class=" toogelBtn" value=""><i class="fa fa-chevron-down"></i> </h3>
 												</div>
@@ -82,9 +62,12 @@
 													        <output id="Filelist"></output>
 													    </div>
 													</div>
+													<div class="text-center mt-2">
+														<button id="Submit"type="submit" class="r_btn">Submit</button>
+													</div>
 												</div>
 											</div>
-											<div class="Second_step">
+											<div class="Second_step" style="display:none;">
 												<div class="form_head">
 													<h3>Payments <i class="fa fa-chevron-down"></i> <input type="button" id="second_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
@@ -100,7 +83,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="third_step">
+											<div class="third_step" style="display:none;">
 												<div class="form_head">
 													<h3>Assignment In Progress <i class="fa fa-chevron-down"></i> <input type="button" id="third_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
@@ -120,7 +103,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="four_step">
+											<div class="four_step" style="display:none;">
 												<div class="form_head">
 													<h3>Rate & Feedback <i class="fa fa-chevron-down"></i> <input type="button" id="FeedbackToggle" class="toogelBtn" value=""></h3>
 												</div>
@@ -145,7 +128,7 @@
 														<textarea class="textarea" placeholder="Write your feedback here"></textarea>
 													</div>
 													<div class="text-center mt-2">
-														<button id="Submit" class="r_btn">Submit</button>
+														<button id="Submit"type="submit" class="r_btn">Submit</button>
 													</div>
 												</div>
 											</div>
@@ -165,4 +148,36 @@
 			</div>
 		</div>
 	</div>
+
 <?php $this->load->view('users/footer'); ?>
+
+ 
+<?php if($order[0]['status']=='Awaiting Confirmation'){ ?>
+<script>
+    $(".first_step").css({'display':'block'});
+</script>
+<?php }?>
+<?php if($order[0]['status']=='Order Confirmed'){ ?>
+<script>
+    $(".Second_step").css({'display':'block'});
+    $("#second_stepNext_btn").click();
+</script>
+<?php }?>
+
+
+
+<?php if($order[0]['status']=='Assignment In progress'){ ?>
+<script>
+    $(".third_step").css({'display':'block'});
+    $("#third_stepNext_btn").click();
+</script>
+<?php }?>
+
+
+
+<?php if($order[0]['status']=='Assignment Completed'){ ?>
+<script>
+   $(".four_step").css({'display':'block'});
+    $("#FeedbackToggle").click();
+</script>
+<?php }?>

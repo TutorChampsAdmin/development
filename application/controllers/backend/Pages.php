@@ -33,6 +33,7 @@ class Pages extends CI_Controller {
 		   $data  = ['total_posts' => $total_posts ,'rowperpage' => $rowperpage,'postList' => $postList];
 		   die(json_encode($data));
         }else{
+			$data = [];
         	$data['mainbodyContent'] = $this->load->view('backend/pages',$data,TRUE);
 			$this->load->view('backend/master_view',$data);
         }

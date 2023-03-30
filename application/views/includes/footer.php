@@ -1,3 +1,16 @@
+<style>
+        #loading{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #fff url('<?php echo base_url();?>assets/front/images/loader.gif') no-repeat center  ;
+        z-index: 999;
+        display: none;
+        opacity: 0.7;
+    }
+</style>
+
+<div id="loading"></div>
 	<div class="modal EditTableModal openPopup" id="openPopup">
 		<div class="modal-dialog customPopWidth">
 			<div class="modal-content">
@@ -12,13 +25,14 @@
 								<h3 class="popupHead">Create An Account</h3>
 							</div>
 							<div class="fields_con">
+							    <span class ="err_msz"></span>
 								<label class="has-float-label">
 									<input name="email" placeholder="" type="email" required="required">
 									<span class="label">Email *</span>
 								</label>
 							</div>
 							<div class="fields_con">
-								<input class="phone" name="phone" type="text" id="phone" placeholder="Phone Number *" />
+								<input class="phone" name="phone" type="number" id="phone" placeholder="Phone Number *" />
 							</div>
 							<div class="fields_con">
 								<label class="has-float-label">
@@ -27,6 +41,7 @@
 									<i onclick="changeInputType()" class="show_password_icon fa fa-eye fa-eye-slash"></i>
 								</label>
 							</div>
+							<!--<p>this is error message</p>-->
 							<div class="fields_con text-center mb-0 pt-2">
 								<button class="r_btn">Sign Up</button>
 
@@ -41,6 +56,7 @@
 								<h3 class="popupHead">Submit Your Problem <br> Here!</h3>
 							</div>
 							<div class="fields_con">
+							    <span class="epError"></span>
 								<label class="has-float-label">
 									<input name="email" placeholder="" type="email" required="required">
 									<span class="label">Email *</span>
@@ -63,19 +79,20 @@
 					</form>
 						<div class="resetPassword">
 							<div>
-								<h3 class="popupHead">Reset Password</h3>
-								<p>Forgotten your password? Enter your email address below, and we'll email instructions for setting a new one.</p>
+								<h3 class="popupHead" id="h">Reset Password</h3>
+								<p id="cont">Forgotten your password? Enter your email address below, and we'll email instructions for setting a new one.</p>
 							</div>
-							<form>
-							<div class="fields_con">
-								<label class="has-float-label">
-									<input placeholder="" type="email" required="required">
-									<span class="label">Email *</span>
-								</label>
-							</div>
-							<div class="fields_con text-center m-0">
-								<button class="r_btn">Send Email</button>
-							</div>
+							<form method="POST" id="reset" action="<?php echo base_url('password_reset/');?>">
+                                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
+    							<div class="fields_con">
+    								<label class="has-float-label">
+    									<input placeholder="" type="email" required="required">
+    									<span class="label">Email *</span>
+    								</label>
+    							</div>
+    							<div class="fields_con text-center m-0">
+    								<button class="r_btn">Send Email</button>
+    							</div>
 							</form>
 						</div>
 				</div>
@@ -170,10 +187,48 @@
 	<script src="<?php echo base_url(); ?>assets/front/js/custom.js"></script>
 
 
+<script>
+    
+    $('#reset').submit(function(e){
+            e.preventDefault();
+            var form = $('#reset')[0];
+            var form_data = new FormData(form);
+            form_data.append("reset_pass",'reset_pass')
+            var actionurl = $("#reset").attr("action");
+            $.ajax({
+                type:"POST",
+                url:actionurl,
+                data:form_data,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success:function(data){
+                    
+                    var response = JSON.parse(data);
+                    console.log("success");
+                    if(response.status=="success"){
+                        $("#h").text("Password reset sent")
+                        $("#cont").text(response.message)
+                        $("#reset").css("display","none");
+                    }else{
+                        $("#cont").text(response.message)
+                    }
+                }
 
+            })
+            .done(function(){
+                console.log("done")
+            })
+            .fail(function(){
+                console.log("fail")
+            })
+
+        })
+</script>
     
     <script>
         function openModalFunction() {
+            // console.log("function called");
             $("#openPopup").css("display","block");
           }
 
@@ -206,6 +261,7 @@
             var form = $("#login_form")[0];
             var data = new FormData(form);
             data.append("login",'login');
+            console.log("form submitted");
             var actionurl = $("#login_form").attr('action');
             $.ajax({
                 type:"POST",
@@ -216,14 +272,19 @@
                 contentType: false,
                 success:function(data){
                     $("#loading").css({"display":"none"});
-
+                    console.log("success");
                     var response = JSON.parse(data);
-                    if(response.status=='error'){
-                        var content = response.msg
-                        $('.epError').text(content)
+                    console.log(response.order);
+                    if(response.order=="YES"){
+                        order_id = response.order_id;
+                         window.location.href = '<?php echo base_url();?>dashboard/tracking/'+order_id;
+                    }
+                    else if(response.status=="error"){
+                        console.log(response.msg);
+                        $(".epError").text(response.msg);
                     }
                     else{
-                        window.location.href ='<?php echo base_url();?>dashboard/old-user/';
+                        window.location.href = '<?php echo base_url();?>dashboard/old-user/';
                     }
                 }
             })
@@ -246,14 +307,15 @@
                 contentType: false,
                 success:function(data){
                     $("#loading").css({"display":"none"});
+                    console.log("success");
                     var response = JSON.parse(data);
                     if(response.status=="success"){
                         console.log("successfull registered")
                         console.log(response.order);
                         if(response.order == "YES"){
+							console.log(response.order_id);
                             order_id = response.order_id;
                             window.location.href = '<?php echo base_url();?>dashboard/tracking/'+order_id;
-                            // window.location.href = '<?php echo base_url();?>dashboard/new-user/order-successful';
                         }
                         else{
                             window.location.href = '<?php echo base_url();?>dashboard/new-user/';
@@ -261,7 +323,8 @@
                     }
                     else{
                         var content = response.msg
-                        $('.err_msz').append(content)
+                        console.log(content);
+                        $('.err_msz').text(content)
                     }
 
                 }

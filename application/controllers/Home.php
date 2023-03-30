@@ -110,6 +110,67 @@ class Home extends CI_Controller {
 
         			$this->User_dashboard->update_user(array('id' => $userData['id']), array('last_login' => date('Y-m-d H:i:s')));
 					$data = ['status'=>'success','msg' => 'Login Successfuly'];
+				// 	order saving process
+				    $insert = $userData['id'];
+				 if($insert){
+				    	if($this->session->userdata('onlyOrder_id') != ''){
+				    		$orderId = $this->session->userdata('onlyOrder_id');
+				    		$orderMessage = $this->session->userdata('orderMessage');
+				    		$this->User_dashboard->update__data('orders',array('id' =>$orderId), array('order_id' => 'TC-HW-'.$orderId,'user_id' => $insert));
+                            $this->session->set_userdata('Order_Code','TC-HW-'.$orderId);
+                            
+                            if(trim($orderMessage) != ''){
+                                 $commentsData = [
+                                    'message'       => $orderMessage,     
+                                    'first_comment' => '1',   
+                                    'order_id'      => $orderId,    
+                                    'user_role'     => '8',     
+                                    'added_on'      => date('Y-m-d H:i:s'),     
+                                    'added_by'      => $insert,     
+                                    'to_users'      => $insert.',1',
+                                    'to_user_role'  => '1,8',
+                                    'to_writer'     => '0',
+                                    'to_customer'   => '1',
+                               ];
+                               
+                               $this->User_dashboard->insert('order_comments',$commentsData);
+                            }
+                             
+                            
+                            
+				    		$subjectMail  = 'Order Created - TC-HW-'.$orderId;
+							$messageMail  = '<h3>Dear '.$username.'</h3>
+
+										<p>Thank you for choosing TutorChamps. Your order has been created successfully. Your order summary is as:<br>
+ 
+										Subject: '.$this->input->post('subject').'<br>
+										Order Id: TC-HW-'.$orderId.'<br>
+										Deadline: '.$this->input->post('deadline').'<br>
+										</p>
+
+										<p>Please allow us some time to confirm your order. Our team has already working on this. We will get back to you shortly. </p>
+										<p>You can check the status of your assignment by logging into your dashboard by using your email and password.</p>
+
+										<p>To access dashboard login to our website by using the given link below.<br>
+										https://tutorchamps.com/login/ <br>
+
+										OR<br>
+										Contact Us on WhatsApp directly: https://wa.me/+919711569678</p>
+
+										<p>Best,<br>
+										TutorChamps Students Support Team<br>
+										Sincerely,<br>
+										The Tutorchamps Team</p>';
+				    		
+				    	}
+				    	$this->send_email_customers(trim($this->input->post('email')),$subjectMail,$messageMail);
+
+						$data = ['status'=>'success','msg' => 'Registered Successfuly','order' => 'YES','order_id'=>'TC-HW-'.$orderId];
+					}
+    				else{
+    				    $data = ['status'=>'success','msg' => 'Registered Successfuly','order' => ""];
+    				}
+				
 				}else{
 					$data = ['status'=>'error','msg' => 'Your Account has been deactivated'];
 				}
@@ -138,7 +199,7 @@ class Home extends CI_Controller {
 			$userData = $this->User_dashboard->getRows($email_id);
 			
 			if(count($userData) > 0 && (int)$userData['id'] > 0 && $userData['id'] !=''){
-				if($userData['is_active'] == '1'){
+				if($userData['is_active'] != '0'){
 					$userId = $userData['id'];
 					$token  = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 45);
 					$this->User_dashboard->update__data('user',array('id' =>$userId), array('token' => $token ));

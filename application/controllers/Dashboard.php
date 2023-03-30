@@ -153,7 +153,9 @@ class Dashboard extends CI_Controller {
             
             if($insert_id){
                 $this->User_dashboard->update__data('orders',array('id' =>$insert_id,'user_id' => $this->user_id), array('order_id' => 'TC-HW-'.$insert_id));
-                die('success');
+                $data = ['order_id'=>'TC-HW-'.$insert_id];
+                die(json_encode($data));
+                // die('success');
             }else{
                 die('Someting went wrong. Please try again.');
             }
