@@ -228,7 +228,6 @@
     
     <script>
         function openModalFunction() {
-            // console.log("function called");
             $("#openPopup").css("display","block");
           }
 
@@ -247,7 +246,6 @@
                 processData: false,
                 contentType: false,
                 success:function(data){
-                    //console.log(data);
                 }
             })
         })
@@ -277,10 +275,9 @@
                     console.log(response.order);
                     if(response.order=="YES"){
                         order_id = response.order_id;
-                         window.location.href = '<?php echo base_url();?>dashboard/tracking/'+order_id;
+                        window.location.href = '<?php echo base_url();?>dashboard/tracking/'+order_id;
                     }
                     else if(response.status=="error"){
-                        console.log(response.msg);
                         $(".epError").text(response.msg);
                     }
                     else{
@@ -307,13 +304,9 @@
                 contentType: false,
                 success:function(data){
                     $("#loading").css({"display":"none"});
-                    console.log("success");
                     var response = JSON.parse(data);
                     if(response.status=="success"){
-                        console.log("successfull registered")
-                        console.log(response.order);
                         if(response.order == "YES"){
-							console.log(response.order_id);
                             order_id = response.order_id;
                             window.location.href = '<?php echo base_url();?>dashboard/tracking/'+order_id;
                         }
@@ -323,7 +316,6 @@
                     }
                     else{
                         var content = response.msg
-                        console.log(content);
                         $('.err_msz').text(content)
                     }
 
