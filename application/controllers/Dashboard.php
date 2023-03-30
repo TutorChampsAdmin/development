@@ -39,8 +39,33 @@ class Dashboard extends CI_Controller {
             ];
         $this->load->view('users/tracking',$data);
     }
+    public function home(){
+        $this->load->view('users/home');
+    }
+    public function history(){
+        $orders = $this->User_dashboard->get_orders($this->user_id);
+        $LabOrders = $this->User_dashboard->get_lab_orders($this->user_id);
+        $user_detail = $this->User_dashboard->get_user_details($this->user_id);
+      
+        $data = [
+                    'orders'  => $orders,
+                    'LabOrders'  => $LabOrders,
+                    'user_detail'  => $user_detail
+                ];
+        $this->load->view('users/history',$data);
+    }
+    public function refer(){
+        $this->load->view('users/refer');
+    }
 
 
+    public function reward(){
+        $this->load->view('users/reward');
+    }
+    
+    public function faq(){
+        $this->load->view('users/faq');
+    }
     public function profile(){
 
         if($this->input->post('update_p') && trim($this->input->post('nae')) != ''){
