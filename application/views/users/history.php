@@ -26,7 +26,7 @@
 
 
 
-        <div class="table_con" id="all">
+        <div class="table_con" id="All">
             <table class="table table-striped" style="margin: 0;">
                 <tr class="thead"
                     style="font-size: 15px;font-weight: 500;color: #000;border-top: none;width: 100%;background: #47bf7f;border-top: 2px solid #43b97e;text-align: center;">
