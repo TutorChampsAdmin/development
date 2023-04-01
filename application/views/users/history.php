@@ -41,7 +41,7 @@
                 foreach ($orders as $order) {
                     if ($order['duration'] == '') { ?>
                         <tr style="font-size: 15px; color: #000;width: 100%; border-top: 2px solid #43b97e;text-align: center;">
-                            <td><a href="<?php echo base_url(); ?>dashboard/tracking/<?php echo $order['order_id']; ?>"><?php echo $order['order_id'] ?></a></td>
+                            <td><a href="<?php echo base_url(); ?>dashboard/tracking/<?php echo strtolower($order['order_id']); ?>"><?php echo $order['order_id'] ?></a></td>
                             <?php if ($order['assignment'] != '') { ?>
                                 <td><a href="<?php echo base_url() . $order['assignment']; ?>">Preview</a> </td>
                             <?php } else { ?>
@@ -83,7 +83,7 @@
                 foreach ($orders as $order) {
                     if ($order['duration'] == '' and $order['status']=='Assignment In progress') { ?>
                         <tr style="font-size: 15px; color: #000;width: 100%; border-top: 2px solid #43b97e;text-align: center;">
-                            <td><a href="<?php echo base_url(); ?>dashboard/tracking/<?php echo $order['order_id']; ?>"><?php echo $order['order_id'] ?></a></td>
+                            <td><a href="<?php echo base_url(); ?>dashboard/tracking/<?php echo strtolower($order['order_id']); ?>"><?php echo $order['order_id'] ?></a></td>
                             <td>
                                 <?php echo $order['description']; ?>
                             </td>
@@ -123,7 +123,7 @@
                 foreach ($orders as $order) {
                     if ($order['duration'] == '' and $order['status']=='Awaiting Confirmation') { ?>
                         <tr style="font-size: 15px; color: #000;width: 100%; border-top: 2px solid #43b97e;text-align: center;">
-                            <td><a href="<?php echo base_url(); ?>dashboard/tracking/<?php echo $order['order_id']; ?>"><?php echo $order['order_id'] ?></a></td>
+                            <td><a href="<?php echo base_url(); ?>dashboard/tracking/<?php echo strtolower($order['order_id']); ?>"><?php echo $order['order_id'] ?></a></td>
                             <td>
                                 <?php echo $order['description']; ?>
                             </td>
@@ -167,7 +167,7 @@
                 foreach ($orders as $order) {
                     if ($order['duration'] == '' and $order['status']=='Assignment Completed') { ?>
                         <tr style="font-size: 15px; color: #000;width: 100%; border-top: 2px solid #43b97e;text-align: center;">
-                            <td><a href="<?php echo base_url(); ?>dashboard/tracking/<?php echo $order['order_id']; ?>"><?php echo $order['order_id'] ?></a></td>
+                            <td><a href="<?php echo base_url(); ?>dashboard/tracking/<?php echo strtolower($order['order_id']); ?>"><?php echo $order['order_id'] ?></a></td>
                             <td>
                                 <?php echo $order['subject']; ?>
                             </td>
@@ -211,7 +211,7 @@
                 foreach ($orders as $order) {
                     if ($order['duration'] == '' and $order['status']=='Order Rejected') { ?>
                         <tr style="font-size: 15px; color: #000;width: 100%; border-top: 2px solid #43b97e;text-align: center;">
-                            <td><a href="<?php echo base_url(); ?>dashboard/tracking/<?php echo $order['order_id']; ?>"><?php echo $order['order_id'] ?></a></td>
+                            <td><a href="<?php echo base_url(); ?>dashboard/tracking/<?php echo strtolower($order['order_id']); ?>"><?php echo $order['order_id'] ?></a></td>
                             <td>
                                 <?php echo $order['description']; ?>
                             </td>
@@ -254,7 +254,7 @@
                 foreach ($orders as $order) {
                     if ($order['duration'] == '') { ?>
                         <tr style="font-size: 15px; color: #000;width: 100%; border-top: 2px solid #43b97e;text-align: center;">
-                            <td><a href="<?php echo base_url(); ?>dashboard/tracking/<?php echo $order['order_id']; ?>"><?php echo $order['order_id'] ?></a></td>
+                            <td><a href="<?php echo base_url(); ?>dashboard/tracking/<?php echo strtolower($order['order_id']); ?>"><?php echo $order['order_id'] ?></a></td>
                             <?php if ($order['assignment'] != '') { ?>
                                 <td><a href="<?php echo base_url() . $order['assignment']; ?>">Preview</a> </td>
                             <?php } else { ?>
