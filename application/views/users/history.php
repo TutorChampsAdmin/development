@@ -27,7 +27,7 @@
 
 
         <div class="table_con" id="All">
-            <table class="table table-striped" style="margin: 0;">
+            <table  class="table table-striped" style="margin: 0;">
                 <tr class="thead"
                     style="font-size: 15px;font-weight: 500;color: #000;border-top: none;width: 100%;background: #47bf7f;border-top: 2px solid #43b97e;text-align: center;">
                     <td>Order ID</td>
@@ -36,6 +36,7 @@
                     <td>Subject</td>
                     <td>Status</td>
                 </tr>
+                <tbody id="myTable">
                 <?php
                 foreach ($orders as $order) {
                     if ($order['duration'] == '') { ?>
@@ -58,6 +59,7 @@
                         </tr>
                     <?php }
                 } ?>
+            </tbody>
             </table>
         </div>
 
@@ -67,7 +69,7 @@
 
         <!-- ongoing orders -->
         <div class="table_con" style="display:none;" id="Ongoing">
-            <table class="table table-striped" style="margin: 0;">
+            <table  class="table table-striped" style="margin: 0;">
                 <tr class="thead"
                     style="font-size: 15px;font-weight: 500;color: #000;border-top: none;width: 100%;background: #47bf7f;border-top: 2px solid #43b97e;text-align: center;">
                     <td>Order ID</td>
@@ -76,6 +78,7 @@
                     <td>Deadline</td>
                     <td>Subject</td>
                 </tr>
+                <tbody id="myTable">
                 <?php
                 foreach ($orders as $order) {
                     if ($order['duration'] == '' and $order['status']=='Assignment In progress') { ?>
@@ -98,6 +101,7 @@
                         </tr>
                     <?php }
                 } ?>
+            </tbody>
             </table>
         </div>
 
@@ -114,6 +118,7 @@
                     <td>Deadline</td>
                     <td>Reason</td>
                 </tr>
+                <tbody id="myTable">
                 <?php
                 foreach ($orders as $order) {
                     if ($order['duration'] == '' and $order['status']=='Awaiting Confirmation') { ?>
@@ -136,6 +141,7 @@
                         </tr>
                     <?php }
                 } ?>
+            </tbody>
             </table>
         </div>
 
@@ -147,7 +153,7 @@
 
         <!-- completed orders -->
         <div class="table_con"  style="display:none;" id="Delivered">
-            <table class="table table-striped" style="margin: 0;">
+            <table  class="table table-striped" style="margin: 0;">
                 <tr class="thead"
                     style="font-size: 15px;font-weight: 500;color: #000;border-top: none;width: 100%;background: #47bf7f;border-top: 2px solid #43b97e;text-align: center;">
                     <td>Order ID</td>
@@ -156,6 +162,7 @@
                     <td>Feedback</td>
 
                 </tr>
+                <tbody id="myTable">
                 <?php
                 foreach ($orders as $order) {
                     if ($order['duration'] == '' and $order['status']=='Assignment Completed') { ?>
@@ -175,6 +182,7 @@
                         </tr>
                     <?php }
                 } ?>
+            </tbody>
             </table>
         </div>
 
@@ -187,7 +195,7 @@
 
 
         <div class="table_con"  style="display:none;" id="Cancelled">
-            <table class="table table-striped" style="margin: 0;">
+            <table  class="table table-striped" style="margin: 0;">
                 <tr class="thead"
                     style="font-size: 15px;font-weight: 500;color: #000;border-top: none;width: 100%;background: #47bf7f;border-top: 2px solid #43b97e;text-align: center;">
                     <td>Order ID</td>
@@ -196,6 +204,9 @@
                     <td>Deadline</td>
                     <td>Reason</td>
                 </tr>
+                <tbody id="myTable">
+
+               
                 <?php
                 foreach ($orders as $order) {
                     if ($order['duration'] == '' and $order['status']=='Order Rejected') { ?>
@@ -218,6 +229,7 @@
                         </tr>
                     <?php }
                 } ?>
+            </tbody>
             </table>
         </div>
 
@@ -228,7 +240,7 @@
 
 
         <div class="table_con"  style="display:none;" id="Refunded">
-            <table class="table table-striped" style="margin: 0;">
+            <table  class="table table-striped" style="margin: 0;">
                 <tr class="thead"
                     style="font-size: 15px;font-weight: 500;color: #000;border-top: none;width: 100%;background: #47bf7f;border-top: 2px solid #43b97e;text-align: center;">
                     <td>Order ID</td>
@@ -236,6 +248,7 @@
                     <td>Deadline</td>
                     <td>Subject</td>
                 </tr>
+                <tbody id="myTable">
                 <?php
                 foreach ($orders as $order) {
                     if ($order['duration'] == '') { ?>
@@ -255,6 +268,7 @@
                         </tr>
                     <?php }
                 } ?>
+                </tbody>
             </table>
         </div>
 
@@ -280,4 +294,17 @@
     })
 
 </script>
+
+<script>
+$(document).ready(function(){
+  $("#search").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
 <?php $this->load->view('users/footer'); ?>
