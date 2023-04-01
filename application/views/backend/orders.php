@@ -418,6 +418,8 @@ function get_order_list(rowno, create_page)
                     var or_selected = '';
                     var rya_selected = '';
                     var ac_selected = '';
+                    var check = '';
+                    var refund = '';
                     var assigned = 'NA';
                   
 
@@ -456,7 +458,10 @@ function get_order_list(rowno, create_page)
                         var ac_selected = 'selected';
                     }
                     if(orders[i].status=='Checking Tutor Availability'){
-                        var aco_selected='selcted';
+                        var check='selected';
+                    }
+                    if(orders[i].status=='Refunded'){
+                        var refund='selected';
                     }
                     
                     if(orders[i].tutor_id != '' && orders[i].tutor_id != null && orders[i].tutor_id != '0'){
@@ -475,12 +480,13 @@ function get_order_list(rowno, create_page)
                             <td>`+country+`</td>
                             <td><select id="orderStatus`+orders[i].id+`" onchange="change_order_status(`+orders[i].id+`,'`+orders[i].first_name+`','`+orders[i].email+`','`+orders[i].order_id+`')" style="border:none">
                                 <option value="Awaiting Confirmation" `+acon_selected+`>Awaiting Confirmation</option>
-                                <option value="Checking Tutor Availability" `+aco_selected+`>Checking Tutor Availability</option>
+                                <option value="Checking Tutor Availability" `+check+`>Checking Tutor Availability</option>
                                 <option value="Order Confirmed" `+oc_selected+`>Order Confirmed</option>
                                 <option value="Assignment In progress" `+aip_selected+`>Assignment In progress</option>
                                 <option value="Order Rejected" `+or_selected+`>Order Rejected</option>
                                 <option value="Review Your Assignment" `+rya_selected+`>Review Your Assignment</option>
                                 <option value="Assignment Completed" `+ac_selected+`>Assignment Completed</option>
+                                <option value="Refunded" `+refund+`>Refunded</option>
                             </select></td>
                             <td id="floatOption`+orders[i].id+`">`+floatMenu+`</td>
                             <td id="tutotName`+orders[i].id+`">`+assigned+`</td>

@@ -28,7 +28,7 @@ class Dashboard extends CI_Controller {
                     'LabOrders'  => $LabOrders,
                     'user_detail'  => $user_detail
                 ];
-        $this->load->view('users/dashboard',$data);
+        $this->load->view('users/home',$data);
     }
 
     public function tracking($order_id){

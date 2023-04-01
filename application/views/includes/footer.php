@@ -274,7 +274,8 @@
                     var response = JSON.parse(data);
                     console.log(response.order);
                     if(response.order=="YES"){
-                        order_id = response.order_id;
+                        var order_id = response.order_id;
+						order_id =order_id.toLocaleLowerCase();
                         window.location.href = '<?php echo base_url();?>dashboard/tracking/'+order_id;
                     }
                     else if(response.status=="error"){
@@ -307,7 +308,8 @@
                     var response = JSON.parse(data);
                     if(response.status=="success"){
                         if(response.order == "YES"){
-                            order_id = response.order_id;
+                            var order_id = response.order_id;
+							order_id =order_id.toLocaleLowerCase();
                             window.location.href = '<?php echo base_url();?>dashboard/tracking/'+order_id;
                         }
                         else{
