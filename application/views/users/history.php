@@ -247,6 +247,7 @@
                     <td>Assignment File</td>
                     <td>Deadline</td>
                     <td>Subject</td>
+                    <td>Reason</td>
                 </tr>
                 <tbody id="myTable">
                 <?php
@@ -264,6 +265,9 @@
                             </td>
                             <td>
                                 <?php echo $order['subject']; ?>
+                            </td>
+                            <td>
+                                <?php echo $order['reason']; ?>
                             </td>
                         </tr>
                     <?php }
