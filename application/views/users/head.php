@@ -83,11 +83,11 @@
 						<div class="sidebar sidebar_menu">
 
 							<ul class="sidebar_menu">
-								<li><a id="home" class="active" href="javascript:void(0)"><i class="fa fa-home"></i> Home</a></li>
-								<li><a id="live_session" href="javascript:void(0)"><i class="fa fa-history" aria-hidden="true"></i> Order History</a></li>
-								<li><a id="project_lab" href="javascript:void(0)"><i class="fa fa-bug"></i> Reward Points</a></li>
-								<li><a id="profile" href="javascript:void(0)"><i class="fa fa-user"></i> Refer & Earn</a></li>
-								<li><a id="profile" href="javascript:void(0)"><i class="fa fa-question-circle"></i> FAQs</a></li>
+								<li><a id="home"  href="<?php echo base_url();?>dashboard/home"><i class="fa fa-home"></i> Home</a></li>
+								<li><a id="live_session" href="<?php echo base_url(); ?>dashboard/history"><i class="fa fa-history" aria-hidden="true"></i> Order History</a></li>
+								<li><a id="project_lab" href="<?php echo base_url(); ?>dashboard/reward"><i class="fa fa-bug"></i> Reward Points</a></li>
+								<li><a id="refer" href="<?php echo base_url(); ?>dashboard/refer"><i class="fa fa-user"></i> Refer & Earn</a></li>
+								<li><a id="faq" href="<?php echo base_url(); ?>dashboard/faq"><i class="fa fa-question-circle"></i> FAQs</a></li>
 								<div class="sidebar_bottomLink">
 									<li><a id="" href="javascript:void(0)"><i class="fa fa-question-circle"></i> Help</a></li>
 									<li><a id="" href="<?php echo base_url('dashboard/logout/');?>"><i class="fa fa-cog"></i> Logout</a></li>

@@ -39,8 +39,33 @@ class Dashboard extends CI_Controller {
             ];
         $this->load->view('users/tracking',$data);
     }
+    public function home(){
+        $this->load->view('users/home');
+    }
+    public function history(){
+        $orders = $this->User_dashboard->get_orders($this->user_id);
+        $LabOrders = $this->User_dashboard->get_lab_orders($this->user_id);
+        $user_detail = $this->User_dashboard->get_user_details($this->user_id);
+      
+        $data = [
+                    'orders'  => $orders,
+                    'LabOrders'  => $LabOrders,
+                    'user_detail'  => $user_detail
+                ];
+        $this->load->view('users/history',$data);
+    }
+    public function refer(){
+        $this->load->view('users/refer');
+    }
 
 
+    public function reward(){
+        $this->load->view('users/reward');
+    }
+    
+    public function faq(){
+        $this->load->view('users/faq');
+    }
     public function profile(){
 
         if($this->input->post('update_p') && trim($this->input->post('nae')) != ''){
@@ -152,6 +177,20 @@ class Dashboard extends CI_Controller {
             $insert_id = $this->User_dashboard->insert('orders',$data);
             
             if($insert_id){
+                $commentsData = [
+                    'message'       =>  "Welcome To TutorChamps. Let Us know How We Can Help You In This Assignment",     
+                    'first_comment' => '1',   
+                    'order_id'      => $insert_id,    
+                    'user_role'     => '8',     
+                    'added_on'      => date('Y-m-d H:i:s'),     
+                    'added_by'      => '1',     
+                    'to_users'      => $this->session->userdata('logged_in_id').',1',
+                    'to_user_role'  => '1,8',
+                    'to_writer'     => '0',
+                    'to_customer'   => '1',
+               ];
+               
+               $this->User_dashboard->insert('order_comments',$commentsData);
                 $this->User_dashboard->update__data('orders',array('id' =>$insert_id,'user_id' => $this->user_id), array('order_id' => 'TC-HW-'.$insert_id));
                 $data = ['order_id'=>'TC-HW-'.$insert_id];
                 die(json_encode($data));

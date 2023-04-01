@@ -455,6 +455,9 @@ function get_order_list(rowno, create_page)
                     if(orders[i].status == 'Assignment Completed'){
                         var ac_selected = 'selected';
                     }
+                    if(orders[i].status=='Checking Tutor Availability'){
+                        var aco_selected='selcted';
+                    }
                     
                     if(orders[i].tutor_id != '' && orders[i].tutor_id != null && orders[i].tutor_id != '0'){
                         assigned = orders[i].assinged_to;
@@ -472,6 +475,7 @@ function get_order_list(rowno, create_page)
                             <td>`+country+`</td>
                             <td><select id="orderStatus`+orders[i].id+`" onchange="change_order_status(`+orders[i].id+`,'`+orders[i].first_name+`','`+orders[i].email+`','`+orders[i].order_id+`')" style="border:none">
                                 <option value="Awaiting Confirmation" `+acon_selected+`>Awaiting Confirmation</option>
+                                <option value="Checking Tutor Availability" `+aco_selected+`>Checking Tutor Availability</option>
                                 <option value="Order Confirmed" `+oc_selected+`>Order Confirmed</option>
                                 <option value="Assignment In progress" `+aip_selected+`>Assignment In progress</option>
                                 <option value="Order Rejected" `+or_selected+`>Order Rejected</option>
@@ -513,6 +517,7 @@ function get_order_list(rowno, create_page)
 function change_order_status(id,name,email,orderID,subject){
     if(confirm('Are you sure to change the order status.')){
         var status = $('#orderStatus'+id).val();
+        console.log(status);
         $.ajax({
             type        : 'POST',
             url         : "<?php echo base_url(BACKEND_FOLDER.'/orders/order-status-change/');?>"+id,
