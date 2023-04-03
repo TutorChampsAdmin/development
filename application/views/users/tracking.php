@@ -155,10 +155,7 @@
 									</div>
 								</div>
 							</div>
-
-							</div>
-							<div class="project_lab_content">
-								
+							<a class="chat_icon" data-toggle="modal" data-target="#myModal" ><img style="max-width: 100%;" src="<?php echo base_url();?>assets/img/chat.png"> </a>
 							</div>
 
 						</div>

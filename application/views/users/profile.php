@@ -9,14 +9,16 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/css/intlTelInput.css" />
 	<link href="<?php echo base_url();?>assets/css/dashboard.css" rel="stylesheet">
-	<link href="<?php echo base_url();?>assets/css/chat.css" rel="stylesheet">
+	<!-- <link href="<?php echo base_url();?>assets/css/chat.css" rel="stylesheet"> -->
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&amp;display=swap"
 		rel="stylesheet">
 	<link rel="shortcut icon" href="<?php echo base_url();?>assets/img/fav.png" type="image/x-icon">
 </head>
 
 <body>
-
+<style>
+	
+</style>
 	<header class="header">
 		<div class="container">
 			<div class="row" style="align-items: center;">
@@ -72,7 +74,7 @@
 						<div class="sidebar sidebar_menu">
 
 							<ul class="sidebar_menu">
-								<li><a id="home" class="active" href="javascript:void(0)"><i class="fa fa-home"></i> Home</a></li>
+								<li><a id="home" class="active" href="<?php echo base_url(); ?>dashboard/"><i class="fa fa-home"></i> Home</a></li>
 								<li><a id="live_session" href="javascript:void(0)"><i class="fa fa-history" aria-hidden="true"></i> Order History</a></li>
 								<li><a id="project_lab" href="javascript:void(0)"><i class="fa fa-bug"></i> Reward Points</a></li>
 								<li><a id="profile" href="javascript:void(0)"><i class="fa fa-user"></i> Refer & Earn</a></li>
@@ -109,6 +111,7 @@
 								    <li><a data-toggle="tab" href="#menu1" class="active">Personal Information</a></li>
 								    <li><a data-toggle="tab" href="#menu2">Billing Address</a></li>
 								    <li><a data-toggle="tab" href="#menu3">Change Password</a></li>
+								    <li><a data-toggle="tab" href="#menu4">Privacy Policy</a></li>
 								  </ul>
 
 								  <div class="tab-content">
@@ -137,23 +140,23 @@
 								      		</div>
 
 
-								    <!--  		<div class="fields_outer_div">-->
-								    <!--  			<div class="form_fields">-->
-												<!--	<label>Birthday</label>-->
-												<!--	<input class="Birthday input" type="datetime-local" id="birthday" name="Birthday" placeholder="Birthday">-->
-												<!--</div>-->
-												<!--<div class="form_fields">-->
-												<!--	<label>Gender</label>-->
-												<!--  	<div class="radio_con">-->
-												<!--		<label for="male">-->
-												<!--			<input style="display: inline-block;" type="radio" id="male" name="Gender" value="male">Male-->
-												<!--		</label>-->
-												<!--		<label for="female">-->
-												<!--		   <input style="display: inline-block;" type="radio" id="female" name="Gender" value="female">female-->
-												<!--		</label>-->
-												<!--	</div>-->
-												<!--</div>-->
-								    <!--  		</div>-->
+								     		<div class="fields_outer_div">
+								     			<div class="form_fields">
+													<label>Birthday</label>
+													<input class="Birthday input" type="datetime-local" id="birthday" name="Birthday" placeholder="Birthday">
+												</div>
+												<div class="form_fields">
+													<label>Gender</label>
+													<div class="radioCon">
+												 		<label for="male">
+												 			<input style="display: inline-block;" checked type="radio" id="male" name="Gender" value="male">Male
+												 		</label>
+												 		<label for="female">
+												 		   <input style="display: inline-block;" type="radio" id="female" name="Gender" value="female">female
+												 		</label>
+												 	</div>
+												</div>
+								       		</div>
 
 								      		<div class="fields_outer_div">
 								      			<div class="form_fields">
@@ -166,29 +169,29 @@
 												</div>
 								      		</div>
 
-								    <!--  		<div class="fields_outer_div">-->
-								    <!--  			<div class="form_fields">-->
-								    <!--  				<label>Course Name</label>-->
-												<!--	<input name="CourseName" class="input" placeholder="Course Name" type="text">-->
-												<!--</div>-->
-												<!--<div class="form_fields">-->
-								    <!--  				<label>Time Zone</label>-->
-												<!--	<input name="TimeZone" class="input" placeholder="" type="text">-->
-												<!--</div>-->
-								    <!--  		</div>-->
+								    <div class="fields_outer_div">
+								     	<div class="form_fields">
+								    		<label>Course Name</label>
+											<input name="CourseName" class="input" placeholder="Course Name" type="text">
+										</div>
+										<div class="form_fields">
+								    		<label>Time Zone</label>
+											<input name="TimeZone" class="input" placeholder="" type="text">
+										</div>
+								    </div>
 
-								    <!--  		<div class="fields_outer_div">-->
-								    <!--  			<div class="form_fields">-->
-								    <!--  				<label for="EmailNotif"> -->
-								    <!--  					<input type="checkbox" id="EmailNotif" name="EmailNotif" value="EmailNotif"> Get Email Notifications-->
-								    <!--  				</label>-->
-												<!--</div>-->
-												<!--<div class="form_fields">-->
-								    <!--  				<label for="WhatsappNotif"> -->
-								    <!--  					<input type="checkbox" id="WhatsappNotif" name="WhatsappNotif" value="WhatsappNotif" checked> Get Whatsapp Notifications-->
-								    <!--  				</label>-->
-												<!--</div>-->
-								    <!--  		</div>-->
+								    <div class="fields_outer_div">
+										<div class="form_fields">
+											<label for="EmailNotif">
+												<input type="checkbox" id="EmailNotif" name="EmailNotif" value="EmailNotif"> Get Email Notifications
+											</label>
+										</div>
+										<div class="form_fields">
+								     		<label for="WhatsappNotif">
+								    			<input type="checkbox" id="WhatsappNotif" name="WhatsappNotif" value="WhatsappNotif" checked> Get Whatsapp Notifications
+								     		</label>
+											</div>
+								     	</div>
 
 								      		<div class="text-center mt-4">
 												<button id="" type="submit" class="r_btn">Save Details</button>
@@ -253,9 +256,54 @@
 								      	</form>
 								    </div>
 								    <div id="menu3" class="tab-pane fade">
-								      <h3>Menu 3</h3>
-								      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+										<form class="order_form changePassword">
+								      		<div>
+								      			<h3>Change Password</h3>
+								      		</div>
+
+								      		<div>
+								      			<div class="form_fields">
+								      				<label>Old Password</label>
+													<input class="input" type="password" name="" placeholder="Old Password" id="oldPassword">
+													<i onclick="changeInputType()" id="show_password_icon" class="show_password_icon fa fa-eye fa-eye-slash"></i>
+												</div>
+												<div class="form_fields">
+								      				<label>New Password</label>
+													<input class="input" type="password" name="" placeholder="New Password" id="newPassword">
+													<i onclick="changeInputTypeTwo()" id="show_password_iconTwo"  class="show_password_icon fa fa-eye fa-eye-slash"></i>
+												</div>
+								      		</div>
+
+											<div>
+								      			<div class="form_fields">
+								      				<label>Confirm Password</label>
+													<input class="input" type="password" name="" placeholder="Confirm Password" id="ConfPassword">
+													<i onclick="changeInputTypeThree()" id="show_password_iconThree" class="show_password_icon fa fa-eye fa-eye-slash "></i>
+												</div>
+								      		</div>
+
+
+								      		<div class="text-center mt-4">
+												<button id="" class="r_btn">Change</button>
+											</div>
+
+								      	</form>
 								    </div>
+
+									<div id="menu4" class="tab-pane fade">
+										<div class="privacy_content">
+											<h3 class="aq_h3">Privacy Policy</h3>
+
+											<h4>» Overview :</h4>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+											<h4>» Overview :</h4>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+											<h4>» Overview :</h4>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+										</div>
+									</div>
 								  </div>
 							</div>
 
@@ -306,6 +354,48 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
   <script src="<?php echo base_url();?>assets/js/custom.js"></script>
+
+  <script>
+		var input = document.querySelector("#phone");
+		window.intlTelInput(input, {
+			separateDialCode: true
+		});
+	</script>
+
+	<script>
+		function changeInputType() {
+            $("#show_password_icon").toggleClass("fa-eye-slash");
+            var oldPassword = document.getElementById("oldPassword");
+            if (oldPassword.type === "password") {
+                oldPassword.type = "text";
+            } else {
+                oldPassword.type = "password";
+            }
+        }
+
+		function changeInputTypeTwo() {
+            $("#show_password_iconTwo").toggleClass("fa-eye-slash");
+            var newPassword = document.getElementById("newPassword");
+            
+			if (newPassword.type === "password") {
+                newPassword.type = "text";
+            } else {
+                newPassword.type = "password";
+            }
+        }
+
+		function changeInputTypeThree() {
+            $("#show_password_iconthree").toggleClass("fa-eye-slash");
+            var ConfPassword = document.getElementById("ConfPassword");
+
+			if (ConfPassword.type === "password") {
+                ConfPassword.type = "text";
+            } else {
+                ConfPassword.type = "password";
+            }
+        }
+	</script>
+
 	<script>
         if ('{{ ordered }}' == 'True'){
 			$("#check").click()
