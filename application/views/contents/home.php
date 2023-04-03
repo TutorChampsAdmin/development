@@ -47,6 +47,7 @@
 					<div id="bannerForm" class="banner_form " data-aos="fade-left" data-aos-duration="1200">
 						<h3>Submit Your Problem Here!</h3>
 						<div class="banner_form_con">
+							<!-- <p>this is testing</p> -->
 						    <?php $this->load->view('includes/order_form') ?>
 						</div>
 					</div>
