@@ -198,6 +198,7 @@ function getdata(){
 						$('#hwform').trigger('reset');
 						var response = JSON.parse(data);
 						var order_id = response.order_id; 
+						order_id =order_id.toLocaleLowerCase();
 						 window.location.href = '<?php echo base_url();?>dashboard/tracking/'+order_id;
 					}
 				})

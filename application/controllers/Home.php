@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+require_once("geoip2.phar");
+use GeoIp2\Database\Reader;
 class Home extends CI_Controller {
 
 	function __construct(){
@@ -261,7 +262,15 @@ class Home extends CI_Controller {
 		$this->session->set_userdata('onlyOrder_id','');
 		$this->session->set_userdata('subject','');
 		$this->session->set_userdata('deadline','');
-		
+		$ip = $this->get_User_Ip_Address();
+		if($ip!=='::1'){
+			$reader = new Reader('GeoLite2-City.mmdb');
+			$record = $reader->city($ip);
+			$country = $record->country->name;
+		}
+		else {
+			$country='';
+		}
 		$data = [
                     'status'    	=> 'Awaiting Confirmation',
                     'description'   => $this->input->post('Details'),
@@ -269,7 +278,7 @@ class Home extends CI_Controller {
                     // 'subject'   	=> $this->input->post('subject'),
                     'assigned'  	=> 'False',
                     'submission_date' => date('Y-m-d'),
-                    'country'   => '',
+                    'country'   => $country,
                     'user_id' => 0,
                     ];
              if(isset($_FILES['files']) && $_FILES['files']['name'] != ''){
@@ -349,12 +358,12 @@ class Home extends CI_Controller {
                             
                             if(trim($orderMessage) != ''){
                                  $commentsData = [
-                                    'message'       => $orderMessage,     
+                                    'message'       => "Welcome To TutorChamps. Let Us know How We Can Help You In This Assignment",     
                                     'first_comment' => '1',   
                                     'order_id'      => $orderId,    
                                     'user_role'     => '8',     
                                     'added_on'      => date('Y-m-d H:i:s'),     
-                                    'added_by'      => $insert,     
+                                    'added_by'      => '1',     
                                     'to_users'      => $insert.',1',
                                     'to_user_role'  => '1,8',
                                     'to_writer'     => '0',
