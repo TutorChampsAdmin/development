@@ -343,7 +343,7 @@ ul{padding: 0;}
   bottom: -2px;
   z-index: 1;
 }
-.tab_sec{border: none!important; padding: 20px 0;}
+.tab_sec{border: none!important; padding: 20px 0 35px;}
 .tab_sec .tab-content{padding: 10px;}
 .avatar-upload .avatar-edit input {
   display: none;
@@ -365,20 +365,27 @@ ul{padding: 0;}
   position: relative;
   border-radius: 100%;
   border: 4px solid #08b07b;
-  box-shadow: 1px 1px 15px #e0e0e0;
+  box-shadow: 1px 1px 15px #e0e0e0; 
+  background: url(http://localhost/development/assets/img/man.png);
+  background-size: cover;
 }
 .fields_outer_div {
     display: flex;
     justify-content: space-between;
     max-width: 700px;
 }
-.tab_sec + div form{max-width: 700px; margin: 0;}
-.form_fields {
-    width: 48%;
-}
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    opacity: 0;
+  }
+
+.tab_sec + div form{max-width: 750px; margin: 0; padding: 30px; background: #fff;}
 .prof_name{    padding-left: 15px;
     font-size: 20px;
     font-weight: 500;}
+.editProfile .form_fields {
+    width: 48%;
+}
 .avatar-upload .avatar-preview > div {
   width: 100%;
   height: 100%;
@@ -631,8 +638,13 @@ form .fileinput-button {
     background: #ffcc00;
     border-radius: 25px;
     margin: 0 auto 10px auto;
+    
 }
 
+/* .progressbar li.active:before{animation-name: animation-timeline-current;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;} */
 /*progressbar connectors*/
 .progressbar li:after {
     content: '';
@@ -656,7 +668,7 @@ form .fileinput-button {
     color: white;
 }
 .order_form_con{    padding: 30px 0;
-    max-width: 653px;
+    max-width: calc(100% - 380px);
     width: 100%;}
 .order_form{ overflow: hidden;
     border-radius: 10px;
@@ -769,6 +781,68 @@ form .fileinput-button {
     margin-right: 8px;
 }
 .assignmSolve{display: flex; height: 0; overflow: hidden;}
+.radioCon{display: flex;}
+    .radioCon label{ padding: 8px 10px;
+        background: #e9f8f3;
+        border-radius: 8px;}
+    .radioCon input{ padding: 8px 10px;
+        background: #e9f8f3;
+        margin-right: 8px;
+        border-radius: 8px;}
+    .radioCon label:last-child{ margin-left: 15px;}
+	.editProfile h3{font-size: 18px; padding-bottom: 12px;}
+	.changePassword .form_fields{width: 100%; position: relative;}
+	.show_password_icon {
+    position: absolute;
+    right: 15px;
+    top: 38px;
+    font-size: 16px!important;
+    cursor: pointer;
+    color: #737373;
+}
+.privacy_content{    max-width: 750px;
+    margin: 0;
+    padding: 30px;
+    background: #fff;     overflow: hidden;
+    border-radius: 10px;}
+.aq_h3{    position: relative;
+    margin-bottom: 26px;
+    font-size: 22px!important;
+    padding-bottom: 17px!important;}
+.aq_h3:after{content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 160px;
+    height: 1px;
+    background: #08b07b;}
+.privacy_content h4 {
+    font-size: 20px;
+    font-weight: 500;
+}
+.privacy_content p{    font-size: 15px;
+    font-weight: 300;
+    line-height: 26px;}
+.chat_icon{max-width: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px; cursor: pointer; }
+.chat_icon:after{    content: "";
+    position: absolute;
+    width: 25px;
+    height: 15px;
+    background: #fff;
+    left: 7px;
+    top: 12px;
+    z-index: -1; }
+
+    @keyframes animation-timeline-current {
+        0% {background-color: #ffcc00;}
+        10% {background-color: #44d1a4;}
+        100% {background-color: #08b07b;}
+    }
+
+
 
 /* Safari */
 @-webkit-keyframes spin {
@@ -785,6 +859,7 @@ h4{    font-size: 22px;
 .mobBtn{display: none;}
 .form_innBox.hide, .four_step .form_innBox, .Second_step .form_innBox, .third_step .form_innBox{display: none;}
 .form_innBox.show, .first_step.show, .third_step.show, .four_step.show{display: block;}
+.form_fields > div{width: 100%;;}
 
 
 @media screen and (max-width: 1200px){
@@ -805,15 +880,28 @@ h4{    font-size: 22px;
     .sidebar_menu.sidebar li > a{font-size: 13px; white-space: nowrap; padding: 12px;}
 }
 
+@media screen and (max-width: 1200px){
+    .order_form_con{max-width: 92%;}
+}
+
 @media screen and (max-width: 1024px){
     .checkbox_sec .cstm_ser_box{width: calc(50% - 40px)!important;}
     .head_content h1{font-size: 22px;}
     .reward_sec .cstm_ser_box {
     width: calc(50% - 10px)!important;}
     .filter_sec{justify-content: flex-start; flex-wrap: wrap;}
+    .tab_sec li a {
+        padding: 6px 6px 8px;
+        font-size: 12px;
+    }
+    .radioCon label:last-child{margin-left: 8px;;}
+    .editProfile label, .editProfile input{font-size: 12px;}
 }
 
 @media screen and (max-width: 767px){
+    .chatPopup {
+        width: 320px!important;
+        right: 15px!important;}
     .filter_drop{margin-bottom: 15px;}
     .DashboardContent{margin: 0;}
     .dashboardContainer:after{width: 100%;}
@@ -898,16 +986,7 @@ p{font-size: 13px!important;}
     .mobBtn a{color: #009966;}
     .table_con{max-width: 100%; overflow-x: scroll;}
     .table{min-width: 500px;}
-    .radio_con{display: flex;}
-    .radio_con label{background: #fff;
-    margin: 0;
-    padding: 6px 15px;
-    border: 1px solid #08b07b;
-    border-radius: 5px;}
-    .radio_con input{    margin-right: 8px;
-    width: 15px;
-    height: 15px;}
-    .radio_con label:last-child{ margin-left: 15px;}
+    .radioCon{margin-bottom: 20px;}
     .r_btn {
     font-size: 12px;
     line-height: 20px;
@@ -924,11 +1003,16 @@ p{font-size: 13px!important;}
     .deadline_con .input{width: 100%;}
     .deadline_con label{font-size: 12px; margin-bottom: 10px;}
     .form_innBox h4{font-size: 18px;}
-    .notiF_drop_box{right: -70px;}
+    .notiF_drop_box{right: -70px; }
     .profile_Dropdown li a{font-size: 14px;}
     .openPopup .modal-content{max-width: 98%;}
     .banner_form h3{font-size: 20px;}
     .customPopWidth p{font-size: 12px;}
+    .tab_sec.nav.nav-tabs li a{margin-bottom: 10px; font-size: 14px!important;}
+    .editProfile .form_fields {width: 100%;}
+    .iti.iti--allow-dropdown.iti--separate-dial-code{margin-bottom: 20px!important;}
+    .fields_outer_div{display: block;}
+    .tab_sec + div form{padding: 15px;}
 }
 
 

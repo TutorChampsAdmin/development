@@ -1,13 +1,11 @@
 
 <style type="text/css">
 .modal-backdrop{
-    background-color: #21252978 !important;
-
+   display: none; 
 }
 #CommentsLists{
   margin: 0 auto;
   max-width: 800px;
-  padding: 0 20px;
 }
 
 
@@ -40,7 +38,7 @@
     border-radius: 10px;
     background: #5a99ee;
     display: inline-block;
-    padding: 10px 20px;
+    padding: 7px 15px 8px;
     position: relative;
 }
 
@@ -53,10 +51,9 @@
 }
 
 .chat-list .chat-message h5 {
-    margin: 0 0 5px 0;
-    font-weight: 600;
-    line-height: 100%;
-    font-size: .9rem;
+    margin: 0 0 2px 0;
+    font-size: 8px;
+    font-weight: 300;
 }
 
 .chat-list .chat-message p {
@@ -84,12 +81,12 @@
 
 .chat-list .out .chat-body {
     float: right;
-    margin-right: 20px;
+    margin-right: 0px;
     text-align: right;
 }
-
+.chat-img{display: none;}
 .chat-list .out .chat-message {
-    background: #fc6d4c;
+    background: #08b07b;
 }
 
 .chat-list .out .chat-message:before {
@@ -117,13 +114,11 @@
     margin-top:40px;    
 }
 .dateSection{
-
-    font-size: 11px;
-    margin-top: 2px;
+    font-size: 10px;
+    margin-top: 9px;
     color: #777;
     width: 100%;
     text-align: left;
-
 }
 .cmt_att img {
     display: inline-block;
@@ -136,22 +131,70 @@
     font-size: 35px;
     margin: 15px 2px;
 }
+
+.chatPopup{
+    bottom: 10px;
+    top: auto;
+    height: 520px;
+    max-height: 100vh;
+    max-width: 380px;
+    width: 100%;
+    right: 10px; padding: 0!important;
+    left: auto;
+}
+.attach_file{    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    overflow: hidden;}
+.attach_file i{font-size: 20px;
+    color: #a6a6a6;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 26px;}
+.msz_box{width: 100%; position: relative;}
+.msz_box .err{    font-size: 10px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    display: none;
+    bottom: -14px;}
+.chatPopup textarea{font-size: 13px; border-radius: 60px;
+    line-height: 20px; padding: 4px 12px 6px;}
+.send_btn button{padding: 0 8px; margin-top: -9px;}
+.send_btn button i{transform: rotate(35deg); font-size: 18px;}
+.chatPopup button:focus, .chatPopup textarea:focus{outline: none; box-shadow: none;}
+.message_con{ flex-wrap: nowrap; align-items: center;}
+.attach_file input{    margin-top: -27px;
+    width: 24px;
+    height: 24px;
+    opacity: 0;}
+.chatPopup .modal-title{font-size: 17px!important;}
+.chatPopup .modal-body{padding: 0!important;     height: 410px;
+    overflow: auto;}
+.chatPopup > div{margin: 0!important;}
+.chatPopup .card-body{padding: 15px 10px 10px;}
+.chatPopup .close{    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    opacity: 1;}
 </style>
 </style>
-<div class="modal" id="myModal">
+<div class="modal chatPopup"  id="myModal">
     <div class="modal-dialog  modal-lg">
         <div class="modal-content">
 
-            <div class="modal-header" style="padding: 0.5rem 1rem;">
+            <div class="modal-header" style="padding: 0.5rem 1rem; background: #08b07b; color: #fff;">
                 <h4 class="modal-title" id="order_code"></h4>
               
-                <button type="button" class="close" data-dismiss="modal" onclick="close_detail_popup()" style="font-size: 30px;">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" onclick="close_detail_popup()" style="font-size: 18px; padding: 0; margin: 0;">&times;</button>
             </div>
 
             <div class="modal-body">
                 <div id="allDetail" style="border-bottom: 1px solid #ddd;"></div>
                
-                <div class="msgcard" style="background:#eee;max-height: 450px;overflow: auto;">
+                <div class="msgcard" style="background:#08b07b0d; overflow: auto;">
                 <div class="card-body height3 ">
                      
                     <ul class="chat-list" id="CommentsLists"></ul>
@@ -171,9 +214,10 @@
                     <?php if($this->session->userdata('client_user_id') != ''){ ?>
                         <input type="hidden" name="post_comment" id="post_comment" value="yes">
                     <?php } ?>
-                    <div class="row">
-                        <div class="col-md-6">
+                    <div class="row message_con">
+                        <div class="attach_file">
                             <div class="form-group">
+                                <i class="fa fa-paperclip" aria-hidden="true"></i>
                                 <input type="file" name="comments_att" class="form-control" multiple id="comments_att">
                                 <span class="err" style="color: #f00;" id="comments_att_err"></span>
                             </div>
@@ -198,14 +242,12 @@
                                 </div>
                             </div>
                         <?php } ?>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-10">
-                            <textarea class="form-control" name="sendcomments" id="sendcomments" rows="2" placeholder="Type your comment here.."></textarea>
+                        <div class="msz_box">
+                            <textarea class="form-control" name="sendcomments" id="sendcomments" rows="1" placeholder="Type a message.."></textarea>
                             <span class="err" style="color: #f00;" id="sendcomments_err"></span>
                         </div>
-                        <div class="col-md-2">
-                            <button type="button" class="btn btn-submit me-2" id="cmtPostBtn" onclick="check_comment_form()">Send</button>
+                        <div class="send_btn">
+                            <button type="button" class="btn btn-submit me-2" id="cmtPostBtn" onclick="check_comment_form()"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </form>
@@ -393,4 +435,9 @@
     });
 
 </script>
-            
+
+
+
+
+
+
