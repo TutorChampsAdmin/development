@@ -32,6 +32,19 @@ class Dashboard extends CI_Controller {
     }
 
     public function tracking($order_id){
+       
+        if($this->input->post('order_id'))
+        { 
+            $where = ['order_id'=>$this->input->post('order_id')];
+            $data = [
+                'status'=>"Order Confirmed",
+                'description'=>$this->input->post('description'),
+                'deadline'=>($this->input->post('deadline'))?$this->input->post('deadline'):null
+            ];
+            
+            $this->db->update('orders', $data, $where);
+        } 
+
         $ord = $this->User_dashboard->get_order($this->user_id,$order_id);
         // $ord = $this->user_id;
         $data = [

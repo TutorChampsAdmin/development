@@ -7,13 +7,14 @@
 					            <div class="order_form_innCon">  
 					            	<ul id="progressbar" class="progressbar">
 						                <li class="active">Order Created</li>
-										<!-- <li>Checking Tutor Availability</li> -->
+										<li>Checking Tutor Availability</li>
 						                <li>Awaiting Payment</li>
 						                <li>Assignment In Progress</li>
 						                <li>Give Feedback</li>
 						            </ul>
 									<div class="banner_form_con">
-										<form class="order_form" >
+										<form class="order_form" action="" method="post">
+											<input type="hidden" name="order_id" value="<?php echo $order[0]['order_id'];?>" />
 											<div class="first_step opened_Box" style="display:none;">
 												<div class="form_head">
 													<h3><?php echo $order[0]['order_id'];?> - Cost Accounting  <input type="button" id="next" class=" toogelBtn" value=""><i class="fa fa-chevron-down"></i> </h3>
@@ -21,7 +22,7 @@
 												<div class="form_innBox">
 													<div class="form_fields">
 														<label>Description:</label>
-														<textarea class="textarea" id="description" placeholder="Description"><?php echo $order[0]['description'];?> </textarea>
+														<textarea class="textarea" name="description" id="description" placeholder="Description"><?php echo $order[0]['description'];?> </textarea>
 													</div>
 													<div class="form_fields">
 														<label>Question Files</label>
@@ -50,7 +51,7 @@
 															<label for="24hrs">24 hrs</label>
 															<input type="radio" id="30hrs">
 															<label for="30hrs">30 hrs</label>
-															<input class="input" type="datetime-local">
+															<input class="input" type="datetime-local" value="<?php echo date('Y-m-d\TH:i:s', strtotime($order[0]['deadline'])); ?>" name="deadline">
 														</div>
 													</div>
 													<div class="form_fields">
@@ -58,13 +59,29 @@
 														<div class="upload_MFile">
 															<span class="fileinput-button" id="fileinput-button">
 													            <span><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i><br><span>Drop your file or Browse</span> </span>
-													            <input type="file" name="files[]" id="files" multiple accept="image/jpeg, image/png, image/gif,"><br />
+													            <input type="file" name="refFiles[]" id="files" multiple accept="image/jpeg, image/png, image/gif,"><br />
 													        </span>
-													        <output id="Filelist"></output>
+													        <output id="RefFilelist"></output>
 													    </div>
 													</div>
 													<div class="text-center mt-2">
 														<button id="Submit"type="submit" class="r_btn">Submit</button>
+													</div>
+												</div>
+											</div>
+											<div class="Availability_step" style="display:none;">
+												<div class="form_head">
+													<h3>Payments <i class="fa fa-chevron-down"></i> <input type="button" id="availability_stepNext_btn" class="toogelBtn" value=""></h3>
+												</div>
+												<div class="form_innBox">
+													<div class="paymentInnBox">
+														<h4>Make the Payment</h4>
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do consectetur adipisicing elit, sed do eiusmod. </p>
+														
+													</div>
+													<div class="payment_done">
+														<h4><i class="fas fa-check-circle"></i> Payment</h4>
+														<p>Your payment has been received. Tutors have initiated the work on your assignment.</p>
 													</div>
 												</div>
 											</div>
