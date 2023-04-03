@@ -7,6 +7,7 @@
 					            <div class="order_form_innCon">  
 					            	<ul id="progressbar" class="progressbar">
 						                <li class="active">Order Created</li>
+										<!-- <li>Checking Tutor Availability</li> -->
 						                <li>Awaiting Payment</li>
 						                <li>Assignment In Progress</li>
 						                <li>Give Feedback</li>
@@ -67,6 +68,7 @@
 													</div>
 												</div>
 											</div>
+
 											<div class="Second_step" style="display:none;">
 												<div class="form_head">
 													<h3>Payments <i class="fa fa-chevron-down"></i> <input type="button" id="second_stepNext_btn" class="toogelBtn" value=""></h3>
@@ -145,7 +147,11 @@
 			</div>
 		</div>
 	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<script>
+    $("#live_session").addClass('active');
+</script>
 <?php $this->load->view('users/footer'); ?>
 
  
@@ -176,5 +182,14 @@
 <script>
    $(".four_step").css({'display':'block'});
     $("#FeedbackToggle").click();
+</script>
+<?php }?>
+
+
+
+<?php if($order[0]['status']=='Checking Tutor Availability'){ ?>
+<script>
+   $(".mid_step").css({'display':'block'});
+    // $("#FeedbackToggle").click();
 </script>
 <?php }?>
