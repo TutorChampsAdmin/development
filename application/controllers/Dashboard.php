@@ -35,19 +35,52 @@ class Dashboard extends CI_Controller {
     public function tracking($order_id){
        
         if($this->input->post('order_id'))
-        { 
+        {
             $where = ['order_id'=>$this->input->post('order_id')];
-            $data = [
-                'status'=>"Order Confirmed",
+           $data = [
+                'status'=>"Checking Tutor Availability",
                 'description'=>$this->input->post('description'),
-                'deadline'=>($this->input->post('deadline'))?$this->input->post('deadline'):null
+                'deadline'=>($this->input->post('deadline'))?date('Y-m-d H:i:s', strtotime($this->input->post('deadline'))):null
             ];
-            
+            if(isset($_FILES['files']) && $_FILES['files']['name'] != ''){     
+                $image_name_arr            = explode('.', $_FILES['files']['name']);
+                $image_name                = str_replace(' ', '_', $image_name_arr['0']);
+                $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
+                $config['upload_path']     = UPLOAD_DIR;
+                $config['file_name']       = $newFileName;
+                #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
+                $config['allowed_types']   = '*';      
+                $this->upload->initialize($config);               
+                if($this->upload->do_upload('files')){
+                    $data['assignment'] = UPLOAD_DIR.$newFileName;
+                }else{
+                    #print_r($this->upload->display_errors());
+                }
+
+                
+            }
+            if(isset($_FILES['refFiles']) && $_FILES['refFiles']['name'] != ''){
+                
+                $image_name_arr            = explode('.', $_FILES['files']['name']);
+                $image_name                = str_replace(' ', '_', $image_name_arr['0']);
+                $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
+                $config['upload_path']     = UPLOAD_DIR;
+                $config['file_name']       = $newFileName;
+                #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
+                $config['allowed_types']   = '*';      
+                $this->upload->initialize($config);
+                if($this->upload->do_upload('files')){
+                    $data['ref_files'] = UPLOAD_DIR.$newFileName;
+                }else{
+                    #print_r($this->upload->display_errors());
+                }
+                
+            }            
             $this->db->update('orders', $data, $where);
         } 
 
         $ord = $this->User_dashboard->get_order($this->user_id,$order_id);
-        // $ord = $this->user_id;
+        
         $data = [
                 'order'=>$ord
             ];

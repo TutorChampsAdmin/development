@@ -7,15 +7,15 @@
 					            <div class="order_form_innCon">  
 					            	<ul id="progressbar" class="progressbar">
 						                <li class="active">Order Created</li>
-										<li>Checking Tutor Availability</li>
+										<li class="active">Checking Tutor Availability</li>
 						                <li>Awaiting Payment</li>
 						                <li>Assignment In Progress</li>
 						                <li>Give Feedback</li>
 						            </ul>
 									<div class="banner_form_con">
-										<form class="order_form" action="" method="post">
+										<form class="order_form" action="" method="post"  enctype="multipart/form-data">
 											<input type="hidden" name="order_id" value="<?php echo $order[0]['order_id'];?>" />
-											<div class="first_step opened_Box" style="display:none;">
+											<div class="first_step opened_Box" style="display:block;">
 												<div class="form_head">
 													<h3><?php echo $order[0]['order_id'];?> - Cost Accounting  <input type="button" id="next" class=" toogelBtn" value=""><i class="fa fa-chevron-down"></i> </h3>
 												</div>
@@ -29,7 +29,7 @@
 														<div class="upload_MFile">
 															<span class="fileinput-button" id="fileinput-button">
 													            <span><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i><br><span>Drop your file or Browse</span> </span>
-													            <input type="file" name="files[]" id="files" multiple accept="image/jpeg, image/png, image/gif,"><br />
+													            <input type="file" name="files" id="files" multiple accept="image/jpeg, image/png, image/gif,"><br />
 													        </span>
 													        <output id="Filelist"></output>
 													    </div>
@@ -59,7 +59,7 @@
 														<div class="upload_MFile">
 															<span class="fileinput-button" id="fileinput-button">
 													            <span><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i><br><span>Drop your file or Browse</span> </span>
-													            <input type="file" name="refFiles[]" id="files" multiple accept="image/jpeg, image/png, image/gif,"><br />
+													            <input type="file" name="refFiles" id="files" multiple accept="image/jpeg, image/png, image/gif,"><br />
 													        </span>
 													        <output id="RefFilelist"></output>
 													    </div>
@@ -68,25 +68,29 @@
 														<button id="Submit"type="submit" class="r_btn">Submit</button>
 													</div>
 												</div>
-											</div>
-											<div class="Availability_step" style="display:none;">
+											</div> 
+											<div class="Availability_step" style="display:block;">
 												<div class="form_head">
-													<h3>Payments <i class="fa fa-chevron-down"></i> <input type="button" id="availability_stepNext_btn" class="toogelBtn" value=""></h3>
+													<h3>Checking Tutor Availability <i class="fa fa-chevron-down"></i> <input type="button" id="availability_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
 												<div class="form_innBox">
-													<div class="paymentInnBox">
-														<h4>Make the Payment</h4>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do consectetur adipisicing elit, sed do eiusmod. </p>
-														
+													<div class="assignmentProgressBox">
+														<h4><div class="assignmentProgress"></div>We Checking Tutor Availability</h4>
+														<p>Please Be Patient.</p>
 													</div>
-													<div class="payment_done">
-														<h4><i class="fas fa-check-circle"></i> Payment</h4>
-														<p>Your payment has been received. Tutors have initiated the work on your assignment.</p>
+													<div class="assignmSolve">
+														<div>
+															<h4><i class="fas fa-check-circle"></i> Assignment Solved</h4>
+															<p>Please download the solution. If you have any queries regarding the solution, please let us know through chat.</p>
+														</div>
+														<div>
+															<a class="r_btn" href="#">Download solution</a>
+														</div>
 													</div>
 												</div>
 											</div>
 
-											<div class="Second_step" style="display:none;">
+											<div class="Second_step" style="display:block;">
 												<div class="form_head">
 													<h3>Payments <i class="fa fa-chevron-down"></i> <input type="button" id="second_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
@@ -102,7 +106,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="third_step" style="display:none;">
+											<div class="third_step" style="display:block;">
 												<div class="form_head">
 													<h3>Assignment In Progress <i class="fa fa-chevron-down"></i> <input type="button" id="third_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
@@ -122,7 +126,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="four_step" style="display:none;">
+											<div class="four_step" style="display:block;">
 												<div class="form_head">
 													<h3>Rate & Feedback <i class="fa fa-chevron-down"></i> <input type="button" id="FeedbackToggle" class="toogelBtn" value=""></h3>
 												</div>
@@ -206,7 +210,10 @@
 
 <?php if($order[0]['status']=='Checking Tutor Availability'){ ?>
 <script>
-   $(".mid_step").css({'display':'block'});
-    // $("#FeedbackToggle").click();
+	$(".Availability_step").css({'display':'block'});
+   $(".first_step").css({'display':'block'});
+   $("#availability_stepNext_btn").click();
+    $("#next").click();
+    $("#live_session").addClass('active');
 </script>
 <?php }?>
