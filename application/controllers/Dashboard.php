@@ -110,7 +110,11 @@ class Dashboard extends CI_Controller {
 
             die('Details Updated Successfully');
         }else{
-            $this->load->view("users/profile");
+            $user_detail = $this->User_dashboard->get_user_details($this->user_id);
+            $data = [
+                'user_detail'=>$user_detail
+            ];
+            $this->load->view("users/profile",$data);
         }
         
     }

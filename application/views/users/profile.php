@@ -35,22 +35,22 @@
 								      		<div class="fields_outer_div">
 								      			<div class="form_fields">
 								      				<label>Phone</label>
-													<input class="phone_num input" name="phone" type="number" id="phone_num" placeholder="Enter Phone Number" />
+													<input value="<?php echo $user_detail->phone;?>" class="phone_num input" name="phone" type="number" id="phone_num" placeholder="Enter Phone Number" />
 												</div>
 												<div class="form_fields">
 													<label>Whatsapp Number</label>
-													<input class="input" name="whatsappNumber" type="number" id="phone" placeholder="Enter WhatsApp number" />
+													<input value="<?php echo $user_detail->whatsappNumber;?>" class="input" name="whatsappNumber" type="number" id="phone" placeholder="Enter WhatsApp number" />
 												</div>
 								      		</div>
 
 								      		<div class="fields_outer_div">
 								      			<div class="form_fields">
 								      				<label>Name</label>
-													<input name="name" class="input" placeholder="Name" type="text">
+													<input value="<?php echo $user_detail->name;?>" name="name" class="input" placeholder="Name" type="text">
 												</div>
 												<div class="form_fields">
 													<label>Email</label>
-													<input name="email" class="input" placeholder="Email" type="email">
+													<input value="<?php echo $this->session->userdata('userEmail');?>" name="email" class="input" placeholder="Email" type="email">
 												</div>
 								      		</div>
 
@@ -58,16 +58,16 @@
 								     		<div class="fields_outer_div">
 								     			<div class="form_fields">
 													<label>Birthday</label>
-													<input class="Birthday input" type="date" id="birthday" name="birthday" placeholder="Birthday">
+													<input value="<?php echo $user_detail->birthday;?>" class="Birthday input" type="date" id="birthday" name="birthday" placeholder="Birthday">
 												</div>
 												<div class="form_fields">
 													<label>Gender</label>
 													<div class="radioCon">
 												 		<label for="male">
-												 			<input style="display: inline-block;" checked type="radio" id="male" name="Gender" value="male">Male
+												 			<input style="display: inline-block;" <?php if($user_detail->gender=='male')  echo "checked" ?> type="radio" id="male" name="Gender" value="male">Male
 												 		</label>
 												 		<label for="female">
-												 		   <input style="display: inline-block;" type="radio" id="female" name="Gender" value="female">female
+												 		   <input style="display: inline-block;" <?php if($user_detail->gender=='female')  echo "checked" ?>  type="radio" id="female" name="Gender" value="female">female
 												 		</label>
 												 	</div>
 												</div>
@@ -76,22 +76,22 @@
 								      		<div class="fields_outer_div">
 								      			<div class="form_fields">
 								      				<label>Collage Name</label>
-													<input name="CollageName" class="input" placeholder="Collage Name" type="text">
+													<input value="<?php echo $user_detail->study_level; ?>" name="CollageName" class="input" placeholder="Collage Name" type="text">
 												</div>
 												<div class="form_fields">
 								      				<label>Graduation year</label>
-													<input name="GraduationYear" class="input" placeholder="2000" type="text">
+													<input value= "<?php echo $user_detail->graduationYear; ?>" name="GraduationYear" class="input" placeholder="2000" type="text">
 												</div>
 								      		</div>
 
 								    <div class="fields_outer_div">
 								     	<div class="form_fields">
 								    		<label>Course Name</label>
-											<input name="CourseName" class="input" placeholder="Course Name" type="text">
+											<input value= "<?php echo $user_detail->courseName; ?>" name="CourseName" class="input" placeholder="Course Name" type="text">
 										</div>
 										<div class="form_fields">
 								    		<label>Time Zone</label>
-											<input name="TimeZone" class="input" placeholder="" type="text">
+											<input value= "<?php echo $user_detail->timeZone; ?>" name="TimeZone" class="input" placeholder="" type="text">
 										</div>
 								    </div>
 
@@ -103,7 +103,7 @@
 										</div>
 										<div class="form_fields">
 								     		<label for="WhatsappNotif">
-								    			<input type="checkbox" id="WhatsappNotif" name="WhatsappNotif" value="1" > Get Whatsapp Notifications
+								    			<input type="checkbox" id="WhatsappNotif" name="WhatsappNotif" value="1" <?php if($user_detail->whatsAppNotification=='1') echo "checked" ?> > Get Whatsapp Notifications
 								     		</label>
 											</div>
 								     	</div>
@@ -399,7 +399,7 @@
 						$("#loading").css({"display":"none"});
 						$('#profile_form').trigger('reset');
 						console.log(data);
-						window.location.href = '<?php echo base_url();?>dashboard/';
+						window.location.href = '<?php echo base_url();?>dashboard/profile';
 					}
 				})
 			})
