@@ -170,20 +170,21 @@
 								      	</form>
 								    </div>
 								    <div id="menu3" class="tab-pane fade">
-										<form class="order_form changePassword">
+										<form class="order_form changePassword" method="POST" action="<?php echo base_url('dashboard/reset_password');?>" id="reset_pass_form">
+										<input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />  
 								      		<div>
 								      			<h3>Change Password</h3>
 								      		</div>
 
 								      		<div>
-								      			<div class="form_fields">
+								      			<!-- <div class="form_fields">
 								      				<label>Old Password</label>
 													<input class="input" type="password" name="" placeholder="Old Password" id="oldPassword">
 													<i onclick="changeInputType()" id="show_password_icon" class="show_password_icon fa fa-eye fa-eye-slash"></i>
-												</div>
+												</div> -->
 												<div class="form_fields">
 								      				<label>New Password</label>
-													<input class="input" type="password" name="" placeholder="New Password" id="newPassword">
+													<input class="input" type="password" name="password" placeholder="New Password" id="newPassword">
 													<i onclick="changeInputTypeTwo()" id="show_password_iconTwo"  class="show_password_icon fa fa-eye fa-eye-slash"></i>
 												</div>
 								      		</div>
@@ -191,14 +192,14 @@
 											<div>
 								      			<div class="form_fields">
 								      				<label>Confirm Password</label>
-													<input class="input" type="password" name="" placeholder="Confirm Password" id="ConfPassword">
+													<input class="input" type="password" name="confm_password" placeholder="Confirm Password" id="ConfPassword">
 													<i onclick="changeInputTypeThree()" id="show_password_iconThree" class="show_password_icon fa fa-eye fa-eye-slash "></i>
 												</div>
 								      		</div>
 
 
 								      		<div class="text-center mt-4">
-												<button id="" class="r_btn">Change</button>
+												<button id="" type="submit" class="r_btn">Change</button>
 											</div>
 
 								      	</form>
@@ -383,26 +384,30 @@
 
 <!--this is from -->
 
-
-	<script>
-function getdata(){
-	$.ajax({
-		type:"GET",
-		url:'/getdata/',
-		success:function(data){
-		for(let i=0; i<data.length;i++){
-			var order_id = data[i].order_id
-			var deadline = data[i].deadline
-			var subject = data[i].subject
-			var status = data[i].status
-			var temp = '<tr><td>'+order_id+'</td><td>'+deadline+'</td><td>'+subject+'</td><td>'+status+'</td><td>'+'<div class="chatIcon main_chat_icon"><a href="https://wa.me/+919711569678" target="_blank"><img src="<?php echo base_url();?>assets/front/dashboard/images/chat.png"></a></div>'+'</td></tr>'
-			$("#labdata tr:last").after(temp)
-		}
-		}
-	})
-}
-	</script>
-
+<script>
+	    	$("#reset_pass_form").submit(function(e){
+				e.preventDefault();
+				$("#loading").css({"display":"block"});
+				var form = $("#reset_pass_form")[0];
+				var data = new FormData(form);
+				data.append("csrfmiddlewaretoken",'{{ csrf_token }}')
+				var actionurl = $("#reset_pass_form").attr('action');
+				$.ajax({
+					type:"POST",
+					url:actionurl,
+					data:data,
+					cache: false,
+					processData: false,
+					contentType: false,
+					success:function(data){
+						$("#loading").css({"display":"none"});
+						$('#reset_pass_form').trigger('reset');
+						alert(data);
+						window.location.href = '<?php echo base_url();?>dashboard/home';
+					}
+				})
+			})
+</script>
 	<script>
         function readURL(input) {
     if (input.files && input.files[0]) {

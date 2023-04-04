@@ -209,17 +209,6 @@ input {outline: none;}
 							<div class="left_icon"><i class="fa fa-check"></i></div>
 							<p>Unlimited Revisions</p>
 						</div>
-
-						<!-- <div class="cstm_ser_box">
-							<div class="left_icon"><i class="fa fa-check"></i></div>
-							<p>More Humble Support Team.</p>
-						</div>
-
-						<div class="cstm_ser_box">
-							<div class="left_icon"><i class="fa fa-check"></i></div>
-							<p>100% Plagiarism Free Solutions.</p>
-						</div>
- -->
 					</div>
 				</div>
 			</div>
@@ -229,12 +218,11 @@ input {outline: none;}
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+<script src="<?php echo base_url();?>assets/front/js/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script src="<?php echo base_url();?>assets/front/js/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $('#login_form').submit(function(e){
             e.preventDefault();
