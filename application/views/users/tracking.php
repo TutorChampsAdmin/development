@@ -147,12 +147,11 @@
 			</div>
 		</div>
 	</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<?php $this->load->view('users/footer'); ?>
 <script>
     $("#live_session").addClass('active');
 </script>
-<?php $this->load->view('users/footer'); ?>
 
  
 <?php if($order[0]['status']=='Awaiting Confirmation'){ ?>
