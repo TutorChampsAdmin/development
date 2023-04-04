@@ -123,12 +123,12 @@ class Home extends CI_Controller {
                             
                             if(trim($orderMessage) != ''){
                                  $commentsData = [
-                                    'message'       => $orderMessage,     
+                                    'message'       => "Welcome To TutorChamps. Let Us know How We Can Help You In This Assignment",     
                                     'first_comment' => '1',   
                                     'order_id'      => $orderId,    
                                     'user_role'     => '8',     
                                     'added_on'      => date('Y-m-d H:i:s'),     
-                                    'added_by'      => $insert,     
+                                    'added_by'      => '1',     
                                     'to_users'      => $insert.',1',
                                     'to_user_role'  => '1,8',
                                     'to_writer'     => '0',
