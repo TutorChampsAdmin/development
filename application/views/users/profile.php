@@ -276,104 +276,6 @@
         }
 	</script>
 
-	<script>
-        if ('{{ ordered }}' == 'True'){
-			$("#check").click()
-		}
-		console.log($("#checkbox").checked)
-
-		$("#profile").click(function () {
-			$(".profileContent").addClass("active_");
-			$(".homeContant").removeClass("active_");
-			$(".live_session_content").removeClass("active_");
-			$(".assignment_help_content").removeClass("active_");
-			$(".project_lab_content").removeClass("active_");
-		});
-		$("#live_session").click(function () {
-			$(".live_session_content").addClass("active_");
-			$(".profileContent").removeClass("active_");
-			$(".homeContant").removeClass("active_");
-			$(".assignment_help_content").removeClass("active_");
-			$(".project_lab_content").removeClass("active_");
-		});
-		$("#assignment_help").click(function () {
-			$(".assignment_help_content").addClass("active_");
-			$(".profileContent").removeClass("active_");
-			$(".homeContant").removeClass("active_");
-			$(".live_session_content").removeClass("active_");
-			$(".project_lab_content").removeClass("active_");
-		});
-		$("#project_lab").click(function () {
-			$(".project_lab_content").addClass("active_");
-			$(".profileContent").removeClass("active_");
-			$(".homeContant").removeClass("active_");
-			$(".live_session_content").removeClass("active_");
-			$(".assignment_help_content").removeClass("active_");
-		});
-		
-		$(document).ready(function () {
-			$('.sidebar_menu ul li a').click(function () {
-				$('li a').removeClass("active");
-				$(this).addClass("active");
-			});
-		});
-
-		$(document).ready(function () {
-			$('#mobBtn').click(function () {
-				$('.sidebar').toggleClass("open");
-				var classname = $("#i").attr("class")
-				if(classname=="fa fa-bars"){
-					$("#i").addClass("fa-times");
-					$("#i").removeClass("fa-bars");
-				}
-				else{
-					$("#i").addClass("fa-bars");
-					$("#i").removeClass("fa-times");
-				}
-			});
-		});
-		$(document).ready(function () {
-			$('.sidebar a').click(function () {
-				$('.sidebar').toggleClass("open");
-			});
-		});
-	</script>
-
-
-
-
-    <script>
-    	$("#next").click(function(){
-   		  $(".first_step .form_innBox").toggleClass("hide");
-   		  $(".first_step").toggleClass("opened_Box");
-   		  $("#progressbar li").removeClass("active");
-   		  $("#progressbar li:nth-child(1)").addClass("active");
-   		});
-
-   		$("#second_stepNext_btn").click(function(){
-   		  $(".Second_step .form_innBox").toggleClass("show");
-   		  $(".Second_step").toggleClass("opened_Box");
-   		  $("#progressbar li").removeClass("active");
-   		  $("#progressbar li:nth-child(1)").addClass("active");
-   		  $("#progressbar li:nth-child(2)").addClass("active");
-   		});
-
-   		$("#third_stepNext_btn").click(function(){
-   		  $(".third_step .form_innBox").toggleClass("show");
-   		  $(".third_step").toggleClass("opened_Box");
-   		  $("#progressbar li").removeClass("active");
-   		  $("#progressbar li:nth-child(1)").addClass("active");
-   		  $("#progressbar li:nth-child(2)").addClass("active");
-   		  $("#progressbar li:nth-child(3)").addClass("active");
-   		});
-
-   		$("#FeedbackToggle").click(function(){
-   		  $(".four_step .form_innBox").toggleClass("show");
-   		  $(".four_step").toggleClass("opened_Box");
-   		  $("#progressbar li").addClass("active");
-   		});
-   		
-    </script>
 
 <!--this is from -->
 
@@ -429,7 +331,8 @@
 				})
 			})
 </script>
-	<script>
+
+<script>
         function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -444,21 +347,7 @@
 $("#imageUpload").change(function() {
     readURL(this);
 });
-    </script>
-
-
-     <script>
-            $('#files').change(function() {
-				var i = $(this).prev('label').clone();
-				var file = $('#files')[0].files[0].name;
-				$(this).prev('label').text(file);
-			  });
-        </script>
-
-
-<?php $this->load->view('includes/order_detail_popup'); ?>
-
-
+</script>
 
 </body>
 
