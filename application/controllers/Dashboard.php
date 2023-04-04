@@ -115,17 +115,25 @@ class Dashboard extends CI_Controller {
     }
     public function profile(){
 
-        if($this->input->post('update_p') && trim($this->input->post('nae')) != ''){
+        if($this->input->post('update_p') != ''){
             $update_arr_user = [
-                                'first_name'    => $this->input->post('nae'),
+                                'first_name'    => $this->input->post('name'),
+                                'email'   =>$this->input->post('email'),
                             ];
 
             $this->User_dashboard->update_user(array('user_id' => $this->user_id), $update_arr_user);
          
             $update_arr = [
-                            'name'          => $this->input->post('nae'),
-                            'phone'         => $this->input->post('if-phone'),
-                            'study_level'   => $this->input->post('College'),
+                            'name'          => $this->input->post('name'),
+                            'phone'         => $this->input->post('phone'),
+                            'study_level'   => $this->input->post('CollageName'),
+                            'gender'=>         $this->input->post('Gender'),
+                            'whatsappNumber'=> $this->input->post('whatsappNumber'),
+                            'birthday'=>       $this->input->post('birthday'),
+                            'graduationYear'=> $this->input->post('GraduationYear'),
+                            'courseName'=>     $this->input->post('CourseName'),
+                            'timeZone'=>       $this->input->post('TimeZone'),
+                            'whatsAppNotification'=>$this->input->post('WhatsappNotif')
                        ];
             if(isset($_FILES['profile']) && $_FILES['profile']['name'] != ''){
                 $image_name_arr            = explode('.', $_FILES['profile']['name']);

@@ -30,22 +30,23 @@
 
 								  <div class="tab-content">
 								    <div id="menu1" class="tab-pane fade active show">
-								      	<form class="order_form">
+								      	<form class="order_form" method="POST" action="<?php echo base_url('dashboard/profile');?>" enctype="multipart/form-data" id="profile_form">
+										  	<input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />  
 								      		<div class="fields_outer_div">
 								      			<div class="form_fields">
 								      				<label>Phone</label>
-													<input class="phone_num input" name="phone_num" type="number" id="phone_num" placeholder="9876543210" />
+													<input class="phone_num input" name="phone" type="number" id="phone_num" placeholder="Enter Phone Number" />
 												</div>
 												<div class="form_fields">
 													<label>Whatsapp Number</label>
-													<input class="input" name="phone" type="number" id="phone" placeholder="9876543210" />
+													<input class="input" name="whatsappNumber" type="number" id="phone" placeholder="Enter WhatsApp number" />
 												</div>
 								      		</div>
 
 								      		<div class="fields_outer_div">
 								      			<div class="form_fields">
 								      				<label>Name</label>
-													<input name="Name" class="input" placeholder="Name" type="text">
+													<input name="name" class="input" placeholder="Name" type="text">
 												</div>
 												<div class="form_fields">
 													<label>Email</label>
@@ -57,7 +58,7 @@
 								     		<div class="fields_outer_div">
 								     			<div class="form_fields">
 													<label>Birthday</label>
-													<input class="Birthday input" type="datetime-local" id="birthday" name="Birthday" placeholder="Birthday">
+													<input class="Birthday input" type="date" id="birthday" name="birthday" placeholder="Birthday">
 												</div>
 												<div class="form_fields">
 													<label>Gender</label>
@@ -97,12 +98,12 @@
 								    <div class="fields_outer_div">
 										<div class="form_fields">
 											<label for="EmailNotif">
-												<input type="checkbox" id="EmailNotif" name="EmailNotif" value="EmailNotif"> Get Email Notifications
+												<input type="checkbox" id="EmailNotif" name="EmailNotif" value="EmailNotif" checked> Get Email Notifications
 											</label>
 										</div>
 										<div class="form_fields">
 								     		<label for="WhatsappNotif">
-								    			<input type="checkbox" id="WhatsappNotif" name="WhatsappNotif" value="WhatsappNotif" checked> Get Whatsapp Notifications
+								    			<input type="checkbox" id="WhatsappNotif" name="WhatsappNotif" value="1" > Get Whatsapp Notifications
 								     		</label>
 											</div>
 								     	</div>
@@ -164,7 +165,7 @@
 								      		</div>
 
 								      		<div class="text-center mt-4">
-												<button id="" class="r_btn">Save Details</button>
+												<button id="" type="submit" class="r_btn">Save Details</button>
 											</div>
 
 								      	</form>
@@ -281,14 +282,6 @@
 		}
 		console.log($("#checkbox").checked)
 
-
-		// $("#home").click(function () {
-		// 	$(".homeContant").addClass("active_");
-		// 	$(".profileContent").removeClass("active_");
-		// 	$(".live_session_content").removeClass("active_");
-		// 	$(".assignment_help_content").removeClass("active_");
-		// 	$(".project_lab_content").removeClass("active_");
-		// });
 		$("#profile").click(function () {
 			$(".profileContent").addClass("active_");
 			$(".homeContant").removeClass("active_");
@@ -385,6 +378,34 @@
 <!--this is from -->
 
 <script>
+	// profile form submission
+	$("#profile_form").submit(function(e){
+				e.preventDefault();
+				console.log("form submitted");
+				$("#loading").css({"display":"block"});
+				var form = $("#profile_form")[0];
+				var data = new FormData(form);
+				data.append("update_p",'update_p')
+				var actionurl = $("#profile_form").attr('action');
+				$.ajax({
+					type:"POST",
+					url:actionurl,
+					data:data,
+					cache: false,
+					processData: false,
+					contentType: false,
+					success:function(data){
+						console.log("success");
+						$("#loading").css({"display":"none"});
+						$('#profile_form').trigger('reset');
+						console.log(data);
+						window.location.href = '<?php echo base_url();?>dashboard/';
+					}
+				})
+			})
+
+// password reset form submission
+
 	    	$("#reset_pass_form").submit(function(e){
 				e.preventDefault();
 				$("#loading").css({"display":"block"});
@@ -433,47 +454,10 @@ $("#imageUpload").change(function() {
 				$(this).prev('label').text(file);
 			  });
         </script>
-		<script>
-			$("#hwform").submit(function(e){
-				e.preventDefault();
-				$("#loading").css({"display":"block"});
-				var form = $("#hwform")[0];
-				var data = new FormData(form);
-				data.append("order_from_dashboard",'order_from_dashboard')
-				var actionurl = $("#hwform").attr('action');
-				$.ajax({
-					type:"POST",
-					url:actionurl,
-					data:data,
-					cache: false,
-					processData: false,
-					contentType: false,
-					success:function(data){
-						$("#loading").css({"display":"none"});
-						$('#hwform').trigger('reset');
-						alert('Order successful');
-						 window.location.href = '<?php echo base_url();?>dashboard/new-user/order-successful';
-					}
-				})
-			})
-		</script>
 
 
 <?php $this->load->view('includes/order_detail_popup'); ?>
 
-<?php  
-$req_url2 = "https://" . $_SERVER[ 'HTTP_HOST' ] . $_SERVER[ 'REQUEST_URI' ];
-
-    if(strpos($req_url2, '/order-successful') !== false) {
-        $ordID = $this->session->userdata('onlyOrder_id') ;
-        $Order_Code = $this->session->userdata('Order_Code') ; ?>
-        <script>
-            var lead_id ='<?php echo $ordID ; ?>';
-            var order_id ='<?php echo $Order_Code ; ?>';
-            show_order_details(lead_id,order_id,subjectname='');
-        </script>
-<?php    } 
-?>
 
 
 </body>
