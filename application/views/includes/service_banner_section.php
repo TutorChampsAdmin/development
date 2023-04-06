@@ -7,6 +7,7 @@
     width: 330px;
     height: 432px;
     background: url(<?php echo base_url().$page['banner_image'];?>); background-size: cover;}
+	
 .home .banner_section{
 display:<?php if($page['url_slug']=='features'){ echo "none";}?>;}
 </style>

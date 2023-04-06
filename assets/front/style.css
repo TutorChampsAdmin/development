@@ -70,13 +70,6 @@ header nav{position:relative; display: flex!important;
     position: relative;}
 .banner_section .container{    position: relative;
     z-index: 9;}    
-.banner_section:after{content: "";
-    position: absolute;
-    left: calc(50% - 165px);
-    bottom: 0;
-    width: 330px;
-    height: 432px;
-    background: url(../images/banner_img.png); background-size: cover;}
 .banner_section h1{font-size: 56px; font-weight: 800; line-height: 68px; margin-bottom: 15px;}
 .banner_section h1 span{color: #08b07b;}
 .banner_section p{margin: 25px 0 35px;}
@@ -420,24 +413,8 @@ footer ul li a:hover{color: #08b07b!important;}
     color: #fff;}
 .check_sec .cstm_ser_box:hover .left_icon{background: #ffcc00; transition: ease-in-out .2s;     border-color: #ffcc00;}
 .check_sec .cstm_ser_box:hover .left_icon i{color: #08b07b; transition: ease-in-out .2s;}
-.home .banner_section {
-    padding: 100px 0 85px;
-    position: relative;
-    background: url(../images/homeworkHelp_img.png);
-    background-repeat: no-repeat; background-size: 330px;
-    background-position: center bottom;
-}
 
 
-.home .banner_section:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to top, #7af7cbbf, #ffffffa8);
-}
 .sub_sec, .ser_sec{
     padding: 60px 0 30px;
 }
