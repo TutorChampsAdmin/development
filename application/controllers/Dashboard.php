@@ -211,13 +211,13 @@ class Dashboard extends CI_Controller {
                 $image_name_arr            = explode('.', $_FILES['assignment']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = UPLOAD_DIR;
+                $config['upload_path']     = './media/student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
                 $this->upload->initialize($config);
                 if($this->upload->do_upload('assignment')){
-                    $data['assignment'] = UPLOAD_DIR.$newFileName;
+                    $data['assignment'] = 'media/student/'.$newFileName;
                 }else{
                     #print_r($this->upload->display_errors());
                 }
