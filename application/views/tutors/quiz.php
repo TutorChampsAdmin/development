@@ -6,7 +6,7 @@
   <title>Quiz_home</title>
   <link href="<?php echo base_url();?>assets/front/css/bootstrap.css" rel="stylesheet">
   <link href="<?php echo base_url();?>assets/front/css/dash.css" rel="stylesheet">
-  <link href="<?php echo base_url();?>assets/front/dashboard/css/dashboard.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/front/css/dashboard.css" rel="stylesheet">
   <link href="<?php echo base_url();?>assets/front/css/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&amp;display=swap"
     rel="stylesheet">
@@ -545,15 +545,7 @@
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- <div class="header">
-			<div class="logo"><img src="{% static 'images/logo.png' %}" alt="logo"></div>
-		</div> -->
 
-  <!-- {% for message in messages %}
-  <script>
-    alert('{{message}}')
-  </script>
-  {% endfor %} -->
 <!--Instructions div starts-->
 <div class="big_container2">
   <!-- <div class="heading2"><span>Intructions</span></div> -->
@@ -595,9 +587,9 @@
     </div>
 
     <div class="text-center psr mt-3">
-      <input type="submit" class="formBtn theme-btn btn-style-one" value="Create A New Order Now" onclick="myFunction()">
+      <input type="submit" class="formBtn theme-btn btn-style-one" value="Start Test" onclick="myFunction()">
 
-      <a href="" class="theme-btn btn-style-one"><span class="txt">Start Test</span></a>
+      <!-- <a href="" class="theme-btn btn-style-one"><span class="txt">Start Test</span></a> -->
 
     </div>
 
@@ -678,17 +670,13 @@
       <?php $i++; } ?>
       <div class="button-bottom">
       <div class="text-center psr mt-3" style="margin-left:10px; margin-right:10px;">
-        <!-- <input required type="file" class="formBtn theme-btn btn-style-one" value="Create A New Order Now"> -->
-
-        <!-- <a href="" class="theme-btn btn-style-one"><span class="txt">Upload Solution</span></a> -->
         <input  type="file" class="attach_file input"  value="Add File" name="solutions" id="upload_solution">
 
       </div>
 
       <div class="text-center psr mt-3" style="margin-left:10px; margin-right:10px;">
-        <input type="submit" class="formBtn theme-btn btn-style-one" value="Create A New Order Now">
+        <input type="submit" class="formBtn theme-btn btn-style-one" value="Submit Test">
         <input type="hidden" name="tutor_quiz" id="tutor_quiz" value="1">
-        <a href="" class="theme-btn btn-style-one"><span class="txt">Submit Test</span></a>
 
       </div>
       </div>
