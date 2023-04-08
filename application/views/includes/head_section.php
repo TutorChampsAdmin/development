@@ -112,6 +112,13 @@ if(strpos($req_url, '/index.php') !== false || strpos($req_url, '/index.php/') !
 			border-bottom: 1px solid #ddd;
 			transition: .2s ease-in-out;
 		}
+		header{    width: 100%;
+    background: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    transition: .2s ease-in-out;
+    position: relative;
+    z-index: 99999999;}
 
 		header nav {
 			position: relative;
