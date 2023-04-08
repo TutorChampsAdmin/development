@@ -114,7 +114,7 @@
             <!-- <p>this is test</p> -->
             <div class="container d-flex align-items-center">
                 <!-- <p>this is test2</p> -->
-                <form class="commForm login_form loginF" style="display:block;" method="POST" action="<?php echo base_url()?>tutor/tutor_detail/" enctype="multipart/form-data" >
+                <form class="commForm login_form loginF" method="POST" action="<?php echo base_url()?>tutor/tutor_detail/" enctype="multipart/form-data" >
                 <!-- <p>this is test3</p> -->
                 <div class="first_step">
                     <h3 class="text-dark text-center">Enter Required Details Here</h3>
