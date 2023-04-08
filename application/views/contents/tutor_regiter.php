@@ -93,7 +93,7 @@
             <span style="color:red;"><?php echo $this->session->flashdata('success_msg'); $this->session->set_flashdata('success_msg', '');?></span>
             <input type="hidden" name="tutor_register_up" id="tutor_register_up" value="1">
             <button type="submit" class="button button-form">Submit<span class="arrow"></span></button></a>
-            <p class="term">*We are currently onboarding Tutors from only India</p>
+            <p class="term">*We are currently onboarding Tutors from India only!</p>
           </center>
         </form>
       </center>

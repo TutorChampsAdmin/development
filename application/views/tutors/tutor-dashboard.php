@@ -2,19 +2,8 @@
 <html>
 
 <head>
-	<!-- <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script src="https://unpkg.com/phosphor-icons"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/front/css/styles-tutor-new.css"> -->
   <title>Dashboard</title>
   <script src="<?php echo base_url();?>assets/front/js/jquery.js"></script>
-  
 	<meta charset="utf-8">
 	<title>Dashboard</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700&display=swap" rel="stylesheet">
 	<link href="<?php echo base_url();?>assets/front/css/bootstrap.css" rel="stylesheet">
 	<link href="<?php echo base_url();?>assets/front/css/dash.css" rel="stylesheet">
-	<link href="<?php echo base_url();?>assets/front/dashboard/css/dashboard.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>assets/front/css/dashboard.css" rel="stylesheet">
 	<link href="<?php echo base_url();?>assets/front/css/style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&amp;display=swap"
 		rel="stylesheet">
@@ -35,21 +24,6 @@
 	<link href="<?php echo base_url();?>assets/front/css/chat.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<style>
-/* Chat section */
-/* <div class="chat-head" data-target="html">
-		<input type="checkbox" id="check"> <label class="chat-btn" for="check" style="background-color: #f8c333;"> <img
-				class="comment" src="{% static 'images/chat.png' %}"><i class="fa fa-close close"></i> </label>
-		<div class="chatwindow">
-
-			{% include 'chat_head/chat-window.html' with uuid=user %}
-
-
-		</div>
-		<div class="chat_box">
-			<button id="close_chat" type="button" class="close">×</button>
-			<h3>ChatBox</h3>
-		</div> 
-	</div> */
 		.avatar-upload {
 			position: relative;
 			max-width: 100px;
