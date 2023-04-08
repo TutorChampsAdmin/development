@@ -595,9 +595,9 @@
     </div>
 
     <div class="text-center psr mt-3">
-      <input type="submit" class="formBtn theme-btn btn-style-one" value="Create A New Order Now" onclick="myFunction()">
+      <input type="submit" class="formBtn theme-btn btn-style-one" value="Start Test" onclick="myFunction()">
 
-      <a href="" class="theme-btn btn-style-one"><span class="txt">Start Test</span></a>
+      <!-- <a href="" class="theme-btn btn-style-one"><span class="txt">Start Test</span></a> -->
 
     </div>
 
@@ -678,17 +678,13 @@
       <?php $i++; } ?>
       <div class="button-bottom">
       <div class="text-center psr mt-3" style="margin-left:10px; margin-right:10px;">
-        <!-- <input required type="file" class="formBtn theme-btn btn-style-one" value="Create A New Order Now"> -->
-
-        <!-- <a href="" class="theme-btn btn-style-one"><span class="txt">Upload Solution</span></a> -->
         <input  type="file" class="attach_file input"  value="Add File" name="solutions" id="upload_solution">
 
       </div>
 
       <div class="text-center psr mt-3" style="margin-left:10px; margin-right:10px;">
-        <input type="submit" class="formBtn theme-btn btn-style-one" value="Create A New Order Now">
+        <input type="submit" class="formBtn theme-btn btn-style-one" value="Submit Test">
         <input type="hidden" name="tutor_quiz" id="tutor_quiz" value="1">
-        <a href="" class="theme-btn btn-style-one"><span class="txt">Submit Test</span></a>
 
       </div>
       </div>
