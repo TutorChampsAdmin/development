@@ -9,7 +9,7 @@
 							<div class="order_form_con">
 					            <div class="order_form_innCon">  
 					            	<ul id="progressbar" class="progressbar">
-						                <li class="active">Order Created</li>
+						                <li class="active current">Order Created</li>
 										<li>Checking Tutor Availability</li>
 						                <li>Awaiting Payment</li>
 						                <li>Assignment In Progress</li>
@@ -76,6 +76,8 @@
 											</div> 
 											<div class="Availability_step" style="display:block;">
 												<div class="form_head">
+													<span class="pending_step"></span>
+													<i style="display: none;" class="completed_step fa fa-check"></i>
 													<h3>Checking Tutor Availability <i class="fa fa-chevron-down"></i> <input type="button" id="availability_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
 												<div class="form_innBox">
@@ -97,6 +99,8 @@
 
 											<div class="Second_step" style="display:block;">
 												<div class="form_head">
+													<span class="pending_step"></span>
+													<i style="display: none;" class="completed_step fa fa-check"></i>
 													<h3>Payments <i class="fa fa-chevron-down"></i> <input type="button" id="second_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
 												<div class="form_innBox">
@@ -113,6 +117,8 @@
 											</div>
 											<div class="third_step" style="display:block;">
 												<div class="form_head">
+													<span class="pending_step"></span>
+													<i style="display: none;" class="completed_step fa fa-check"></i>
 													<h3>Assignment In Progress <i class="fa fa-chevron-down"></i> <input type="button" id="third_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
 												<div class="form_innBox">
@@ -133,6 +139,8 @@
 											</div>
 											<div class="four_step" style="display:block;">
 												<div class="form_head">
+													<span class="pending_step"></span>
+													<i style="display: none;" class="completed_step fa fa-check"></i>
 													<h3>Rate & Feedback <i class="fa fa-chevron-down"></i> <input type="button" id="FeedbackToggle" class="toogelBtn" value=""></h3>
 												</div>
 
