@@ -62,9 +62,7 @@
 								<a class="profile" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
 								<ul class="profile_Dropdown">
 									<li><a href="<?php echo base_url(); ?>dashboard/profile/">View & Edit Profile</a> </li>
-									<li><a href="#">Payment Information</a> </li>
-									<li><a href="#">Update Password</a> </li>
-									<li><a href="#">Privacy Policy</a> </li>
+									<li><a href="<?php echo base_url('dashboard/logout/'); ?>">Log Out</a> </li>
 								</ul>
 							</li>
 							<li class="mobBtn"><a href="javascript:void(0);" id="mobBtn"><i class="fa fa-bars" id="i" aria-hidden="true"></i></a></li>

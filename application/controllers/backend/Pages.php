@@ -73,12 +73,12 @@ class Pages extends CI_Controller {
             $image_name_arr            = explode('.', $_FILES['banner_image']['name']);
             $image_name                = str_replace(' ', '_', $image_name_arr['0']);
             $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-            $config['upload_path']     = UPLOAD_DIR;
+            $config['upload_path']     = './media/pages/';
             $config['file_name']       = $newFileName;
             $config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
             $this->upload->initialize($config);
             if($this->upload->do_upload('banner_image')){
-            	$data['banner_image']  = 'media/'.$newFileName;
+            	$data['banner_image']  = 'media/pages/'.$newFileName;
             }else{
             	#print_r($this->upload->display_errors());
             }
@@ -155,12 +155,12 @@ class Pages extends CI_Controller {
             $image_name_arr            = explode('.', $_FILES['banner_image']['name']);
             $image_name                = str_replace(' ', '_', $image_name_arr['0']);
             $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-            $config['upload_path']     = UPLOAD_DIR;
+            $config['upload_path']     = './media/pages/';
             $config['file_name']       = $newFileName;
             $config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
             $this->upload->initialize($config);
             if($this->upload->do_upload('banner_image')){
-            	$data['banner_image']  = 'media/'.$newFileName;
+            	$data['banner_image']  = 'media/pages/'.$newFileName;
             }else{
             	#print_r($this->upload->display_errors());
             }

@@ -30,26 +30,27 @@
 
 								  <div class="tab-content">
 								    <div id="menu1" class="tab-pane fade active show">
-								      	<form class="order_form">
+								      	<form class="order_form" method="POST" action="<?php echo base_url('dashboard/profile');?>" enctype="multipart/form-data" id="profile_form">
+										  	<input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />  
 								      		<div class="fields_outer_div">
 								      			<div class="form_fields">
 								      				<label>Phone</label>
-													<input class="phone_num input" name="phone_num" type="number" id="phone_num" placeholder="9876543210" />
+													<input value="<?php echo $user_detail->phone;?>" class="phone_num input" name="phone" type="number" id="phone_num" placeholder="Enter Phone Number" />
 												</div>
 												<div class="form_fields">
 													<label>Whatsapp Number</label>
-													<input class="input" name="phone" type="number" id="phone" placeholder="9876543210" />
+													<input value="<?php echo $user_detail->whatsappNumber;?>" class="input" name="whatsappNumber" type="number" id="phone" placeholder="Enter WhatsApp number" />
 												</div>
 								      		</div>
 
 								      		<div class="fields_outer_div">
 								      			<div class="form_fields">
 								      				<label>Name</label>
-													<input name="Name" class="input" placeholder="Name" type="text">
+													<input value="<?php echo $user_detail->name;?>" name="name" class="input" placeholder="Name" type="text">
 												</div>
 												<div class="form_fields">
 													<label>Email</label>
-													<input name="email" class="input" placeholder="Email" type="email">
+													<input value="<?php echo $this->session->userdata('userEmail');?>" name="email" class="input" placeholder="Email" type="email">
 												</div>
 								      		</div>
 
@@ -57,16 +58,16 @@
 								     		<div class="fields_outer_div">
 								     			<div class="form_fields">
 													<label>Birthday</label>
-													<input class="Birthday input" type="datetime-local" id="birthday" name="Birthday" placeholder="Birthday">
+													<input value="<?php echo $user_detail->birthday;?>" class="Birthday input" type="date" id="birthday" name="birthday" placeholder="Birthday">
 												</div>
 												<div class="form_fields">
 													<label>Gender</label>
 													<div class="radioCon">
 												 		<label for="male">
-												 			<input style="display: inline-block;" checked type="radio" id="male" name="Gender" value="male">Male
+												 			<input style="display: inline-block;" <?php if($user_detail->gender=='male')  echo "checked" ?> type="radio" id="male" name="Gender" value="male">Male
 												 		</label>
 												 		<label for="female">
-												 		   <input style="display: inline-block;" type="radio" id="female" name="Gender" value="female">female
+												 		   <input style="display: inline-block;" <?php if($user_detail->gender=='female')  echo "checked" ?>  type="radio" id="female" name="Gender" value="female">female
 												 		</label>
 												 	</div>
 												</div>
@@ -75,34 +76,34 @@
 								      		<div class="fields_outer_div">
 								      			<div class="form_fields">
 								      				<label>Collage Name</label>
-													<input name="CollageName" class="input" placeholder="Collage Name" type="text">
+													<input value="<?php echo $user_detail->study_level; ?>" name="CollageName" class="input" placeholder="Collage Name" type="text">
 												</div>
 												<div class="form_fields">
 								      				<label>Graduation year</label>
-													<input name="GraduationYear" class="input" placeholder="2000" type="text">
+													<input value= "<?php echo $user_detail->graduationYear; ?>" name="GraduationYear" class="input" placeholder="2000" type="text">
 												</div>
 								      		</div>
 
 								    <div class="fields_outer_div">
 								     	<div class="form_fields">
 								    		<label>Course Name</label>
-											<input name="CourseName" class="input" placeholder="Course Name" type="text">
+											<input value= "<?php echo $user_detail->courseName; ?>" name="CourseName" class="input" placeholder="Course Name" type="text">
 										</div>
 										<div class="form_fields">
 								    		<label>Time Zone</label>
-											<input name="TimeZone" class="input" placeholder="" type="text">
+											<input value= "<?php echo $user_detail->timeZone; ?>" name="TimeZone" class="input" placeholder="" type="text">
 										</div>
 								    </div>
 
 								    <div class="fields_outer_div">
 										<div class="form_fields">
 											<label for="EmailNotif">
-												<input type="checkbox" id="EmailNotif" name="EmailNotif" value="EmailNotif"> Get Email Notifications
+												<input type="checkbox" id="EmailNotif" name="EmailNotif" value="EmailNotif" checked> Get Email Notifications
 											</label>
 										</div>
 										<div class="form_fields">
 								     		<label for="WhatsappNotif">
-								    			<input type="checkbox" id="WhatsappNotif" name="WhatsappNotif" value="WhatsappNotif" checked> Get Whatsapp Notifications
+								    			<input type="checkbox" id="WhatsappNotif" name="WhatsappNotif" value="1" <?php if($user_detail->whatsAppNotification=='1') echo "checked" ?> > Get Whatsapp Notifications
 								     		</label>
 											</div>
 								     	</div>
@@ -164,26 +165,27 @@
 								      		</div>
 
 								      		<div class="text-center mt-4">
-												<button id="" class="r_btn">Save Details</button>
+												<button id="" type="submit" class="r_btn">Save Details</button>
 											</div>
 
 								      	</form>
 								    </div>
 								    <div id="menu3" class="tab-pane fade">
-										<form class="order_form changePassword">
+										<form class="order_form changePassword" method="POST" action="<?php echo base_url('dashboard/reset_password');?>" id="reset_pass_form">
+										<input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />  
 								      		<div>
 								      			<h3>Change Password</h3>
 								      		</div>
 
 								      		<div>
-								      			<div class="form_fields">
+								      			<!-- <div class="form_fields">
 								      				<label>Old Password</label>
 													<input class="input" type="password" name="" placeholder="Old Password" id="oldPassword">
 													<i onclick="changeInputType()" id="show_password_icon" class="show_password_icon fa fa-eye fa-eye-slash"></i>
-												</div>
+												</div> -->
 												<div class="form_fields">
 								      				<label>New Password</label>
-													<input class="input" type="password" name="" placeholder="New Password" id="newPassword">
+													<input class="input" type="password" name="password" placeholder="New Password" id="newPassword">
 													<i onclick="changeInputTypeTwo()" id="show_password_iconTwo"  class="show_password_icon fa fa-eye fa-eye-slash"></i>
 												</div>
 								      		</div>
@@ -191,14 +193,14 @@
 											<div>
 								      			<div class="form_fields">
 								      				<label>Confirm Password</label>
-													<input class="input" type="password" name="" placeholder="Confirm Password" id="ConfPassword">
+													<input class="input" type="password" name="confm_password" placeholder="Confirm Password" id="ConfPassword">
 													<i onclick="changeInputTypeThree()" id="show_password_iconThree" class="show_password_icon fa fa-eye fa-eye-slash "></i>
 												</div>
 								      		</div>
 
 
 								      		<div class="text-center mt-4">
-												<button id="" class="r_btn">Change</button>
+												<button id="" type="submit" class="r_btn">Change</button>
 											</div>
 
 								      	</form>
@@ -274,136 +276,63 @@
         }
 	</script>
 
-	<script>
-        if ('{{ ordered }}' == 'True'){
-			$("#check").click()
-		}
-		console.log($("#checkbox").checked)
-
-
-		// $("#home").click(function () {
-		// 	$(".homeContant").addClass("active_");
-		// 	$(".profileContent").removeClass("active_");
-		// 	$(".live_session_content").removeClass("active_");
-		// 	$(".assignment_help_content").removeClass("active_");
-		// 	$(".project_lab_content").removeClass("active_");
-		// });
-		$("#profile").click(function () {
-			$(".profileContent").addClass("active_");
-			$(".homeContant").removeClass("active_");
-			$(".live_session_content").removeClass("active_");
-			$(".assignment_help_content").removeClass("active_");
-			$(".project_lab_content").removeClass("active_");
-		});
-		$("#live_session").click(function () {
-			$(".live_session_content").addClass("active_");
-			$(".profileContent").removeClass("active_");
-			$(".homeContant").removeClass("active_");
-			$(".assignment_help_content").removeClass("active_");
-			$(".project_lab_content").removeClass("active_");
-		});
-		$("#assignment_help").click(function () {
-			$(".assignment_help_content").addClass("active_");
-			$(".profileContent").removeClass("active_");
-			$(".homeContant").removeClass("active_");
-			$(".live_session_content").removeClass("active_");
-			$(".project_lab_content").removeClass("active_");
-		});
-		$("#project_lab").click(function () {
-			$(".project_lab_content").addClass("active_");
-			$(".profileContent").removeClass("active_");
-			$(".homeContant").removeClass("active_");
-			$(".live_session_content").removeClass("active_");
-			$(".assignment_help_content").removeClass("active_");
-		});
-		
-		$(document).ready(function () {
-			$('.sidebar_menu ul li a').click(function () {
-				$('li a').removeClass("active");
-				$(this).addClass("active");
-			});
-		});
-
-		$(document).ready(function () {
-			$('#mobBtn').click(function () {
-				$('.sidebar').toggleClass("open");
-				var classname = $("#i").attr("class")
-				if(classname=="fa fa-bars"){
-					$("#i").addClass("fa-times");
-					$("#i").removeClass("fa-bars");
-				}
-				else{
-					$("#i").addClass("fa-bars");
-					$("#i").removeClass("fa-times");
-				}
-			});
-		});
-		$(document).ready(function () {
-			$('.sidebar a').click(function () {
-				$('.sidebar').toggleClass("open");
-			});
-		});
-	</script>
-
-
-
-
-    <script>
-    	$("#next").click(function(){
-   		  $(".first_step .form_innBox").toggleClass("hide");
-   		  $(".first_step").toggleClass("opened_Box");
-   		  $("#progressbar li").removeClass("active");
-   		  $("#progressbar li:nth-child(1)").addClass("active");
-   		});
-
-   		$("#second_stepNext_btn").click(function(){
-   		  $(".Second_step .form_innBox").toggleClass("show");
-   		  $(".Second_step").toggleClass("opened_Box");
-   		  $("#progressbar li").removeClass("active");
-   		  $("#progressbar li:nth-child(1)").addClass("active");
-   		  $("#progressbar li:nth-child(2)").addClass("active");
-   		});
-
-   		$("#third_stepNext_btn").click(function(){
-   		  $(".third_step .form_innBox").toggleClass("show");
-   		  $(".third_step").toggleClass("opened_Box");
-   		  $("#progressbar li").removeClass("active");
-   		  $("#progressbar li:nth-child(1)").addClass("active");
-   		  $("#progressbar li:nth-child(2)").addClass("active");
-   		  $("#progressbar li:nth-child(3)").addClass("active");
-   		});
-
-   		$("#FeedbackToggle").click(function(){
-   		  $(".four_step .form_innBox").toggleClass("show");
-   		  $(".four_step").toggleClass("opened_Box");
-   		  $("#progressbar li").addClass("active");
-   		});
-   		
-    </script>
 
 <!--this is from -->
 
+<script>
+	// profile form submission
+	$("#profile_form").submit(function(e){
+				e.preventDefault();
+				console.log("form submitted");
+				$("#loading").css({"display":"block"});
+				var form = $("#profile_form")[0];
+				var data = new FormData(form);
+				data.append("update_p",'update_p')
+				var actionurl = $("#profile_form").attr('action');
+				$.ajax({
+					type:"POST",
+					url:actionurl,
+					data:data,
+					cache: false,
+					processData: false,
+					contentType: false,
+					success:function(data){
+						console.log("success");
+						$("#loading").css({"display":"none"});
+						$('#profile_form').trigger('reset');
+						console.log(data);
+						window.location.href = '<?php echo base_url();?>dashboard/profile';
+					}
+				})
+			})
 
-	<script>
-function getdata(){
-	$.ajax({
-		type:"GET",
-		url:'/getdata/',
-		success:function(data){
-		for(let i=0; i<data.length;i++){
-			var order_id = data[i].order_id
-			var deadline = data[i].deadline
-			var subject = data[i].subject
-			var status = data[i].status
-			var temp = '<tr><td>'+order_id+'</td><td>'+deadline+'</td><td>'+subject+'</td><td>'+status+'</td><td>'+'<div class="chatIcon main_chat_icon"><a href="https://wa.me/+919711569678" target="_blank"><img src="<?php echo base_url();?>assets/front/dashboard/images/chat.png"></a></div>'+'</td></tr>'
-			$("#labdata tr:last").after(temp)
-		}
-		}
-	})
-}
-	</script>
+// password reset form submission
 
-	<script>
+	    	$("#reset_pass_form").submit(function(e){
+				e.preventDefault();
+				$("#loading").css({"display":"block"});
+				var form = $("#reset_pass_form")[0];
+				var data = new FormData(form);
+				data.append("csrfmiddlewaretoken",'{{ csrf_token }}')
+				var actionurl = $("#reset_pass_form").attr('action');
+				$.ajax({
+					type:"POST",
+					url:actionurl,
+					data:data,
+					cache: false,
+					processData: false,
+					contentType: false,
+					success:function(data){
+						$("#loading").css({"display":"none"});
+						$('#reset_pass_form').trigger('reset');
+						alert(data);
+						window.location.href = '<?php echo base_url();?>dashboard/home';
+					}
+				})
+			})
+</script>
+
+<script>
         function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -418,58 +347,7 @@ function getdata(){
 $("#imageUpload").change(function() {
     readURL(this);
 });
-    </script>
-
-
-     <script>
-            $('#files').change(function() {
-				var i = $(this).prev('label').clone();
-				var file = $('#files')[0].files[0].name;
-				$(this).prev('label').text(file);
-			  });
-        </script>
-		<script>
-			$("#hwform").submit(function(e){
-				e.preventDefault();
-				$("#loading").css({"display":"block"});
-				var form = $("#hwform")[0];
-				var data = new FormData(form);
-				data.append("order_from_dashboard",'order_from_dashboard')
-				var actionurl = $("#hwform").attr('action');
-				$.ajax({
-					type:"POST",
-					url:actionurl,
-					data:data,
-					cache: false,
-					processData: false,
-					contentType: false,
-					success:function(data){
-						$("#loading").css({"display":"none"});
-						$('#hwform').trigger('reset');
-						alert('Order successful');
-						 window.location.href = '<?php echo base_url();?>dashboard/new-user/order-successful';
-					}
-				})
-			})
-		</script>
-
-
-<?php $this->load->view('includes/order_detail_popup'); ?>
-
-<?php  
-$req_url2 = "https://" . $_SERVER[ 'HTTP_HOST' ] . $_SERVER[ 'REQUEST_URI' ];
-
-    if(strpos($req_url2, '/order-successful') !== false) {
-        $ordID = $this->session->userdata('onlyOrder_id') ;
-        $Order_Code = $this->session->userdata('Order_Code') ; ?>
-        <script>
-            var lead_id ='<?php echo $ordID ; ?>';
-            var order_id ='<?php echo $Order_Code ; ?>';
-            show_order_details(lead_id,order_id,subjectname='');
-        </script>
-<?php    } 
-?>
-
+</script>
 
 </body>
 

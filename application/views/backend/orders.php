@@ -111,6 +111,7 @@ table.table.orderAdminP.custom-table p {
                                     <th style="width:100px;">Order Id</th>
                                     <th>Student Message</th>
                                     <th>Assignment File</th>
+                                    <th>Refrence File</th>
                                     <th>Subject</th>
                                     <th style="width:130px;">Deadlin</th>
                                     <th>Country</th>
@@ -405,6 +406,12 @@ function get_order_list(rowno, create_page)
                         file = base_url+orders[i].assignment;
                         preview = 'Preview';
                     }
+                    var refFile = 'javscript:void(0)';
+                    var prev = 'Preview';
+                    if(orders[i].reference_material != '' && orders[i].reference_material != null){
+                        refFile = base_url+orders[i].reference_material;
+                        preview = 'Preview';
+                    }
                     var country = 'NA';
                     if(orders[i].country != '' && orders[i].country != null){
                         country =orders[i].country;
@@ -475,6 +482,7 @@ function get_order_list(rowno, create_page)
                             <td>`+orders[i].order_id+`</td>
                             <td>`+description+`</td>
                             <td><a href="`+file+`" target="_blank">`+preview+`</a> </td>
+                            <td><a href="`+refFile+`" target="_blank">`+prev+`</a> </td>
                             <td>`+checkOrderSubject(orders[i].id,orders[i].subject)+`</td>
                             <td>`+orders[i].deadline+`</td>
                             <td>`+country+`</td>

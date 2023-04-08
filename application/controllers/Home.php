@@ -107,6 +107,7 @@ class Home extends CI_Controller {
 					$this->session->set_userdata('isClientLoggedIn',TRUE);
         			$this->session->set_userdata('client_user_id',$userData['id']);
         			$this->session->set_userdata('logged_in_id',$userData['id']);
+					$this->session->set_userdata('userEmail',$userData['email']);
         			$this->session->set_userdata('logged_in_role','8');
 
         			$this->User_dashboard->update_user(array('id' => $userData['id']), array('last_login' => date('Y-m-d H:i:s')));
@@ -122,12 +123,12 @@ class Home extends CI_Controller {
                             
                             if(trim($orderMessage) != ''){
                                  $commentsData = [
-                                    'message'       => $orderMessage,     
+                                    'message'       => "Welcome To TutorChamps. Let Us know How We Can Help You In This Assignment",     
                                     'first_comment' => '1',   
                                     'order_id'      => $orderId,    
                                     'user_role'     => '8',     
                                     'added_on'      => date('Y-m-d H:i:s'),     
-                                    'added_by'      => $insert,     
+                                    'added_by'      => '1',     
                                     'to_users'      => $insert.',1',
                                     'to_user_role'  => '1,8',
                                     'to_writer'     => '0',
@@ -285,13 +286,13 @@ class Home extends CI_Controller {
                 $image_name_arr            = explode('.', $_FILES['files']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = UPLOAD_DIR;
+                $config['upload_path']     = './media/student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
                 $this->upload->initialize($config);
                 if($this->upload->do_upload('files')){
-                    $data['assignment'] = UPLOAD_DIR.$newFileName;
+                    $data['assignment'] = 'media/student/'.$newFileName;
                 }else{
                     #print_r($this->upload->display_errors());
                 }

@@ -46,13 +46,13 @@ class Dashboard extends CI_Controller {
                 $image_name_arr            = explode('.', $_FILES['files']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = UPLOAD_DIR;
+                $config['upload_path']     = './media/student';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
                 $this->upload->initialize($config);               
                 if($this->upload->do_upload('files')){
-                    $data['assignment'] = UPLOAD_DIR.$newFileName;
+                    $data['assignment'] = 'media/student/'.$newFileName;
                 }else{
                     #print_r($this->upload->display_errors());
                 }
@@ -64,13 +64,13 @@ class Dashboard extends CI_Controller {
                 $image_name_arr            = explode('.', $_FILES['files']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = UPLOAD_DIR;
+                $config['upload_path']     = './media/student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
                 $this->upload->initialize($config);
                 if($this->upload->do_upload('files')){
-                    $data['ref_files'] = UPLOAD_DIR.$newFileName;
+                    $data['ref_files'] = 'media/student/'.$newFileName;
                 }else{
                     #print_r($this->upload->display_errors());
                 }
@@ -115,29 +115,37 @@ class Dashboard extends CI_Controller {
     }
     public function profile(){
 
-        if($this->input->post('update_p') && trim($this->input->post('nae')) != ''){
+        if($this->input->post('update_p') != ''){
             $update_arr_user = [
-                                'first_name'    => $this->input->post('nae'),
+                                'first_name'    => $this->input->post('name'),
+                                'email'   =>$this->input->post('email'),
                             ];
 
             $this->User_dashboard->update_user(array('user_id' => $this->user_id), $update_arr_user);
          
             $update_arr = [
-                            'name'          => $this->input->post('nae'),
-                            'phone'         => $this->input->post('if-phone'),
-                            'study_level'   => $this->input->post('College'),
+                            'name'          => $this->input->post('name'),
+                            'phone'         => $this->input->post('phone'),
+                            'study_level'   => $this->input->post('CollageName'),
+                            'gender'=>         $this->input->post('Gender'),
+                            'whatsappNumber'=> $this->input->post('whatsappNumber'),
+                            'birthday'=>       $this->input->post('birthday'),
+                            'graduationYear'=> $this->input->post('GraduationYear'),
+                            'courseName'=>     $this->input->post('CourseName'),
+                            'timeZone'=>       $this->input->post('TimeZone'),
+                            'whatsAppNotification'=>$this->input->post('WhatsappNotif')
                        ];
             if(isset($_FILES['profile']) && $_FILES['profile']['name'] != ''){
                 $image_name_arr            = explode('.', $_FILES['profile']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = UPLOAD_DIR;
+                $config['upload_path']     = './media/student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
                 $this->upload->initialize($config);
                 if($this->upload->do_upload('profile')){
-                    $update_arr['profile'] = UPLOAD_DIR.$newFileName;
+                    $update_arr['profile'] = 'media/student/'.$newFileName;
                 }else{
                     #print_r($this->upload->display_errors());
                 }
@@ -148,7 +156,11 @@ class Dashboard extends CI_Controller {
 
             die('Details Updated Successfully');
         }else{
-            $this->load->view("users/profile");
+            $user_detail = $this->User_dashboard->get_user_details($this->user_id);
+            $data = [
+                'user_detail'=>$user_detail
+            ];
+            $this->load->view("users/profile",$data);
         }
         
     }
@@ -199,13 +211,13 @@ class Dashboard extends CI_Controller {
                 $image_name_arr            = explode('.', $_FILES['assignment']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = UPLOAD_DIR;
+                $config['upload_path']     = './media/student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
                 $this->upload->initialize($config);
                 if($this->upload->do_upload('assignment')){
-                    $data['assignment'] = UPLOAD_DIR.$newFileName;
+                    $data['assignment'] = 'media/student/'.$newFileName;
                 }else{
                     #print_r($this->upload->display_errors());
                 }
@@ -216,13 +228,13 @@ class Dashboard extends CI_Controller {
                 $image_name_arr            = explode('.', $_FILES['reference_material']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = UPLOAD_DIR;
+                $config['upload_path']     = './media/student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
                 $this->upload->initialize($config);
                 if($this->upload->do_upload('reference_material')){
-                    $data['reference_material'] = UPLOAD_DIR.$newFileName;
+                    $data['reference_material'] = 'media/student/'.$newFileName;
                 }else{
                     #print_r($this->upload->display_errors());
                 }
@@ -278,13 +290,13 @@ class Dashboard extends CI_Controller {
                 $image_name_arr            = explode('.', $_FILES['assignment']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = UPLOAD_DIR;
+                $config['upload_path']     = './media/student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
                 $this->upload->initialize($config);
                 if($this->upload->do_upload('assignment')){
-                    $data['assignment'] = UPLOAD_DIR.$newFileName;
+                    $data['assignment'] = 'media/student/'.$newFileName;
                 }else{
                     #print_r($this->upload->display_errors());
                 }
@@ -295,13 +307,13 @@ class Dashboard extends CI_Controller {
                 $image_name_arr            = explode('.', $_FILES['reference_material']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = UPLOAD_DIR;
+                $config['upload_path']     = './media/student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
                 $this->upload->initialize($config);
                 if($this->upload->do_upload('reference_material')){
-                    $data['reference_material'] = UPLOAD_DIR.$newFileName;
+                    $data['reference_material'] = 'media/student/'.$newFileName;
                 }else{
                     #print_r($this->upload->display_errors());
                 }
@@ -337,13 +349,13 @@ class Dashboard extends CI_Controller {
                 $image_name_arr            = explode('.', $_FILES['report_guidline']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = UPLOAD_DIR;
+                $config['upload_path']     = './media/student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
                 $this->upload->initialize($config);
                 if($this->upload->do_upload('report_guidline')){
-                    $data['report_guidline'] = UPLOAD_DIR.$newFileName;
+                    $data['report_guidline'] = 'media/student/'.$newFileName;
                 }else{
                     #print_r($this->upload->display_errors());
                 }
@@ -354,13 +366,13 @@ class Dashboard extends CI_Controller {
                 $image_name_arr            = explode('.', $_FILES['lab_manual']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = UPLOAD_DIR;
+                $config['upload_path']     = './media/student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
                 $this->upload->initialize($config);
                 if($this->upload->do_upload('lab_manual')){
-                    $data['lab_manual'] = UPLOAD_DIR.$newFileName;
+                    $data['lab_manual'] = 'media/student/'.$newFileName;
                 }else{
                     #print_r($this->upload->display_errors());
                 }
@@ -371,13 +383,13 @@ class Dashboard extends CI_Controller {
                 $image_name_arr            = explode('.', $_FILES['reference_material']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = UPLOAD_DIR;
+                $config['upload_path']     = './media/student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
                 $this->upload->initialize($config);
                 if($this->upload->do_upload('reference_material')){
-                    $data['reference_material'] = UPLOAD_DIR.$newFileName;
+                    $data['reference_material'] = 'media/student/'.$newFileName;
                 }else{
                     #print_r($this->upload->display_errors());
                 }
