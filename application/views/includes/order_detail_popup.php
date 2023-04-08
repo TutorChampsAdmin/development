@@ -36,7 +36,7 @@
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    background: #5a99ee;
+    background: #3fc79c;
     display: inline-block;
     padding: 7px 15px 8px;
     position: relative;
@@ -86,7 +86,7 @@
 }
 .chat-img{display: none;}
 .chat-list .out .chat-message {
-    background: #08b07b;
+    background: #3fc79c;
 }
 
 .chat-list .out .chat-message:before {
@@ -135,18 +135,18 @@
 .chatPopup{
     bottom: 10px;
     top: auto;
-    height: 520px;
+    height: 470px;
     max-height: 100vh;
-    max-width: 380px;
+    max-width: 340px;
     width: 100%;
-    right: 10px; padding: 0!important;
-    left: auto;
+    right: 30px; padding: 0!important;
+    left: auto; z-index: 8!important;
 }
 .attach_file{    width: 24px;
     height: 24px;
     margin-right: 10px;
     overflow: hidden;}
-.attach_file i{font-size: 20px;
+.attach_file i{font-size: 16px;
     color: #a6a6a6;
     width: 24px;
     height: 24px;
@@ -170,7 +170,7 @@
     height: 24px;
     opacity: 0;}
 .chatPopup .modal-title{font-size: 17px!important;}
-.chatPopup .modal-body{padding: 0!important;     height: 410px;
+.chatPopup .modal-body{padding: 0!important;     height: 360px;
     overflow: auto;}
 .chatPopup > div{margin: 0!important;}
 .chatPopup .card-body{padding: 15px 10px 10px;}
@@ -179,16 +179,19 @@
     margin: 0;
     color: #fff;
     opacity: 1;}
+.chatPopup .modal-header{padding: 0.5rem 1rem; background: #3fc79c; color: #fff; cursor: pointer;}
+.chatPopup.closeChat{height: 44px!important;}
+.chatPopup.closeChat .modal-body, .chatPopup.closeChat .modal-footer{display: none!important;}
+body.modal-open{overflow: unset!important;}
+.minimize_icon{position: absolute; right: 10px; top: 12px;}
 </style>
 </style>
 <div class="modal chatPopup"  id="myModal">
     <div class="modal-dialog  modal-lg">
         <div class="modal-content">
 
-            <div class="modal-header" style="padding: 0.5rem 1rem; background: #08b07b; color: #fff;">
-                <h4 class="modal-title" id="order_code"></h4>
-              
-                <button type="button" class="close" data-dismiss="modal" onclick="close_detail_popup()" style="font-size: 18px; padding: 0; margin: 0;">&times;</button>
+            <div class="modal-header" onclick="close_detail_popup()">
+                <h4 class="modal-title" id="order_code"></h4><i class="minimize_icon fa fa-minus"></i>
             </div>
 
             <div class="modal-body">
@@ -259,7 +262,7 @@
 
 <script>
      function close_detail_popup(){
-            $('#myModal').modal('hide');
+            $('#myModal').toggleClass('closeChat');
         } 
         
         
