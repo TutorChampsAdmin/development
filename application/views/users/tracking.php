@@ -16,8 +16,9 @@
 						                <li>Give Feedback</li>
 						            </ul>
 									<div class="banner_form_con">
-										<form class="order_form" >
-											<div class="first_step opened_Box" style="display:none;">
+										<form class="order_form" action="" method="post"  enctype="multipart/form-data">
+											<input type="hidden" name="order_id" value="<?php echo $order[0]['order_id'];?>" />
+											<div class="first_step opened_Box" style="display:block;">
 												<div class="form_head">
 													<span class="pending_step"></span>
 													<i style="display: none;" class="completed_step fa fa-check"></i>
@@ -26,14 +27,14 @@
 												<div class="form_innBox">
 													<div class="form_fields">
 														<label>Description:</label>
-														<textarea class="textarea" id="description" placeholder="Description"><?php echo $order[0]['description'];?> </textarea>
+														<textarea class="textarea" name="description" id="description" placeholder="Description"><?php echo $order[0]['description'];?> </textarea>
 													</div>
 													<div class="form_fields">
 														<label>Question Files</label>
 														<div class="upload_MFile">
 															<span class="fileinput-button" id="fileinput-button">
 													            <span><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i><br><span>Drop your file or Browse</span> </span>
-													            <input type="file" name="files[]" id="files" multiple accept="image/jpeg, image/png, image/gif,"><br />
+													            <input type="file" name="files" id="files" multiple accept="image/jpeg, image/png, image/gif,"><br />
 													        </span>
 													        <output id="Filelist"></output>
 													    </div>
@@ -55,7 +56,7 @@
 															<label for="24hrs">24 hrs</label>
 															<input type="radio" id="30hrs">
 															<label for="30hrs">30 hrs</label>
-															<input class="input" type="datetime-local">
+															<input class="input" type="datetime-local" value="<?php echo date('Y-m-d\TH:i:s', strtotime($order[0]['deadline'])); ?>" name="deadline">
 														</div>
 													</div>
 													<div class="form_fields">
@@ -63,18 +64,38 @@
 														<div class="upload_MFile">
 															<span class="fileinput-button" id="fileinput-button">
 													            <span><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i><br><span>Drop your file or Browse</span> </span>
-													            <input type="file" name="files[]" id="files" multiple accept="image/jpeg, image/png, image/gif,"><br />
+													            <input type="file" name="refFiles" id="files" multiple accept="image/jpeg, image/png, image/gif,"><br />
 													        </span>
-													        <output id="Filelist"></output>
+													        <output id="RefFilelist"></output>
 													    </div>
 													</div>
 													<div class="text-center mt-2">
 														<button id="Submit"type="submit" class="r_btn">Submit</button>
 													</div>
 												</div>
+											</div> 
+											<div class="Availability_step" style="display:block;">
+												<div class="form_head">
+													<h3>Checking Tutor Availability <i class="fa fa-chevron-down"></i> <input type="button" id="availability_stepNext_btn" class="toogelBtn" value=""></h3>
+												</div>
+												<div class="form_innBox">
+													<div class="assignmentProgressBox">
+														<h4><div class="assignmentProgress"></div>We Checking Tutor Availability</h4>
+														<p>Please Be Patient.</p>
+													</div>
+													<div class="assignmSolve">
+														<div>
+															<h4><i class="fas fa-check-circle"></i> Assignment Solved</h4>
+															<p>Please download the solution. If you have any queries regarding the solution, please let us know through chat.</p>
+														</div>
+														<div>
+															<a class="r_btn" href="#">Download solution</a>
+														</div>
+													</div>
+												</div>
 											</div>
 
-											<div class="Second_step" style="display:none;">
+											<div class="Second_step" style="display:block;">
 												<div class="form_head">
 													<h3>Payments <i class="fa fa-chevron-down"></i> <input type="button" id="second_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
@@ -90,7 +111,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="third_step" style="display:none;">
+											<div class="third_step" style="display:block;">
 												<div class="form_head">
 													<h3>Assignment In Progress <i class="fa fa-chevron-down"></i> <input type="button" id="third_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
@@ -110,7 +131,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="four_step" style="display:none;">
+											<div class="four_step" style="display:block;">
 												<div class="form_head">
 													<h3>Rate & Feedback <i class="fa fa-chevron-down"></i> <input type="button" id="FeedbackToggle" class="toogelBtn" value=""></h3>
 												</div>
@@ -193,7 +214,10 @@
 
 <?php if($order[0]['status']=='Checking Tutor Availability'){ ?>
 <script>
-   $(".mid_step").css({'display':'block'});
-    // $("#FeedbackToggle").click();
+	$(".Availability_step").css({'display':'block'});
+   $(".first_step").css({'display':'block'});
+   $("#availability_stepNext_btn").click();
+    $("#next").click();
+    $("#live_session").addClass('active');
 </script>
 <?php }?>
