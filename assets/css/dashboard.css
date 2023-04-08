@@ -650,7 +650,7 @@ form .fileinput-button {
     
 }
 
-.progressbar li.active:after {
+.progressbar li.active.current:after {
     content: '';
     position: absolute;
     top: calc(50% - 14px);
@@ -678,9 +678,10 @@ form .fileinput-button {
 .order_form{ overflow: hidden;
     border-radius: 10px;
     margin: 0 auto;}
-.order_form .form_head{background: #3fc79c;
+.order_form .form_head{background: #797979;
     color: #fff; position: relative;
     padding: 15px 15px 17px 20px;}
+.opened_Box .form_head{background: #3fc79c!important;}
 .form_head h3 i{position: absolute;
     right: 20px; top: 17px;}
 .form_head .toogelBtn{position: absolute;

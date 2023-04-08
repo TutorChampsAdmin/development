@@ -23,6 +23,13 @@ header.fixed{    position: fixed;
     z-index: 999999;
     padding: 10px 0;
     border-bottom: 1px solid #ddd; transition: .2s ease-in-out;}
+header{    width: 100%;
+    background: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    transition: .2s ease-in-out;
+    position: relative;
+    z-index: 99999999;}
 header nav{position:relative; display: flex!important;
     justify-content: space-between;}
 .cssmenu > ul{width: calc(100% - 215px);
