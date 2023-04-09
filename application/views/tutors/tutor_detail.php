@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Tutor Details - Become A Tutor @TutorChamps.com</title>
-        <link href="<?php echo base_url();?>assets/front/css/bootstrap.css" rel="stylesheet">
-        <link href="<?php echo base_url();?>assets/front/css/style.css" rel="stylesheet">
+        <link href="<?php echo base_url();?>assets/tutors/css/bootstrap.css" rel="stylesheet">
+        <link href="<?php echo base_url();?>assets/tutors/css/style.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <link rel="shortcut icon" href="<?php echo base_url();?>assets/front/images/favicon.png" type="image/x-icon">
     <style>
@@ -167,7 +167,7 @@
                 </div>
             </form>
         </div> 
-    <div class="pattern-layer-seven" style="background-image: url('<?php echo base_url();?>assets/front/images/main-slider/pattern-5.png')"></div>               
+    <div class="pattern-layer-seven" style="background-image: url('<?php echo base_url();?>assets/tutors/images/main-slider/pattern-5.png')"></div>               
     <div class="circle-layer"></div>
         </section>  
     </div>

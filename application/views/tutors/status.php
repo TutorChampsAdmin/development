@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <title>Quiz_home</title>
-  <link href="<?php echo base_url();?>assets/front/css/bootstrap.css" rel="stylesheet">
-  <link href="<?php echo base_url();?>assets/front/css/dash.css" rel="stylesheet">
-  <link href="<?php echo base_url();?>assets/front/dashboard/css/dashboard.css" rel="stylesheet">
-  <link href="<?php echo base_url();?>assets/front/css/style.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/tutors/css/bootstrap.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/tutors/css/dash.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/tutors/css/dashboard.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/tutors/css/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&amp;display=swap"
     rel="stylesheet">
   <link rel="shortcut icon" href="http://localhost/tutorchamps/assets/front/images/fav.png" type="image/x-icon">
@@ -210,20 +210,8 @@
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- <div class="header2">
-			<div class="logo2"><img src="{% static 'images/logo2.png' %}" alt="logo2"></div>
-		</div> -->
-<!-- 
-  {% for message in messages %}
-  <script>
-    alert('{{message}}')
-  </script>
-  {% endfor %} -->
-
-
 
   <div class="big_container2">
-    <!-- <div class="heading2"><span>Intructions</span></div> -->
     <div class="header2">
       <div class="logo2"><img src="<?php echo base_url();?>assets/front/images/logo.png" alt="logo2"></div>
     </div>

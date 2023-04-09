@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <title>Quiz_home</title>
-  <link href="<?php echo base_url();?>assets/front/css/bootstrap.css" rel="stylesheet">
-  <link href="<?php echo base_url();?>assets/front/css/dash.css" rel="stylesheet">
-  <link href="<?php echo base_url();?>assets/front/css/dashboard.css" rel="stylesheet">
-  <link href="<?php echo base_url();?>assets/front/css/style.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/tutors/css/bootstrap.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/tutors/css/dash.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/tutors/css/dashboard.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/tutors/css/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&amp;display=swap"
     rel="stylesheet">
   <link rel="shortcut icon" href="<?php echo base_url();?>assets/front/images/fav.png" type="image/x-icon">
@@ -550,7 +550,7 @@
 <div class="big_container2">
   <!-- <div class="heading2"><span>Intructions</span></div> -->
   <div class="header2">
-    <div class="logo2"><img src="<?php echo base_url();?>assets/front/images/logo.png" alt="logo2"></div>
+    <div class="logo2"><img src="<?php echo base_url();?>assets/tutors/images/logo.png" alt="logo2"></div>
   </div>
   <div class="first2">
     <div class="head_content2">
@@ -605,7 +605,7 @@
     <!-- <div class="heading"><span>Intructions</span></div> -->
     <div class="header1">
       <div class="header">
-        <div class="logo"><img src="<?php echo base_url();?>assets/front/images/logo.png" alt="logo"></div>
+        <div class="logo"><img src="<?php echo base_url();?>assets/tutors/images/logo.png" alt="logo"></div>
         <div class="clock">
           <div id="app">
             <div class="base-timer">
@@ -656,7 +656,7 @@
       <div class="first">
         <div class="question">
           <input name="question_arr[]" type="hidden" value="<?php echo $questions['id'];?>">
-          <p><b style="display: block;">Question <?php echo $i;?> :</b><img src="https://tutorchamps.com/media/<?php echo strtolower($questions['question']);?>" alt=""></p>
+          <p><b style="display: block;">Question <?php echo $i;?> :</b><img src="<?php echo base_url();?>media/<?php echo strtolower($questions['question']);?>" alt=""></p>
           <input name="ques<?php echo $questions['id'];?>" type="radio" value="1" id="opt1">
           <label for="opt1">1</label><br>
           <input name="ques<?php echo $questions['id'];?>" type="radio" value="2" id="opt2">
