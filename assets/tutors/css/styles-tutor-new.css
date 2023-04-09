@@ -563,21 +563,6 @@ input {
   background-color: #43B97E !important;
 }
 
-.procedure1 {
-  background-image: url("http://tutorchamps/assets/front/images/assets-tutor-new/procedure1.svg");
-}
-
-.procedure2 {
-  background-image: url("http://tutorchamps/assets/front/images/assets-tutor-new/procedure2.svg");
-}
-
-.procedure3 {
-  background-image: url("http://tutorchamps/assets/front/images/assets-tutor-new/procedure3.svg");
-}
-
-.procedure4 {
-  background-image: url("http://tutorchamps/assets/front/images/assets-tutor-new/procedure4.svg");
-}
 
 .procedure-text {
   padding: 20px;
@@ -639,12 +624,7 @@ input {
   margin: 0 auto;
 }
 
-.testimonals {
-  background-color: #FFFFFF;
-  background-image: url("http://tutorchamps/assets/front/images/assets-tutor-new/tesimonialbg.png");
-  background-size: cover;
-  padding-bottom: 40px;
-}
+
 
 .testimonial-box {
   width: 90%;
