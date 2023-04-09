@@ -13,12 +13,12 @@
     <link rel="shortcut icon" href="<?php echo base_url();?>assets/front/images/fav.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/front/css/styles-tutor-register-new.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/tutors/css/styles-tutor-register-new.css">
   <title>Tutor</title>
 </head>
 <body>
   <div class="navbar">
-    <img class="logo" src="<?php echo base_url();?>assets/front/images/assets-tutor-register/logo.png">
+    <img class="logo" src="<?php echo base_url();?>assets/tutors/images/logo.png">
   </div>
   <!--<div class="container">
       <div class="col-md-12" style="padding:60px;text-align: center;">
@@ -98,8 +98,8 @@
         </form>
       </center>
     </div>
-    <img class="green-decoration" src="<?php echo base_url();?>assets/front/images/assets-tutor-register/pattern-18.png" width="100%">
-    <img class="yellow-decoration" src="<?php echo base_url();?>assets/front/images/assets-tutor-register/pattern-1.png" width="100%">
+    <img class="green-decoration" src="<?php echo base_url();?>assets/tutors/images/pattern-18.png" width="100%">
+    <img class="yellow-decoration" src="<?php echo base_url();?>assets/tutors/images/pattern-1.png" width="100%">
   </div>
 
   <script>
@@ -111,40 +111,6 @@
       }
     }
   </script>
-<script src="<?php echo base_url();?>assets/front/js/jquery.js"></script>
-// <script>
-// $('#tutor_register_up').submit(function(e)
-// {
-    
-//     e.preventDefault();
-//     $("#loading").css({'display': 'block'});
-//     var form = $("#tutor_register_up")[0];
-//     var data = new FormData(form);
-//     data.append("tutor_register_up",'tutor_register_up')
-//     var actionurl = $("#tutor_register_up").attr('action');
-//     $.ajax({
-//         type:"POST",
-//         url:actionurl,
-//         data:data,
-//         cache: false,
-//         processData: false,
-//         contentType: false,
-//         success:function(data)
-//         {    
-//             $("#loading").css({'display':'none'});
-//             var response = JSON.parse(data);
-//             if(response.status=='error')
-//             {
-//                 var content = response.msg
-//                 $('.err_msz').text(content);
-//             }
-//             else
-//             {
-//                  window.location.href = '<?php echo base_url() ?>dashboard/new-user';
-//             }
-//         }
-//     });  
-// });
-// </script>
+<script src="<?php echo base_url();?>assets/tutors/js/jquery.js"></script>
 </body>
 </html>
