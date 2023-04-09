@@ -186,7 +186,6 @@
 		</script>
 		
 		
-<?php $this->load->view('includes/order_detail_popup'); ?>
 
 <?php  
 $req_url2 = "https://" . $_SERVER[ 'HTTP_HOST' ] . $_SERVER[ 'REQUEST_URI' ];
