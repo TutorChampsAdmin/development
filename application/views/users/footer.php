@@ -119,8 +119,8 @@
     	$("#next").click(function(){
    		  $(".first_step .form_innBox").toggleClass("hide");
    		  $(".first_step").toggleClass("opened_Box");
-   		  $("#progressbar li").removeClass("active");
-   		  $("#progressbar li:nth-child(1)").addClass("active");
+   		  // $("#progressbar li").removeClass("active");
+   		  // $("#progressbar li:nth-child(1)").addClass("active");
    		});
 
    		$("#second_stepNext_btn").click(function(){

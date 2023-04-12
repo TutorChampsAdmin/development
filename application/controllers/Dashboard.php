@@ -2,7 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 require_once("geoip2.phar");
 use GeoIp2\Database\Reader;
-class Dashboard extends CI_Controller {
+// CI_Controller
+class Dashboard extends  MY_Controller {
      
      
     function __construct()
@@ -56,12 +57,10 @@ class Dashboard extends CI_Controller {
                 }else{
                     #print_r($this->upload->display_errors());
                 }
-
-                
             }
             if(isset($_FILES['refFiles']) && $_FILES['refFiles']['name'] != ''){
                 
-                $image_name_arr            = explode('.', $_FILES['files']['name']);
+                $image_name_arr            = explode('.', $_FILES['refFiles']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
                 $config['upload_path']     = UPLOAD_DIR;
@@ -75,7 +74,10 @@ class Dashboard extends CI_Controller {
                     #print_r($this->upload->display_errors());
                 }
                 
-            }            
+            }
+            $this->load->helper('url');
+            $data['title'] = 'My Website';
+            $this->output->set_header('title: ' . $data['title']);
             $this->db->update('orders', $data, $where);
         } 
 
@@ -412,6 +414,23 @@ class Dashboard extends CI_Controller {
         return $ip;
     } 
 
+    public function upsertNotification($id,$payload,$insert=true){
+         $notificatio=[
+            'ref_type'=>'order',
+            'ref_no'=>$payload->order_id,
+            'user_id'=>$payload->user_id,
+            'message'=>$payload->message,
+            'message'=>$payload->message,
+            'is_ seen'=>'1',            
+         ];
+
+         if($id)
+            $this->db->update__data('orders',array('id' => $id),$notificatio); 
+         else 
+            $this->db->insert('notifications',$notificatio);
+
+        true;
+    }
 
 }
 

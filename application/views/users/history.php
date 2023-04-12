@@ -1,4 +1,4 @@
-<?php $this->load->view('users/head'); ?>
+<?php //$this->load->view('users/head'); ?>
 <div class="mainContent DashboardContent">
     <div class="live_session_content active_">
 

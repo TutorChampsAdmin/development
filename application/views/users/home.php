@@ -1,4 +1,4 @@
-<?php $this->load->view('users/head'); ?>
+<?php //$this->load->view('users/head'); ?>
 <div class="mainContent DashboardContent">
 <div class="dTbale homeContant active_" style="margin-top: 0px;">
 								<div class="head_content">

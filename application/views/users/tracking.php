@@ -1,4 +1,4 @@
-<?php $this->load->view('users/head');?>
+<?php //$this->load->view('users/head');?>
 						<div class="mainContent DashboardContent">
 							
 							<div class="live_session_content" style="height: auto;">
@@ -7,7 +7,7 @@
 					            <div class="order_form_innCon">  
 					            	<ul id="progressbar" class="progressbar">
 						                <li class="active">Order Created</li>
-										<li class="active">Checking Tutor Availability</li>
+										<li>Checking Tutor Availability</li>
 						                <li>Awaiting Payment</li>
 						                <li>Assignment In Progress</li>
 						                <li>Give Feedback</li>
@@ -15,7 +15,7 @@
 									<div class="banner_form_con">
 										<form class="order_form" action="" method="post"  enctype="multipart/form-data">
 											<input type="hidden" name="order_id" value="<?php echo $order[0]['order_id'];?>" />
-											<div class="first_step opened_Box" style="display:block;">
+											<div class="first_step opened_Box" style="display:none;">
 												<div class="form_head">
 													<h3><?php echo $order[0]['order_id'];?> - Cost Accounting  <input type="button" id="next" class=" toogelBtn" value=""><i class="fa fa-chevron-down"></i> </h3>
 												</div>
@@ -69,7 +69,7 @@
 													</div>
 												</div>
 											</div> 
-											<div class="Availability_step" style="display:block;">
+											<div class="Availability_step" style="display:none;">
 												<div class="form_head">
 													<h3>Checking Tutor Availability <i class="fa fa-chevron-down"></i> <input type="button" id="availability_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
@@ -90,7 +90,7 @@
 												</div>
 											</div>
 
-											<div class="Second_step" style="display:block;">
+											<div class="Second_step" style="display:none;">
 												<div class="form_head">
 													<h3>Payments <i class="fa fa-chevron-down"></i> <input type="button" id="second_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
@@ -106,7 +106,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="third_step" style="display:block;">
+											<div class="third_step" style="display:none;">
 												<div class="form_head">
 													<h3>Assignment In Progress <i class="fa fa-chevron-down"></i> <input type="button" id="third_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
@@ -126,7 +126,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="four_step" style="display:block;">
+											<div class="four_step" style="display:none;">
 												<div class="form_head">
 													<h3>Rate & Feedback <i class="fa fa-chevron-down"></i> <input type="button" id="FeedbackToggle" class="toogelBtn" value=""></h3>
 												</div>
@@ -185,6 +185,9 @@
 <script>
     $(".Second_step").css({'display':'block'});
     $("#second_stepNext_btn").click();
+    $("#progressbar li:nth-child(1)").addClass("active");
+	$("#progressbar li:nth-child(2)").addClass("active");
+	$("#progressbar li:nth-child(3)").addClass("active");
 </script>
 <?php }?>
 
@@ -194,6 +197,11 @@
 <script>
     $(".third_step").css({'display':'block'});
     $("#third_stepNext_btn").click();
+
+    $("#progressbar li:nth-child(1)").addClass("active");
+	$("#progressbar li:nth-child(2)").addClass("active");
+	$("#progressbar li:nth-child(3)").addClass("active");
+	$("#progressbar li:nth-child(4)").addClass("active");
 </script>
 <?php }?>
 
@@ -203,6 +211,10 @@
 <script>
    $(".four_step").css({'display':'block'});
     $("#FeedbackToggle").click();
+	$("#progressbar li:nth-child(1)").addClass("active");
+	$("#progressbar li:nth-child(2)").addClass("active");
+	$("#progressbar li:nth-child(3)").addClass("active");
+	$("#progressbar li:nth-child(4)").addClass("active");
 </script>
 <?php }?>
 
@@ -215,5 +227,9 @@
    $("#availability_stepNext_btn").click();
     $("#next").click();
     $("#live_session").addClass('active');
+
+		$("#progressbar li").removeClass("active");
+		$("#progressbar li:nth-child(1)").addClass("active");
+		$("#progressbar li:nth-child(2)").addClass("active");
 </script>
 <?php }?>

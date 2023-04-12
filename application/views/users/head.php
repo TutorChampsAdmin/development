@@ -53,9 +53,19 @@
 							<li>
 								<a class="notiF" href="#"><i class="fa fa-bell" aria-hidden="true"></i> <span class="notiF_count">2</span> </a>
 								<ul class="notiF_drop_box">
-								  <li><a href="#"><div><img src="<?php echo base_url();?>assets/img/accurate-solutions.png"></div> <div class="noti_txt"><span>Order 178132 updated</span><span>Updated successfully</span> <span class="notif_time">2 day ago</span></div> </a></li>
-								  <li><a href="#"><div><img src="<?php echo base_url();?>assets/img/accurate-solutions.png"></div> <div class="noti_txt"><span>Order 178132 updated</span><span>Updated successfully</span> <span class="notif_time">2 day ago</span></div> </a></li>
-								  <li><a href="#"><div><img src="<?php echo base_url();?>assets/img/accurate-solutions.png"></div> <div class="noti_txt"><span>Order 178132 updated</span><span>Updated successfully</span> <span class="notif_time">2 day ago</span></div> </a></li>
+								<?php 
+								foreach($notifications as $notification): ?>
+								<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+								<li>
+								  	<a href="#">
+								  	<div>
+								  		<img src="<?php echo base_url();?>assets/img/accurate-solutions.png">
+								  	</div> 
+								  	<div class="noti_txt"><span><?php echo $notification->ref_type.' '.$notification->ref_no; ?> updated</span><span><?php echo $notification->message; ?></span> <span class="notif_time"><?php echo $notification->updated_at; ?></span>
+								  	</div> 
+								  </a>
+								  </li>
+								<?php endforeach; ?> 
 								</ul>
 							</li>
 							<li>
