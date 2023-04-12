@@ -232,7 +232,7 @@ class Tutor extends CI_Controller {
 							</body>
 							</html>';
 						$subject = 'Welcome to TutorChamps || Complete the test';
-						$this->send_mail_to_client($email,$subject,$html);
+						$this->send_mail_to_client('tutor@tutorchamps.com',$email,$subject,$html);
 				    if($user_id)
 				    {
 				    	redirect('thank-you/'.$user_id);
@@ -342,7 +342,7 @@ class Tutor extends CI_Controller {
 						</body>
 						</html>';
 					$subject = 'Best of luck for next time';
-					$this->send_mail_to_client($email,$subject,$html);
+					$this->send_mail_to_client('tutor@tutorchamps.com',$email,$subject,$html);
 
 	            $data1 = array();
 				$data1['status']      = "Fail";
@@ -397,7 +397,7 @@ class Tutor extends CI_Controller {
 						</body>
 						</html>';
 					$subject = 'Congratulations || You have nailed it';
-					$this->send_mail_to_client($email,$subject,$html);
+					$this->send_mail_to_client('tutor@tutorchamps.com',$email,$subject,$html);
 
 	            $data1 = array();
 				$data1['status']      = "Pass";
@@ -588,7 +588,7 @@ class Tutor extends CI_Controller {
 	}
 
 
-	public function send_mail_to_client($to,$subject,$message){
+	public function send_mail_to_client($from,$to,$subject,$message){
 		
 		$mailContent = $message;
 
@@ -598,8 +598,8 @@ class Tutor extends CI_Controller {
             'protocol'  => 'smtp',
             'smtp_host' => 'smtp.hostinger.com',
             'smtp_port' => 465,
-            'smtp_user' => 'info@tutorchamps.com',
-            'smtp_pass' => 'Tutorchamps#123',
+            'smtp_user' => $from,
+            'smtp_pass' => 'Tutor@1234',
             'mailtype'  => 'html',
             'smtp_crypto' => 'ssl',
             'charset'   => 'utf-8'
@@ -609,18 +609,10 @@ class Tutor extends CI_Controller {
         $this->email->set_mailtype("html");
         $this->email->set_newline("\r\n");
         $this->email->to($to);
-        $this->email->from('info@tutorchamps.com', 'TutorChamps Admin');
+        $this->email->from('tutor@tutorchamps.com', 'TutorChamps Admin');
         $this->email->subject($subject);
         $this->email->message($mailContent);
         $this->email->send();
-
-       /* if ($this->email->send()) {
-			echo 'Your Email has successfully been sent.';
-		 } else {
-			show_error($this->email->print_debugger());
-		}					
-			*/		
-		
 		
 	}
 	

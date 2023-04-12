@@ -1,12 +1,15 @@
 <?php //$this->load->view('users/head');?>
 						<div class="mainContent DashboardContent">
+							<div class="head_content">
+								<h1>Order Tracking</h1>
+							</div>
 							
 							<div class="live_session_content" style="height: auto;">
 
 							<div class="order_form_con">
 					            <div class="order_form_innCon">  
 					            	<ul id="progressbar" class="progressbar">
-						                <li class="active">Order Created</li>
+						                <li class="active current">Order Created</li>
 										<li>Checking Tutor Availability</li>
 						                <li>Awaiting Payment</li>
 						                <li>Assignment In Progress</li>
@@ -17,6 +20,8 @@
 											<input type="hidden" name="order_id" value="<?php echo $order[0]['order_id'];?>" />
 											<div class="first_step opened_Box" style="display:none;">
 												<div class="form_head">
+													<span class="pending_step"></span>
+													<i style="display: none;" class="completed_step fa fa-check"></i>
 													<h3><?php echo $order[0]['order_id'];?> - Cost Accounting  <input type="button" id="next" class=" toogelBtn" value=""><i class="fa fa-chevron-down"></i> </h3>
 												</div>
 												<div class="form_innBox">
@@ -71,6 +76,8 @@
 											</div> 
 											<div class="Availability_step" style="display:none;">
 												<div class="form_head">
+													<span class="pending_step"></span>
+													<i style="display: none;" class="completed_step fa fa-check"></i>
 													<h3>Checking Tutor Availability <i class="fa fa-chevron-down"></i> <input type="button" id="availability_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
 												<div class="form_innBox">
@@ -92,6 +99,8 @@
 
 											<div class="Second_step" style="display:none;">
 												<div class="form_head">
+													<span class="pending_step"></span>
+													<i style="display: none;" class="completed_step fa fa-check"></i>
 													<h3>Payments <i class="fa fa-chevron-down"></i> <input type="button" id="second_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
 												<div class="form_innBox">
@@ -108,6 +117,8 @@
 											</div>
 											<div class="third_step" style="display:none;">
 												<div class="form_head">
+													<span class="pending_step"></span>
+													<i style="display: none;" class="completed_step fa fa-check"></i>
 													<h3>Assignment In Progress <i class="fa fa-chevron-down"></i> <input type="button" id="third_stepNext_btn" class="toogelBtn" value=""></h3>
 												</div>
 												<div class="form_innBox">
@@ -128,6 +139,8 @@
 											</div>
 											<div class="four_step" style="display:none;">
 												<div class="form_head">
+													<span class="pending_step"></span>
+													<i style="display: none;" class="completed_step fa fa-check"></i>
 													<h3>Rate & Feedback <i class="fa fa-chevron-down"></i> <input type="button" id="FeedbackToggle" class="toogelBtn" value=""></h3>
 												</div>
 
@@ -159,7 +172,6 @@
 									</div>
 								</div>
 							</div>
-							<a class="chat_icon" data-toggle="modal" data-target="#myModal" ><img style="max-width: 100%;" src="<?php echo base_url();?>assets/img/chat.png"> </a>
 							</div>
 
 						</div>
@@ -168,12 +180,11 @@
 			</div>
 		</div>
 	</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<?php $this->load->view('users/footer'); ?>
 <script>
     $("#live_session").addClass('active');
 </script>
-<?php $this->load->view('users/footer'); ?>
 
  
 <?php if($order[0]['status']=='Awaiting Confirmation'){ ?>

@@ -1,13 +1,20 @@
 <style type="text/css">
 	.home .banner_section {
-    background: url(<?php echo base_url().$page['banner_image'];?>);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center bottom;
+	background: url(<?php echo base_url().$page['banner_image'];?>);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center bottom;
 }
-.home .banner_section:after {
-    background-image: linear-gradient(to top, #7af7cbbf, #ffffff);
-}
+	.home .banner_section:after {
+		content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+		background-image: linear-gradient(to top, #7af7cbbf, #ffffff);
+	}
 	@media only screen and (min-width: 768px){
 	 .LearningSolution .cstm_ser_box{min-height: 400px;}
 	 .LearningSolution .cstm_ser_box p{margin-bottom: 40px;}

@@ -150,26 +150,6 @@
 
 <!--this is from -->
 
-
-	<script>
-function getdata(){
-	$.ajax({
-		type:"GET",
-		url:'/getdata/',
-		success:function(data){
-		for(let i=0; i<data.length;i++){
-			var order_id = data[i].order_id
-			var deadline = data[i].deadline
-			var subject = data[i].subject
-			var status = data[i].status
-			var temp = '<tr><td>'+order_id+'</td><td>'+deadline+'</td><td>'+subject+'</td><td>'+status+'</td><td>'+'<div class="chatIcon main_chat_icon"><a href="https://wa.me/+919711569678" target="_blank"><img src="<?php echo base_url();?>assets/front/dashboard/images/chat.png"></a></div>'+'</td></tr>'
-			$("#labdata tr:last").after(temp)
-		}
-		}
-	})
-}
-	</script>
-
      <script>
             $('#files').change(function() {
 				var i = $(this).prev('label').clone();

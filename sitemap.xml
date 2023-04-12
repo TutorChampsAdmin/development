@@ -6,235 +6,241 @@
 		<priority>1.00</priority>
 		</url>
 <url>
-			<loc>https://tutorchamps.com/development/features/</loc>
+			<loc>http://localhost/development/features/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2023-03-11T14:14:02+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/about-us/</loc>
+			<loc>http://localhost/development/about-us/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/refund-policy/</loc>
+			<loc>http://localhost/development/refund-policy/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/privacy-policy/</loc>
+			<loc>http://localhost/development/privacy-policy/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/terms-and-conditions/</loc>
+			<loc>http://localhost/development/terms-and-conditions/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/faqs/</loc>
+			<loc>http://localhost/development/faqs/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/reviews/</loc>
+			<loc>http://localhost/development/reviews/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/online-assignment-help/</loc>
+			<loc>http://localhost/development/online-assignment-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/essay-writing-services/</loc>
+			<loc>http://localhost/development/essay-writing-services/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2023-03-09T19:02:19+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/live-sessions/</loc>
+			<loc>http://localhost/development/live-sessions/</loc>
+			<changefreq>Daily</changefreq>
+			<lastmod>2023-03-29T18:11:06+05:30</lastmod>
+			<priority>0.90</priority>
+			</url>
+<url>
+			<loc>http://localhost/development/project-lab-report-help/</loc>
+			<changefreq>Daily</changefreq>
+			<lastmod>2023-03-29T17:57:59+05:30</lastmod>
+			<priority>0.90</priority>
+			</url>
+<url>
+			<loc>http://localhost/development/dissertation-writing-services/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/project-lab-report-help/</loc>
+			<loc>http://localhost/development/coursework-writing-services/</loc>
 			<changefreq>Daily</changefreq>
-			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
+			<lastmod>2023-03-29T17:52:51+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/dissertation-writing-services/</loc>
+			<loc>http://localhost/development/case-study-writing-services/</loc>
 			<changefreq>Daily</changefreq>
-			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
+			<lastmod>2023-04-07T02:05:23+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/coursework-writing-services/</loc>
+			<loc>http://localhost/development/physics-homework-help/</loc>
 			<changefreq>Daily</changefreq>
-			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
+			<lastmod>2023-04-07T02:09:39+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/case-study-writing-services/</loc>
-			<changefreq>Daily</changefreq>
-			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
-			<priority>0.90</priority>
-			</url>
-<url>
-			<loc>https://tutorchamps.com/development/physics-homework-help/</loc>
-			<changefreq>Daily</changefreq>
-			<lastmod>2023-03-13T15:34:24+05:30</lastmod>
-			<priority>0.90</priority>
-			</url>
-<url>
-			<loc>https://tutorchamps.com/development/chemistry-homework-help/</loc>
+			<loc>http://localhost/development/chemistry-homework-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2023-03-11T18:43:47+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/math-homework-help/</loc>
+			<loc>http://localhost/development/math-homework-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/statistics-homework-help/</loc>
+			<loc>http://localhost/development/statistics-homework-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/accounting-homework-help/</loc>
+			<loc>http://localhost/development/accounting-homework-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/economics-homework-help/</loc>
+			<loc>http://localhost/development/economics-homework-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/programming-homework-help/</loc>
+			<loc>http://localhost/development/programming-homework-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/engineering-homework-help/</loc>
+			<loc>http://localhost/development/engineering-homework-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/english-homework-help/</loc>
+			<loc>http://localhost/development/english-homework-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/science-homework-help/</loc>
+			<loc>http://localhost/development/science-homework-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/biology-homework-help/</loc>
+			<loc>http://localhost/development/biology-homework-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/nursing-homework-help/</loc>
+			<loc>http://localhost/development/nursing-homework-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/management-homework-help/</loc>
+			<loc>http://localhost/development/management-homework-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/finance-homework-help/</loc>
+			<loc>http://localhost/development/finance-homework-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/computer-science-homework-help/</loc>
+			<loc>http://localhost/development/computer-science-homework-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/homework-help/</loc>
+			<loc>http://localhost/development/homework-help/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2023-03-10T18:11:58+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
-		<loc>https://tutorchamps.com/development/blog/</loc>
+			<loc>http://localhost/development/testing/</loc>
+			<changefreq>Daily</changefreq>
+			<lastmod>2023-03-29T17:46:28+05:30</lastmod>
+			<priority>0.90</priority>
+			</url>
+<url>
+		<loc>http://localhost/development/blog/</loc>
 		<changefreq>Daily</changefreq>
-		<lastmod>2023-03-19T18:53:31+05:30</lastmod>
+		<lastmod>2023-04-07T02:09:39+05:30</lastmod>
 		<priority>0.80</priority>
 		</url>
 <url>
-			<loc>https://tutorchamps.com/development/blog/top-10-scholarships-for-college-students/</loc>
+			<loc>http://localhost/development/blog/top-10-scholarships-for-college-students/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2023-01-24T22:36:41+05:30</lastmod>
 			<priority>0.70</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/blog/best-tips-and-tricks-to-do-homework-fast/</loc>
+			<loc>http://localhost/development/blog/best-tips-and-tricks-to-do-homework-fast/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.70</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/blog/top-informative-speech-topics/</loc>
+			<loc>http://localhost/development/blog/top-informative-speech-topics/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.70</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/blog/top-persuasive-speech-topics/</loc>
+			<loc>http://localhost/development/blog/top-persuasive-speech-topics/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.70</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/blog/compare-and-contrast-essay-topics/</loc>
+			<loc>http://localhost/development/blog/compare-and-contrast-essay-topics/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.70</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/blog/top-50-research-paper-topics/</loc>
+			<loc>http://localhost/development/blog/top-50-research-paper-topics/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
 			<priority>0.70</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/blog/how-to-write-an-essay/</loc>
+			<loc>http://localhost/development/blog/how-to-write-an-essay/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2023-03-11T14:19:30+05:30</lastmod>
 			<priority>0.70</priority>
 			</url>
 <url>
-			<loc>https://tutorchamps.com/development/blog/how-to-start-an-essay/</loc>
+			<loc>http://localhost/development/blog/how-to-start-an-essay/</loc>
 			<changefreq>Daily</changefreq>
 			<lastmod>2023-02-07T16:05:44+05:30</lastmod>
 			<priority>0.70</priority>

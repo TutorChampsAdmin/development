@@ -1,14 +1,17 @@
 <style>
-    	.home .banner_section:after {
-			content: "";
-			position: absolute;
-			left: calc(50% - 165px);
-			bottom: 0;
-			width: 330px;
-			height: 432px;
-			background: url(<?php echo base_url();?>assets/front/image/banner_img.png);
-			background-size: cover;
-		}
+	.banner_section{
+		background: linear-gradient(to top, #7af7cb, #fff);
+	}
+    .home .banner_section:after {
+		content: "";
+		position: absolute;
+		left: calc(50% - 165px);
+		bottom: 0;
+		width: 330px;
+		height: 432px;
+		background: url(<?php echo base_url();?>assets/front/image/banner_img.png);
+		background-size: cover;
+	}
 </style>
 
 		<div class="banner_section">

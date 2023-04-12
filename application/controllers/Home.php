@@ -107,6 +107,7 @@ class Home extends CI_Controller {
 					$this->session->set_userdata('isClientLoggedIn',TRUE);
         			$this->session->set_userdata('client_user_id',$userData['id']);
         			$this->session->set_userdata('logged_in_id',$userData['id']);
+					$this->session->set_userdata('userEmail',$userData['email']);
         			$this->session->set_userdata('logged_in_role','8');
 
         			$this->User_dashboard->update_user(array('id' => $userData['id']), array('last_login' => date('Y-m-d H:i:s')));
@@ -122,12 +123,12 @@ class Home extends CI_Controller {
                             
                             if(trim($orderMessage) != ''){
                                  $commentsData = [
-                                    'message'       => $orderMessage,     
+                                    'message'       => "Welcome To TutorChamps. Let Us know How We Can Help You In This Assignment",     
                                     'first_comment' => '1',   
                                     'order_id'      => $orderId,    
                                     'user_role'     => '8',     
                                     'added_on'      => date('Y-m-d H:i:s'),     
-                                    'added_by'      => $insert,     
+                                    'added_by'      => '1',     
                                     'to_users'      => $insert.',1',
                                     'to_user_role'  => '1,8',
                                     'to_writer'     => '0',
@@ -164,7 +165,7 @@ class Home extends CI_Controller {
 										The Tutorchamps Team</p>';
 				    		
 				    	}
-				    	$this->send_email_customers(trim($this->input->post('email')),$subjectMail,$messageMail);
+				    	$this->send_email_customers('student@tutorchamps.com',trim($this->input->post('email')),$subjectMail,$messageMail);
 
 						$data = ['status'=>'success','msg' => 'Registered Successfuly','order' => 'YES','order_id'=>'TC-HW-'.$orderId];
 					}
@@ -216,7 +217,7 @@ class Home extends CI_Controller {
 								<p>Sincerely,<br>
 								The Tutorchamps Team</p>';
 
-					$this->send_email_customers($email_id,$subject,$message);
+					$this->send_email_customers('student@tutorchamps.com',$email_id,$subject,$message);
 								
 					$data = ["status"=>"success","message"=>"We've emailed you instructions for setting your password, if an account exists with the email you entered. You should receive them shortly. If you don't receive an email, please make sure you've entered the address you registered with, and check your spam folder."];
 				}else{
@@ -285,13 +286,13 @@ class Home extends CI_Controller {
                 $image_name_arr            = explode('.', $_FILES['files']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = UPLOAD_DIR;
+                $config['upload_path']     = './media/student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
                 $this->upload->initialize($config);
                 if($this->upload->do_upload('files')){
-                    $data['assignment'] = UPLOAD_DIR.$newFileName;
+                    $data['assignment'] = 'media/student/'.$newFileName;
                 }else{
                     #print_r($this->upload->display_errors());
                 }
@@ -411,7 +412,7 @@ class Home extends CI_Controller {
 											TutorChamps Students Support Team</p>';
 				    	}
 
-				    	$this->send_email_customers(trim($this->input->post('email')),$subjectMail,$messageMail);
+				    	$this->send_email_customers('student@tutorchamps.com',trim($this->input->post('email')),$subjectMail,$messageMail);
 
 						$data = ['status'=>'success','msg' => 'Registered Successfuly','order' => 'YES','order_id'=>'TC-HW-'.$orderId];
 
@@ -443,7 +444,7 @@ class Home extends CI_Controller {
 
 
 
-	public function send_email_customers($to,$subject,$message){
+	public function send_email_customers($from,$to,$subject,$message){
 		
 		$mailContent = '<!DOCTYPE html>
 							<html>
@@ -461,8 +462,8 @@ class Home extends CI_Controller {
             'protocol'  => 'smtp',
             'smtp_host' => 'smtp.hostinger.com',
             'smtp_port' => 465,
-            'smtp_user' => 'info@tutorchamps.com',
-            'smtp_pass' => 'Tutorchamps#123',
+            'smtp_user' => $from,
+            'smtp_pass' => 'Student@1234',
             'mailtype'  => 'html',
             'smtp_crypto' => 'ssl',
             'charset'   => 'utf-8'
@@ -472,19 +473,10 @@ class Home extends CI_Controller {
         $this->email->set_mailtype("html");
         $this->email->set_newline("\r\n");
         $this->email->to($to);
-        $this->email->from('info@tutorchamps.com', 'TutorChamps Student Support');
+        $this->email->from($from, 'TutorChamps Student Support');
         $this->email->subject($subject);
         $this->email->message($mailContent);
         $this->email->send();
-
-       /* if ($this->email->send()) {
-			echo 'Your Email has successfully been sent.';
-		 } else {
-			show_error($this->email->print_debugger());
-		}					
-			*/		
-		
-		
 	}
 
 
