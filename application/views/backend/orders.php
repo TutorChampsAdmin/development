@@ -69,7 +69,7 @@ table.table.orderAdminP.custom-table p {
 }
 </style>
 <video id="notification_Audio" name="media" style="display: none;">
-    <source src="<?php echo base_url();?>assets/front/notification.mp3" type="audio/mpeg">
+    <source src="<?php echo base_url();?>assets/backend/notification.mp3" type="audio/mpeg">
 </video>
 <section class="deadline-sec">
     <div class="container-fluid">
@@ -498,7 +498,7 @@ function get_order_list(rowno, create_page)
                             </select></td>
                             <td id="floatOption`+orders[i].id+`">`+floatMenu+`</td>
                             <td id="tutotName`+orders[i].id+`">`+assigned+`</td>
-                            <td><img src="<?php echo base_url('assets/front/dashboard/images/chat.png')?>" style="width: 35px;" onclick="show_order_details(`+orders[i].id+`,'`+orders[i].order_id+`','`+orders[i].subject+`')"></td>
+                            <td><img src="<?php echo base_url('assets/backend/images/chat.png')?>" style="width: 35px;" onclick="show_order_details(`+orders[i].id+`,'`+orders[i].order_id+`','`+orders[i].subject+`')"></td>
                             
                         </tr>`;
                 } 
