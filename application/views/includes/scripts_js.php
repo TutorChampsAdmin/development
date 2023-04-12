@@ -1,7 +1,7 @@
 <script src="<?php echo base_url('assets/front/js/jquery-3.5.1.min.js').CSS_JS_VER;?>"></script>
 <script src="<?php echo base_url('assets/front/js/owl.carousel.min.js').CSS_JS_VER;?>"></script>
 <script src="<?php echo base_url('assets/front/js/bootstrap.bundle.min.js').CSS_JS_VER;?>"></script>
-<script src="<?php echo base_url('assets/front/js/script.js').CSS_JS_VER;?>"></script>
+<script src="<?php echo base_url('assets/main/js/script.js').CSS_JS_VER;?>"></script>
 <script>
     function GenerateCaptcha(captcha_id) {  
         var chr1 = Math.ceil(Math.random() * 10) + '';  

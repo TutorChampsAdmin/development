@@ -13,7 +13,7 @@
 		href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800;1,900&display=swap"
 		rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<?php echo base_url();?>assets/front/style.css" />
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/main/css/style.css" />
 	<title>Register To Get Your Assignments/Homework Solved Instantly | TutorChamps</title>
 	<style type="text/css">
 		.iti--separate-dial-code .iti__selected-dial-code {
@@ -306,7 +306,7 @@
 	<div class="check_sec">
 
 		<div class="container">
-			<img class="logo" src="<?php echo base_url();?>assets/front/image/logo.png" alt="TutorChamps" title="TutorChamps">
+			<img class="logo" src="<?php echo base_url();?>assets/main/images/logo.png" alt="TutorChamps" title="TutorChamps">
 			<div class="row">
 				<div class="col-12 text-center">
 					<div class="signinInner">

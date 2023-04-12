@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link href="<?php echo base_url();?>assets/front/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/main/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/front/css/style.css" rel="stylesheet">
     <style>
         *{
@@ -23,7 +23,7 @@
             position: fixed;
             width: 100%;
             height: 100vh;
-            background: #fff url('<?php echo base_url();?>assets/front/images/loader.gif') no-repeat center  ;
+            background: #fff url('<?php echo base_url();?>assets/main/images/loader.gif') no-repeat center  ;
             z-index: 999;
             display: none;
             opacity: 0.7;

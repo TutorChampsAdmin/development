@@ -9,7 +9,7 @@
 										<div class="avatar-upload">
 									        <div class="avatar-edit">
 									            <input type='file' id="imageUpload" name="profile" accept=".png, .jpg, .jpeg" />
-									            <label for="imageUpload"><img title="Add profile photo" src="https://tutorchamps.com/assets/front/images/camera.png"></label>
+									            <label for="imageUpload"><img title="Add profile photo" src="<?php echo base_url();?>assets/main/images/camera.png"></label>
 									        </div>
 									        <div class="avatar-preview">
 												<div id="imagePreview" style="background-image: url('');"></div>

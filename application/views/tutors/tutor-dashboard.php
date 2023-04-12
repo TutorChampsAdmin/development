@@ -14,14 +14,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700&display=swap" rel="stylesheet">
-	<link href="<?php echo base_url();?>assets/front/css/bootstrap.css" rel="stylesheet">
-	<link href="<?php echo base_url();?>assets/front/css/dash.css" rel="stylesheet">
-	<link href="<?php echo base_url();?>assets/front/css/dashboard.css" rel="stylesheet">
-	<link href="<?php echo base_url();?>assets/front/css/style.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>assets/tutors/css/bootstrap.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>assets/tutors/css/dash.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>assets/tutors/css/dashboard.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>assets/tutors/css/style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&amp;display=swap"
 		rel="stylesheet">
 	<link rel="shortcut icon" href="<?php echo base_url();?>assets/front/images/fav.png" type="image/x-icon">
-	<link href="<?php echo base_url();?>assets/front/css/chat.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>assets/tutors/css/chat.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<style>
 		.avatar-upload {
@@ -489,23 +489,6 @@
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVND638" height="0" width="0"
 			style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
-
-	<!-- <div class="mobHeader">
-		<div>
-			<div><img src="{% static 'images/logo.png' %}" alt="logo"></div>
-			<a href="javascript:void(0);" class="mobBtn" id="mobBtn"><i id="i" class="fa fa-bars" aria-hidden="true"></i></a>
-		</div>
-	</div> -->
-	<!-- {% for message in messages %}
-	<script>
-		alert('{{message}}')
-	</script>
-	{% endfor %} -->
-
-
-
-
-
 	<style>
 		body {
 			margin: 0;
@@ -1328,21 +1311,6 @@
 
 
 	<div class="clientDashboard">
-
-
-		<!-- <div class="sidebar sidebar_menu">
-			<ul class="sidebar_menu">
-				<li><a class="mob-logo" href="/"><img src="{% static 'images/logo.png' %}" alt="logo"></a></li>
-				<li><a id="home" class="active" href="#"><i class="fa fa-home"></i> Home</a></li>
-				<li><a id="live_session" href="#"><i class="fa fa-video-camera"></i> My Work</a></li>
-				<li><a id="profile" href="#"><i class="fa fa-user"></i> Profile</a></li>
-				<li><a id="project_lab" href="#"><i class="fa fa-bug"></i> Payment</a></li>
-				<li><a id="instruction" href="#"><i class="fa fa-file"></i> Instructions</a></li>
-				<li class="logout"><a id="" href="/tutor-logout/"><i class="fa fa-cog"></i> Logout</a></li>
-			</ul>
-		</div> -->
-
-		<!-- <div style="overflow: hidden; background-color: white;"> -->
 		<div style="background-color: white;">
 
 			<div class="tutor-wrapper sidebar_menu navbar1">
@@ -1353,7 +1321,7 @@
 					<label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
 					<div class="content">
 						<div class="logo" style="margin-right: 23px;"><a href="#"><img
-									src="<?php echo base_url();?>assets/front/images/logo.png" alt="logo"></a></div>
+									src="<?php echo base_url();?>assets/tutors/images/logo.png" alt="logo"></a></div>
 						<ul class="links sidebar_menu"
 							style="background-color: #d9d9d9; margin-bottom: 11px; padding: 3px 15px;">
 							<li><a id="home" class="active" href="#"><i class="fa fa-home"></i> Home</a></li>
@@ -1376,7 +1344,7 @@
 								<?php if($user_detail['profle'] != ''){?>
 								<img src="<?php echo $user_detail['profle']; ?>" alt="profile_pic">
 								<?php }else{?>
-								<img src="<?php echo base_url();?>assets/front/dashboard/images/profi.png" alt="profile_pic">
+								<img src="<?php echo base_url();?>assets/tutors/images/profi.png" alt="profile_pic">
 								<?php } ?>
 								<span class="name"><?php echo $tutor_register['name']; ?></span>
 								<i class="fas fa-chevron-down"></i>
@@ -1648,7 +1616,7 @@
 							<div class="avatar-edit">
 								<input type='file' id="imageUpload" name="profile" accept=".png, .jpg, .jpeg" />
 								<label for="imageUpload"><img title="Add profile photo"
-										src="<?php echo base_url();?>assets/front/images/camera.png"></label>
+										src="<?php echo base_url();?>assets/tutors/images/camera.png"></label>
 							</div>
 							<div class="avatar-preview">
 								<?php if($user_detail['profle'] != ''){?>
@@ -1776,7 +1744,7 @@
 			<div class="instructions_content" id="instructions_content">
 				<iframe title="CVHA Plumbing Need a Plumbing Services?" onload="window.parent.scrollTo(0,0)"
 					allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera"
-					src="<?php echo base_url();?>assets/front/images/InsForTutors.pdf#view=FitH" frameborder="0" style="min-width: 100%;
+					src="<?php echo base_url();?>assets/tutors/images/InsForTutors.pdf#view=FitH" frameborder="0" style="min-width: 100%;
     height: 96vh;
     border: none;" scrolling="no" height="100%" width="100%"></iframe>
 			</div>

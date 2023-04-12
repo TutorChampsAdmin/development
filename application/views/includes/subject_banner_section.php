@@ -39,7 +39,7 @@
 					<div class="trust_con">
 						
 						 <div class="trust_box">
-							<div><img src="<?php echo base_url(); ?>assets/front/image/Sitejabber.png"> </div>
+							<div><img src="<?php echo base_url(); ?>assets/main/images/Sitejabber.png"> </div>
 							<div>
 								<span>4.9 <span class="rating_stars"><i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fas fa-star-half-alt"></i></span> </span>
 								<p>Sitejabber</p>
@@ -47,7 +47,7 @@
 						</div>
 
 						<div class="trust_box" style="margin: 0;">
-							<div><img src="<?php echo base_url(); ?>assets/front/image/Trustpilot.png"> </div>
+							<div><img src="<?php echo base_url(); ?>assets/main/images/Trustpilot.png"> </div>
 							<div>
 								<span>4.9 <span class="rating_stars"><i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fas fa-star-half-alt"></i></span> </span>
 								<p>Trustpilot</p>
