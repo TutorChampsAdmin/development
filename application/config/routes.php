@@ -29,6 +29,7 @@ $route['password_reset'] = 'home/password_reset';
 $route['password-reset-confirm'] = 'home/password_reset_confirm';
 
 $route['dashboard']  = 'dashboard/index';
+$route['dashboard/update_notification'] = 'dashboard/update_notification'; 
 $route['dashboard/new-user']  = 'dashboard/index';
 $route['dashboard/new-user/order-successful']  = 'dashboard/index';
 $route['dashboard/old-user']  = 'dashboard/index';

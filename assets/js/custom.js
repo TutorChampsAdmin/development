@@ -13,6 +13,7 @@ $(document).ready(function()
     });
 });
 
+
   
 	//I added event handler for the file upload control to access the files properties.
 document.addEventListener("DOMContentLoaded", init, false);
@@ -36,6 +37,25 @@ function init() {
   document
     .querySelector("#files")
     .addEventListener("change", handleFileSelect, false);
+
+     document
+    .querySelector('#refFiles').addEventListener('change', function(event) {
+    var output = document.getElementById('FilelistRef'); // Get the output element
+    output.innerHTML = ""; // Clear the output element
+
+    // Loop through the selected files
+    for (var i = 0; i < event.target.files.length; i++) {
+      var file = event.target.files[i]; // Get the current file
+
+      // Check if the current file is an image
+      if (file.type.startsWith('image/')) {
+        var img = document.createElement('img'); // Create an img element
+        img.src = URL.createObjectURL(file); // Set the src attribute to the file object URL
+        img.style.maxWidth = '100px'; // Set the max width of the image
+        output.appendChild(img); // Append the image element to the output element
+      }
+    }
+  })
 }
 
 //the handler for file upload event

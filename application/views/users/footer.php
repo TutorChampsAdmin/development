@@ -184,6 +184,28 @@
 					}
 				})
 			})
+
+
+		function updateNotification(id)
+		{
+			const data={id}
+			console.log('data=>',data)
+			$.ajax({
+				type:"POST",
+				url:'<?php echo base_url("dashboard/update_notification"); ?>',
+				data:data,
+				// cache: false,
+				// processData: false,
+				// contentType: false,
+				success:function(data){
+				    console.log("success submit=>",data);				
+					// var response = JSON.parse(data);
+					// var order_id = response.order_id; 
+					// order_id =order_id.toLocaleLowerCase();
+					//  window.location.href = '<?php echo base_url();?>dashboard/tracking/'+order_id;
+				}
+			})
+		}
 		</script>
 		
 		

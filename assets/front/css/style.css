@@ -379,7 +379,7 @@ footer .desclaim_con b{color: #08b07b;}
 footer .desclaim_con p{font-size: 16px;}
 footer .copyR_cot{display: flex; align-items: center;justify-content: space-between; padding-top: 20px;}
 footer .copyR_cot p{font-size: 16px; color: #fff; margin-bottom: 0;}
-#Filelist{padding-top: 10px;}
+#Filelist, #FilelistRef{padding-top: 10px;}
 .swiper-button-next, .swiper-button-prev {
     background: #08b07b6b;
     min-width: 36px; right: 0; top: calc(50% - 44px);
@@ -396,15 +396,15 @@ footer .copyR_cot p{font-size: 16px; color: #fff; margin-bottom: 0;}
     width: 75px; padding: 13px 10px; 
 }
 .fileinput-button.fileAtached span > span, .fileinput-button.fileAtached span > br{display: none;}
-.fileinput-button.fileAtached + #Filelist {
+.fileinput-button.fileAtached + #Filelist, #FilelistRef {
     padding: 0; display: inline-block; width: 100%;
 }
-.fileinput-button.fileAtached + #Filelist ul li{margin-bottom: 55px;
+.fileinput-button.fileAtached + #Filelist, #FilelistRef ul li{margin-bottom: 55px;
     margin-top: -52px;}
-.fileinput-button.fileAtached + #Filelist ul li:first-child{margin-left: 82px;}
-.fileinput-button.fileAtached + #Filelist ul li:last-child{margin-bottom: 6px!important;}
-#Filelist ul li:nth-child(1), #Filelist ul li:nth-child(2), #Filelist ul li:nth-child(3), #Filelist ul li:nth-child(4){margin-bottom: 5px!important;} 
-#Filelist ul li:nth-child(5), #Filelist ul li:nth-child(6), #Filelist ul li:nth-child(7), #Filelist ul li:nth-child(8), #Filelist ul li:nth-child(9), #Filelist ul li:nth-child(10){margin: -10px 0 15px!important;} 
+.fileinput-button.fileAtached + #Filelist, #FilelistRef ul li:first-child{margin-left: 82px;}
+.fileinput-button.fileAtached + #Filelist, #FilelistRef ul li:last-child{margin-bottom: 6px!important;}
+#Filelist, #FilelistRef ul li:nth-child(1), #Filelist, #FilelistRef ul li:nth-child(2), #Filelist, #FilelistRef ul li:nth-child(3), #Filelist, #FilelistRef ul li:nth-child(4){margin-bottom: 5px!important;} 
+#Filelist, #FilelistRef ul li:nth-child(5), #Filelist, #FilelistRef ul li:nth-child(6), #Filelist, #FilelistRef ul li:nth-child(7), #Filelist, #FilelistRef ul li:nth-child(8), #Filelist, #FilelistRef ul li:nth-child(9), #Filelist, #FilelistRef ul li:nth-child(10){margin: -10px 0 15px!important;} 
 footer ul li a:hover{color: #08b07b!important;}
 .cstm_ser_box p a{color: #08b07b!important;}
 .cstm_ser_box:hover > p a{color: #f8c316!important;}
@@ -783,12 +783,12 @@ body p{font-size: 16px!important;}
 
 ]
 @media screen and (max-width:455px){
-    form #Filelist ul li:nth-child(4){
+    form #Filelist, #FilelistRef ul li:nth-child(4){
     margin: -10px 0 15px!important;
 }
 }
 @media screen and (max-width:383px){
-    form #Filelist ul li:nth-child(3){
+    form #Filelist, #FilelistRef ul li:nth-child(3){
     margin: -10px 0 15px!important;
 }
 }

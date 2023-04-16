@@ -203,7 +203,7 @@ class Dashboard extends  MY_Controller {
                     'status'    => 'Awaiting Confirmation',
                     'description'      => $this->input->post('desc'),
                     // 'deadline'  => $this->input->post('deadline'),
-                    // 'subject'   => $this->input->post('subject'),
+                    'subject'   => $this->input->post('subject')?$this->input->post('subject'):'',
                     'assigned'  => 'False',
                     'submission_date' => date('Y-m-d'),
                     'country'   => $country,
@@ -244,7 +244,6 @@ class Dashboard extends  MY_Controller {
             }  
                     
             $insert_id = $this->User_dashboard->insert('orders',$data);
-            
             if($insert_id){
                 $commentsData = [
                     'message'       =>  "Welcome To TutorChamps. Let Us know How We Can Help You In This Assignment",     
@@ -270,6 +269,16 @@ class Dashboard extends  MY_Controller {
         }else{
             die('You are spaming.');
         }
+    }
+
+    public function update_notification()
+    {
+        $id = $this->input->post('id'); 
+        $this->db->set('is_seen','1');
+        $this->db->where('id', $id);
+        $this->db->update('notifications');  
+        $lastQuery = $this->db->last_query();     
+        die('updated');
     }
 
 

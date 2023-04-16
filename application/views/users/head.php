@@ -51,17 +51,21 @@
 								</ul>
 							</li>
 							<li>
-								<a class="notiF" href="#"><i class="fa fa-bell" aria-hidden="true"></i> <span class="notiF_count">2</span> </a>
+								<a class="notiF" href="#"><i class="fa fa-bell" aria-hidden="true"></i> <span class="notiF_count"><?php echo count($notifications) ?></span> </a>
 								<ul class="notiF_drop_box">
 								<?php 
 								foreach($notifications as $notification): ?>
 								<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
 								<li>
-								  	<a href="#">
+									<!--  -->
+								  	<a href="<?php echo base_url(); ?>dashboard/tracking/<?php echo strtolower($notification->ref_no); ?>"  class="notifications" data-ref="" onclick="updateNotification(<?php echo $notification->id ?>)">
 								  	<div>
 								  		<img src="<?php echo base_url();?>assets/img/accurate-solutions.png">
 								  	</div> 
-								  	<div class="noti_txt"><span><?php echo $notification->ref_type.' '.$notification->ref_no; ?> updated</span><span><?php echo $notification->message; ?></span> <span class="notif_time"><?php echo $notification->updated_at; ?></span>
+								  	<div class="noti_txt">								  		
+								  		<span><?php echo $notification->ref_type.' '.$notification->ref_no; ?></span>
+								  		<span><?php echo $notification->message; ?></span> 
+								  		<span class="notif_time"><?php echo $notification->updated_at; ?></span>
 								  	</div> 
 								  </a>
 								  </li>
