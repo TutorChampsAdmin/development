@@ -27,7 +27,7 @@
 						<div class="trust_con">
 
 							<div class="trust_box">
-								<div><img src="<?php echo base_url();?>assets/front/image/Sitejabber.png"> </div>
+								<div><img src="<?php echo base_url();?>assets/main/images/Sitejabber.png"> </div>
 								<div>
 									<span>4.9 <span class="rating_stars"><i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fas fa-star-half-alt"></i></span> </span>
 									<p>Sitejabber</p>
@@ -35,7 +35,7 @@
 							</div>
 
 							<div class="trust_box" style="margin: 0;">
-								<div><img src="<?php echo base_url();?>assets/front/image/Trustpilot.png"> </div>
+								<div><img src="<?php echo base_url();?>assets/main/images/Trustpilot.png"> </div>
 								<div>
 									<span>4.9 <span class="rating_stars"><i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fas fa-star-half-alt"></i></span> </span>
 									<p>Trustpilot</p>
@@ -65,7 +65,7 @@
 			<div class="row">
 				<div class="col-6 col-md-6 col-lg-3 p-0" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100">
 					<div class="rating_box">
-						<div><img src="<?php echo base_url();?>assets/front/image/accurate-solutions.png"> </div>
+						<div><img src="<?php echo base_url();?>assets/main/images/accurate-solutions.png"> </div>
 						<div><span class="rating">100%</span>
 							<p>Accurate Solutions</p>
 						</div>
@@ -73,7 +73,7 @@
 				</div>
 				<div class="col-6 col-md-6 col-lg-3 p-0" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100">
 					<div class="rating_box">
-						<div><img src="<?php echo base_url();?>assets/front/image/SuccessfulOrder.png"> </div>
+						<div><img src="<?php echo base_url();?>assets/main/images/SuccessfulOrder.png"> </div>
 						<div><span class="rating">22k+</span>
 							<p>Successful Orders Delivered</p>
 						</div>
@@ -81,7 +81,7 @@
 				</div>
 				<div class="col-6 col-md-6 col-lg-3 p-0" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100">
 					<div class="rating_box">
-						<div><img src="<?php echo base_url();?>assets/front/image/HappyStudents.png"> </div>
+						<div><img src="<?php echo base_url();?>assets/main/images/HappyStudents.png"> </div>
 						<div><span class="rating">10k+</span>
 							<p>Happy Students</p>
 						</div>
@@ -89,7 +89,7 @@
 				</div>
 				<div class="col-6 col-md-6 col-lg-3 p-0" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100">
 					<div class="rating_box">
-						<div><img src="<?php echo base_url();?>assets/front/image/kiiiia.png"> </div>
+						<div><img src="<?php echo base_url();?>assets/main/images/kiiiia.png"> </div>
 						<div><span class="rating">100%</span>
 							<p>Money Back Guarantee</p>
 						</div>
@@ -108,8 +108,8 @@
 				</div>
 				<div class="col-12 col-md-6 col-lg-4" data-aos="fade-right" data-aos-duration="1200">
 					<div class="cstm_ser_box">
-						<img class="deflt_img" src="<?php echo base_url();?>assets/front/image/icon_6.png">
-						<img class="hover_img" src="<?php echo base_url();?>assets/front/image/icon_6_y.png">
+						<img class="deflt_img" src="<?php echo base_url();?>assets/main/images/icon_6.png">
+						<img class="hover_img" src="<?php echo base_url();?>assets/main/images/icon_6_y.png">
 						<h4><a href="#">Homework Help</a> </h4>
 						<p>Effortlessly conquer the piles of homework along with understanding of the topics. Get personalised assistance of the experts 24x7.</p>
 						<a class="r_btn" href="#">Read More »</a>
@@ -118,8 +118,8 @@
 
 				<div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in" data-aos-duration="1200">
 					<div class="cstm_ser_box">
-						<img class="deflt_img" src="<?php echo base_url();?>assets/front/image/writing.png">
-						<img class="hover_img" src="<?php echo base_url();?>assets/front/image/writing_y.png">
+						<img class="deflt_img" src="<?php echo base_url();?>assets/main/images/writing.png">
+						<img class="hover_img" src="<?php echo base_url();?>assets/main/images/writing_y.png">
 						<h4><a href="#">Writing & Citation</a> </h4>
 						<p>Take the stress out of your academic life. Stay in tune with the Art of Academic Writing with personalised professional assistance.</p>
 						<a class="r_btn" href="#">Read More »</a>
@@ -128,8 +128,8 @@
 
 				<div class="col-12 col-md-6 col-lg-4" data-aos="fade-left" data-aos-duration="1200">
 					<div class="cstm_ser_box">
-						<img class="deflt_img" src="<?php echo base_url();?>assets/front/image/coruse_work.png">
-						<img class="hover_img" src="<?php echo base_url();?>assets/front/image/coruse_work_y.png">
+						<img class="deflt_img" src="<?php echo base_url();?>assets/main/images/coruse_work.png">
+						<img class="hover_img" src="<?php echo base_url();?>assets/main/images/coruse_work_y.png">
 						<h4><a href="#">Coursework Help</a> </h4>
 						<p>Simplify your course with course experts. <u>Learn Your Subjects with Confidence</u> and better understanding.</p>
 						<a class="r_btn" href="#">Read More »</a>
@@ -138,8 +138,8 @@
 
 				<div class="col-12 col-md-6 col-lg-4" data-aos="fade-right" data-aos-duration="1200">
 					<div class="cstm_ser_box">
-						<img class="deflt_img" src="<?php echo base_url();?>assets/front/image/examPrepare.png">
-						<img class="hover_img" src="<?php echo base_url();?>assets/front/image/examPrepare_y.png">
+						<img class="deflt_img" src="<?php echo base_url();?>assets/main/images/examPrepare.png">
+						<img class="hover_img" src="<?php echo base_url();?>assets/main/images/examPrepare_y.png">
 						<h4><a href="#">Exam Preparation</a> </h4>
 						<p>Syllabus coverage looks like a far cry? TutorChamps is here to make it more than a reality with network of skilled and experienced experts, ready to help you 24x7.</p>
 						<a class="r_btn" href="#">Read More »</a>
@@ -148,8 +148,8 @@
 
 				<div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in" data-aos-duration="1200">
 					<div class="cstm_ser_box">
-						<img class="deflt_img" src="<?php echo base_url();?>assets/front/image/doubtSolving.png">
-						<img class="hover_img" src="<?php echo base_url();?>assets/front/image/doubtSolving_y.png">
+						<img class="deflt_img" src="<?php echo base_url();?>assets/main/images/doubtSolving.png">
+						<img class="hover_img" src="<?php echo base_url();?>assets/main/images/doubtSolving_y.png">
 						<h4><a href="#">Real-time Doubt Solving</a> </h4>
 						<p>Its not possible to get all your doubts solved in an hour short lecture, TutorChamps is here to <b>solve your after class doubts anytime</b> in real-time.</p>
 						<a class="r_btn" href="#">Read More »</a>
@@ -158,8 +158,8 @@
 
 				<div class="col-12 col-md-6 col-lg-4" data-aos="fade-left" data-aos-duration="1200">
 					<div class="cstm_ser_box">
-						<img class="deflt_img" src="<?php echo base_url();?>assets/front/image/LabReports.png">
-						<img class="hover_img" src="<?php echo base_url();?>assets/front/image/LabReports_y.png">
+						<img class="deflt_img" src="<?php echo base_url();?>assets/main/images/LabReports.png">
+						<img class="hover_img" src="<?php echo base_url();?>assets/main/images/LabReports_y.png">
 						<h4><a href="#">Lab Reports</a> </h4>
 						<p>Highly accurate and <a href="https://www.google.com/search?q=are+lab+reports+properly+cited&oq=are+lab+reports+properly+cited&aqs=chrome..69i57j33i160.11126j0j7&sourceid=chrome&ie=UTF-8" target="_blank"> properly cited</a> lab reports to get timely submission done from experienced and skilled experts in the field.</p>
 						<a class="r_btn" href="#">Read More »</a>
@@ -182,8 +182,8 @@
 				</div>
 				<div class="col-12 col-md-6 col-lg-4" data-aos="fade-right" data-aos-duration="1200">
 					<div class="cstm_ser_box">
-						<img class="deflt_img" src="<?php echo base_url();?>assets/front/image/Experts.png">
-						<img class="hover_img" src="<?php echo base_url();?>assets/front/image/Experts_y.png">
+						<img class="deflt_img" src="<?php echo base_url();?>assets/main/images/Experts.png">
+						<img class="hover_img" src="<?php echo base_url();?>assets/main/images/Experts_y.png">
 						<h4>30k+ <br>Subject Experts</h4>
 						<p>A network of highly skilled and experienced Subject experts/coach.</p>
 
@@ -192,8 +192,8 @@
 
 				<div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in" data-aos-duration="1200">
 					<div class="cstm_ser_box">
-						<img class="deflt_img" src="<?php echo base_url();?>assets/front/image/hours24.png">
-						<img class="hover_img" src="<?php echo base_url();?>assets/front/image/hours24_y.png">
+						<img class="deflt_img" src="<?php echo base_url();?>assets/main/images/hours24.png">
+						<img class="hover_img" src="<?php echo base_url();?>assets/main/images/hours24_y.png">
 						<h4>24x7 <br>Student Support</h4>
 						<p>Got a doubt? We’re just a query away at any given time.</p>
 
@@ -202,8 +202,8 @@
 
 				<div class="col-12 col-md-6 col-lg-4" data-aos="fade-left" data-aos-duration="1200">
 					<div class="cstm_ser_box">
-						<img class="deflt_img" src="<?php echo base_url();?>assets/front/image/CostEffective.png">
-						<img class="hover_img" src="<?php echo base_url();?>assets/front/image/CostEffective_y.png">
+						<img class="deflt_img" src="<?php echo base_url();?>assets/main/images/CostEffective.png">
+						<img class="hover_img" src="<?php echo base_url();?>assets/main/images/CostEffective_y.png">
 						<h4>Cost-Effective<br> Price</h4>
 						<p>Prices effective and affordable to make you stand out & perform better.</p>
 
@@ -212,8 +212,8 @@
 
 				<div class="col-12 col-md-6 col-lg-4" data-aos="fade-right" data-aos-duration="1200">
 					<div class="cstm_ser_box">
-						<img class="deflt_img" src="<?php echo base_url();?>assets/front/image/betterGrade.png">
-						<img class="hover_img" src="<?php echo base_url();?>assets/front/image/betterGrade_y.png">
+						<img class="deflt_img" src="<?php echo base_url();?>assets/main/images/betterGrade.png">
+						<img class="hover_img" src="<?php echo base_url();?>assets/main/images/betterGrade_y.png">
 						<h4>99% <br>Better Grades</h4>
 						<p>Achieve better grades with our expert help.</p>
 
@@ -222,8 +222,8 @@
 
 				<div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in" data-aos-duration="1200">
 					<div class="cstm_ser_box">
-						<img class="deflt_img" src="<?php echo base_url();?>assets/front/image/moneyBack.png">
-						<img class="hover_img" src="<?php echo base_url();?>assets/front/image/moneyBack_y.png">
+						<img class="deflt_img" src="<?php echo base_url();?>assets/main/images/moneyBack.png">
+						<img class="hover_img" src="<?php echo base_url();?>assets/main/images/moneyBack_y.png">
 						<h4>100% <br>Money Back Policy</h4>
 						<p>100% money-back guarantee for your satisfaction.</p>
 
@@ -232,8 +232,8 @@
 
 				<div class="col-12 col-md-6 col-lg-4" data-aos="fade-left" data-aos-duration="1200">
 					<div class="cstm_ser_box">
-						<img class="deflt_img" src="<?php echo base_url();?>assets/front/image/Step-by-Step.png">
-						<img class="hover_img" src="<?php echo base_url();?>assets/front/image/Step-by-Step_y.png">
+						<img class="deflt_img" src="<?php echo base_url();?>assets/main/images/Step-by-Step.png">
+						<img class="hover_img" src="<?php echo base_url();?>assets/main/images/Step-by-Step_y.png">
 						<h4>Step-by-Step <br>Explanations</h4>
 						<p>Get step-by-step explanations to understand the concepts better.</p>
 
@@ -260,7 +260,7 @@
 				</div>
 				<div class="col-md-6" data-aos="fade-right" data-aos-duration="1200">
 					<div>
-						<img src="<?php echo base_url();?>assets/front/image/benefits2.png">
+						<img src="<?php echo base_url();?>assets/main/images/benefits2.png">
 					</div>
 				</div>
 				<div class="col-md-6" data-aos="fade-left" data-aos-duration="1200">
@@ -315,7 +315,7 @@
 					</div>
 				</div>
 				<div class="col-12 col-md-6 col-lg-6 pl-lg-0" data-aos="fade-left" data-aos-duration="1200">
-					<div class="img_box"><img src="<?php echo base_url();?>assets/front/image/world-wide-help-img.png"></div>
+					<div class="img_box"><img src="<?php echo base_url();?>assets/main/images/world-wide-help-img.png"></div>
 				</div>
 			</div>
 		</div>
@@ -331,8 +331,8 @@
 				</div>
 				<div class="col-12 col-md-6 col-lg-4" data-aos="fade-right" data-aos-duration="1200">
 					<div class="cstm_ser_box">
-						<img class="deflt_img" src="<?php echo base_url();?>assets/front/image/SubmitProblems.png">
-						<img class="hover_img" src="<?php echo base_url();?>assets/front/image/SubmitProblems_y.png">
+						<img class="deflt_img" src="<?php echo base_url();?>assets/main/images/SubmitProblems.png">
+						<img class="hover_img" src="<?php echo base_url();?>assets/main/images/SubmitProblems_y.png">
 						<h4>Submit Your Problems</h4>
 						<p>Fill out the order form with your homework problems and you'll be registered at TutorChamps. Once you've registered, our team will contact you shortly for further details about your homework. It’s that easy.</p>
 
@@ -341,8 +341,8 @@
 
 				<div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in" data-aos-duration="1200">
 					<div class="cstm_ser_box">
-						<img class="deflt_img" src="<?php echo base_url();?>assets/front/image/icon_5.png">
-						<img class="hover_img" src="<?php echo base_url();?>assets/front/image/icon_5_y.png">
+						<img class="deflt_img" src="<?php echo base_url();?>assets/main/images/icon_5.png">
+						<img class="hover_img" src="<?php echo base_url();?>assets/main/images/icon_5_y.png">
 						<h4>Make the Payment</h4>
 						<p>Get your homework done without breaking the bank! Our team will quote you a fair price and once you agree with the price mentioned, you can pay quickly, without any hassle through the given payment link.</p>
 
@@ -351,8 +351,8 @@
 
 				<div class="col-12 col-md-6 col-lg-4" data-aos="fade-left" data-aos-duration="1200">
 					<div class="cstm_ser_box">
-						<img class="deflt_img" src="<?php echo base_url();?>assets/front/image/betterGrade.png">
-						<img class="hover_img" src="<?php echo base_url();?>assets/front/image/betterGrade_y.png">
+						<img class="deflt_img" src="<?php echo base_url();?>assets/main/images/betterGrade.png">
+						<img class="hover_img" src="<?php echo base_url();?>assets/main/images/betterGrade_y.png">
 						<h4>Learn with A+ Grades</h4>
 						<p>Once your payment has been received, our experts will ensure that you receive the best and highest-quality work and understanding possible, which will undoubtedly earn you an A+ in your coursework. You can easily request a refund if you're dissatisfied with our work.</p>
 
@@ -380,11 +380,11 @@
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
 								<div class="testimonial_box">
-									<img class="quote_img" src="<?php echo base_url();?>assets/front/image/d_quote_img.png">
+									<img class="quote_img" src="<?php echo base_url();?>assets/main/images/d_quote_img.png">
 									<p>The personalized one-to-one session is impressive. The tutor helped with my queries and offered a step-by-step solution so that I can understand it easily. I would highly recommend TutorChamps to my friends also. Not only their services are excellent, but their pricing is also nominal!</p>
 									<div class="user_det">
 										<div class="user_img">
-											<img src="<?php echo base_url();?>assets/front/image/w_avtar.png">
+											<img src="<?php echo base_url();?>assets/main/images/w_avtar.png">
 										</div>
 										<div class="user_n">
 											<span class="name">Sophia William</span>
@@ -396,11 +396,11 @@
 
 							<div class="swiper-slide">
 								<div class="testimonial_box">
-									<img class="quote_img" src="<?php echo base_url();?>assets/front/image/d_quote_img.png">
+									<img class="quote_img" src="<?php echo base_url();?>assets/main/images/d_quote_img.png">
 									<p>Honestly Speaking! I love these guys! They offer homework help services at an affordable price range as compared to other ones. Surely recommend this learning platform to my friends as well!</p>
 									<div class="user_det">
 										<div class="user_img">
-											<img src="<?php echo base_url();?>assets/front/image/w_avtar.png">
+											<img src="<?php echo base_url();?>assets/main/images/w_avtar.png">
 										</div>
 										<div class="user_n">
 											<span class="name">Beca Jones</span>
@@ -411,11 +411,11 @@
 							</div>
 							<div class="swiper-slide swiper-slide-active">
 								<div class="testimonial_box">
-									<img class="quote_img" src="<?php echo base_url();?>assets/front/image/d_quote_img.png">
+									<img class="quote_img" src="<?php echo base_url();?>assets/main/images/d_quote_img.png">
 									<p>The tutors available here are exceptionally talented. They helped with my college homework. I schedule the live session at night. Despite the time, they offer me the best solution along with some valuable tips.</p>
 									<div class="user_det">
 										<div class="user_img">
-											<img src="<?php echo base_url();?>assets/front/image/man.png">
+											<img src="<?php echo base_url();?>assets/main/images/man.png">
 										</div>
 										<div class="user_n">
 											<span class="name">Chris W. Phillip</span>
@@ -429,11 +429,11 @@
 
 							<div class="swiper-slide">
 								<div class="testimonial_box">
-									<img class="quote_img" src="<?php echo base_url();?>assets/front/image/d_quote_img.png">
+									<img class="quote_img" src="<?php echo base_url();?>assets/main/images/d_quote_img.png">
 									<p>One of my friends recommended this online learning platform. I raised a query late at night, and I was surprised when I got an immediate reply. TutorChamps not only help with my college assignment but also assist in improving my grades.</p>
 									<div class="user_det">
 										<div class="user_img">
-											<img src="<?php echo base_url();?>assets/front/image/man.png">
+											<img src="<?php echo base_url();?>assets/main/images/man.png">
 										</div>
 										<div class="user_n">
 											<span class="name">Neeraj Arora</span>
@@ -466,7 +466,7 @@
 					<p class="pb-5">Most common queries of the students are answered here, If you still have any queries, please contact us.</p>
 				</div>
 				<div class="col-md-12 col-lg-6 order-2 order-sm-2 order-lg-1 pt-4 text-center" data-aos="fade-right" data-aos-duration="1200">
-					<img src="<?php echo base_url();?>assets/front/image/faqs.png" alt="FAQs" title="FAQs">
+					<img src="<?php echo base_url();?>assets/main/images/faqs.png" alt="FAQs" title="FAQs">
 				</div>
 				<div class="col-md-12 col-lg-6 order-1 order-sm-1 order-lg-2" data-aos="fade-left" data-aos-duration="1200">
 					<div id="accordion">

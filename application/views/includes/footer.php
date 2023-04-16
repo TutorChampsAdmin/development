@@ -107,7 +107,7 @@
 				<div class="col-12">
 					<div class="logo_sec">
 						<div class="F_logo_con">
-							<img src="<?php echo base_url();?>assets/front/image/logo.png" alt="TutorChamps" title="TutorChamps">
+							<img src="<?php echo base_url();?>assets/main/images/logo.png" alt="TutorChamps" title="TutorChamps">
 						</div>
 						<div class="social_links">
 							<a class="insta" href="https://www.instagram.com/tutorchampsofficial/" target="_blank"><i class="fab fa-instagram"></i> </a>
@@ -177,14 +177,13 @@
 			</div>
 		</div>
 	</footer>
-    <script src="<?php echo base_url();?>assets/front/js/jquery.js"></script>
-	<!--<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>-->
+    <script src="<?php echo base_url();?>assets/main/js/jquery.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 	<script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/front/js/custom.js"></script>
+	<script src="<?php echo base_url(); ?>assets/main/js/custom.js"></script>
 
 
 <script>

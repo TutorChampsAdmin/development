@@ -340,7 +340,7 @@ body.modal-open{overflow: unset!important;}
                                 if(userName == null){
                                     userName = '';
                                 }
-                                var avatar = base_url+'assets/front/images/dummy-avatar.jpg';
+                                var avatar = base_url+'assets/main/images/dummy-avatar.jpg';
                                
                                 var noteAttachments = ``;
                                 

@@ -13,10 +13,32 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/front/css/styles-tutor-new.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/tutors/css/styles-tutor-new.css">
   <title>Tutor</title>
-  <script src="<?php echo base_url();?>assets/front/js/jquery.js"></script>
+  <script src="<?php echo base_url();?>assets/tutors/js/jquery.js"></script>
   <style>
+    .procedure1 {
+  background-image: url("<?php echo base_url();?>assets/tutors/images/procedure1.svg");
+  }
+
+  .procedure2 {
+    background-image: url("<?php echo base_url();?>assets/tutors/images/procedure2.svg");
+  }
+
+  .procedure3 {
+    background-image: url("<?php echo base_url();?>assets/tutors/images/procedure3.svg");
+  }
+
+  .procedure4 {
+    background-image: url("<?php echo base_url();?>assets/tutors/images/procedure4.svg");
+  }
+
+    .testimonals {
+    background-color: #FFFFFF;
+    background-image: url("<?php echo base_url();?>assets/tutors/images/tesimonialbg.png");
+    background-size: cover;
+    padding-bottom: 40px;
+  }
     .button1 {
       display: inline-block;
       border-radius: 40px;
@@ -82,7 +104,7 @@
   <!-- Navbar -->
   <div class="navbar">
     <div class="topnav" id="myTopnav">
-      <a href="/" class="active"><img src="<?php echo base_url();?>assets/front/images/assets-tutor-new/logo.png"></a>
+      <a href="/" class="active"><img src="<?php echo base_url();?>assets/tutors/images/logo.png"></a>
       <a class="link" href="#procedure">How it Works</a>
       <a class="link" href="#benefits">Benefits</a>
       <a class="link" href="#work">Work Description</a>
@@ -133,7 +155,7 @@
         Earn good money by solving homework problems!
       </p>
       <center>
-        <img class="tutor-image" src="<?php echo base_url();?>assets/front/images/assets-tutor-new/landing.svg">
+        <img class="tutor-image" src="<?php echo base_url();?>assets/tutors/images/landing.svg">
       </center>
 
     </div>
@@ -180,15 +202,15 @@
 
     <div class="features">
       <div class="feature1">
-        <center><img class="feature-image" src="<?php echo base_url();?>assets/front/images/assets-tutor-new/feature1.svg"></center>
+        <center><img class="feature-image" src="<?php echo base_url();?>assets/tutors/images/feature1.svg"></center>
         <p class="feature-text">100% Genuine Website</p>
       </div>
       <div class="feature2">
-        <center><img class="feature-image" src="<?php echo base_url();?>assets/front/images/assets-tutor-new/feature2.svg"></center>
+        <center><img class="feature-image" src="<?php echo base_url();?>assets/tutors/images/feature2.svg"></center>
         <p class="feature-text">Simplest Registration Process</p>
       </div>
       <div class="feature3">
-        <center><img class="feature-image" src="<?php echo base_url();?>assets/front/images/assets-tutor-new/feature3.svg"></center>
+        <center><img class="feature-image" src="<?php echo base_url();?>assets/tutors/images/feature3.svg"></center>
         <p class="feature-text">3000+ Tutors in the team</p>
       </div>
     </div>
@@ -277,7 +299,7 @@
       Our online tutoring platform makes it easy, flexible, and convenient to interact with students (and make extra money!).
     </p>
 
-    <img class="decoration" src="<?php echo base_url();?>assets/front/images/assets-tutor-new/design.png">
+    <img class="decoration" src="<?php echo base_url();?>assets/tutors/images/design.png">
   </div>
 
   <!-- Why join tutorchamps -->
@@ -509,7 +531,7 @@
       
     <div class="fade work-grid">
       <div class="deadline">
-        <center><img src="<?php echo base_url();?>assets/front/images/assets-tutor-new/deadline.jpg" alt="" class="deadline-image"></center>
+        <center><img src="<?php echo base_url();?>assets/tutors/images/deadline.jpg" alt="" class="deadline-image"></center>
         <div class="deadline-text">
           <p class="work-heading">Deadline based Work</p>
           <p class="work-explanation">
@@ -525,7 +547,7 @@
       </div>
     
       <div class="live-sesson">
-        <center><img src="<?php echo base_url();?>assets/front/images/assets-tutor-new/live.jpeg" alt="" class="live-session-image"></center>
+        <center><img src="<?php echo base_url();?>assets/tutors/images/live.jpeg" alt="" class="live-session-image"></center>
         <div class="live-session-text">
           <p class="work-heading">Live Sessions</p>
           <p class="work-explanation">
@@ -553,7 +575,7 @@
         
             <div class="card">
               <div class="profile">
-                <img class="tutor-testimonial-image" src="<?php echo base_url();?>assets/front/images/assets-tutor-new/tutor1.jpg">
+                <img class="tutor-testimonial-image" src="<?php echo base_url();?>assets/tutors/images/tutor1.jpg">
                 <div class="profile-text">
                   <h4 class="customer-name">Aishwarya Singh</h4>
                   <p class="customer-role">A Math expert</p>
@@ -565,7 +587,7 @@
         
             <div class="card">
               <div class="profile">
-                <img class="tutor-testimonial-image" src="<?php echo base_url();?>assets/front/images/assets-tutor-new/tutor2.jpg">
+                <img class="tutor-testimonial-image" src="<?php echo base_url();?>assets/tutors/images/tutor2.jpg">
                 <div class="profile-text">
                   <h4 class="customer-name">Manish Arora</h4>
                   <p class="customer-role">An Accounting expert</p>
@@ -577,7 +599,7 @@
         
             <div class="card">
               <div class="profile">
-                <img class="tutor-testimonial-image" src="<?php echo base_url();?>assets/front/images/assets-tutor-new/tutor3.jpg">
+                <img class="tutor-testimonial-image" src="<?php echo base_url();?>assets/tutors/images/tutor3.jpg">
                 <div class="profile-text">
                   <h4 class="customer-name">Kritika Jain</h4>
                   <p class="customer-role">A Biology expert</p>
@@ -589,7 +611,7 @@
         
             <div class="card">
               <div class="profile">
-                <img class="tutor-testimonial-image" src="<?php echo base_url();?>assets/front/images/assets-tutor-new/tutor4.jpg">
+                <img class="tutor-testimonial-image" src="<?php echo base_url();?>assets/tutors/images/tutor4.jpg">
                 <div class="profile-text">
                   <h4 class="customer-name">Hitesh Daswani</h4>
                   <p class="customer-role">A Nursing expert</p>
@@ -601,7 +623,7 @@
         
             <div class="card">
               <div class="profile">
-                <img class="tutor-testimonial-image" src="<?php echo base_url();?>assets/front/images/assets-tutor-new/tutor5.jpg">
+                <img class="tutor-testimonial-image" src="<?php echo base_url();?>assets/tutors/images/tutor5.jpg">
                 <div class="profile-text">
                   <h4 class="customer-name">Anamika Gujral</h4>
                   <p class="customer-role">A Chemistry expert</p>
@@ -614,8 +636,8 @@
           </div>
         
           <div class="sidebar">
-            <img src="<?php echo base_url();?>assets/front/images/assets-tutor-new/up.png" id="up">
-            <img src="<?php echo base_url();?>assets/front/images/assets-tutor-new/down.png" id="down">
+            <img src="<?php echo base_url();?>assets/tutors/images/up.png" id="up">
+            <img src="<?php echo base_url();?>assets/tutors/images/down.png" id="down">
           </div>
         
         </div>
@@ -654,7 +676,7 @@
         <div class="faq-left">
           <p class="faq-content">You must be wondering why you want to be a part of our online tutoring tribe. Check out our FAQs to get all your questions answered!<br><br>
           </p>
-          <img class="faq-image" src="<?php echo base_url();?>assets/front/images/assets-tutor-new/faqs.svg">
+          <img class="faq-image" src="<?php echo base_url();?>assets/tutors/images/faqs.svg">
         </div>
         <div class="faq-right">
           <div class="faq">
@@ -738,7 +760,7 @@
     <div class="footer fade">
       <div class="footer-grid">
         <div class="apply">
-          <div class="logo"><img src="<?php echo base_url();?>assets/front/images/assets-tutor-new/logo.png"></div>
+          <div class="logo"><img src="<?php echo base_url();?>assets/tutors/images/logo.png"></div>
           <p class="apply-text">Everyone wants to earn money but how amazing it is that you can earn money by enjoying your passion. Register as a tutor
           at TutorChamps and solve student homework problems and get paid high in return on a daily basis. So why are you waiting?
           <span class="footer-link">Apply Today!</span></p>
