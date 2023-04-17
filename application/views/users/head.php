@@ -60,7 +60,7 @@
 									<!--  -->
 								  	<a href="<?php echo base_url(); ?>dashboard/tracking/<?php echo strtolower($notification->ref_no); ?>"  class="notifications" data-ref="" onclick="updateNotification(<?php echo $notification->id ?>)">
 								  	<div>
-								  		<img src="<?php echo base_url();?>assets/img/accurate-solutions.png">
+								  		<img src="<?php echo base_url();?>assets/main/images/accurate-solutions.png">
 								  	</div> 
 								  	<div class="noti_txt">								  		
 								  		<span><?php echo $notification->ref_type.' '.$notification->ref_no; ?></span>
