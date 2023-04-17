@@ -44,7 +44,7 @@
 <url>
 			<loc>http://localhost/development/reviews/</loc>
 			<changefreq>Daily</changefreq>
-			<lastmod>2021-11-21T20:58:42+05:30</lastmod>
+			<lastmod>2023-04-17T17:36:28+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
@@ -182,7 +182,7 @@
 <url>
 			<loc>http://localhost/development/homework-help/</loc>
 			<changefreq>Daily</changefreq>
-			<lastmod>2023-03-10T18:11:58+05:30</lastmod>
+			<lastmod>2023-04-07T02:30:17+05:30</lastmod>
 			<priority>0.90</priority>
 			</url>
 <url>
@@ -194,7 +194,7 @@
 <url>
 		<loc>http://localhost/development/blog/</loc>
 		<changefreq>Daily</changefreq>
-		<lastmod>2023-04-07T02:09:39+05:30</lastmod>
+		<lastmod>2023-04-17T17:36:28+05:30</lastmod>
 		<priority>0.80</priority>
 		</url>
 <url>

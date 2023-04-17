@@ -1,6 +1,6 @@
 <nav id='cssmenu' class="cssmenu">
 				<div class="logo" data-aos="fade-right" data-aos-duration="8000"><a href="<?php echo base_url();?>">
-						<img src="<?php echo base_url();?>assets/main/imagesgit/logo.png" alt="TutorChamps" title="TutorChamps"> </a></div>
+						<img src="<?php echo base_url();?>assets/main/images/logo.png" alt="TutorChamps" title="TutorChamps"> </a></div>
 				<div id="head-mobile"></div>
 				<div class="button" data-aos="zoom-in-left" data-aos-duration="1200"></div>
 				<ul data-aos="zoom-in-left" data-aos-duration="1200">

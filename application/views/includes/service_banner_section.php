@@ -9,7 +9,7 @@
     background: url(<?php echo base_url().$page['banner_image'];?>); background-size: cover;}
 	
 .home .banner_section{
-display:<?php if($page['url_slug']=='features'){ echo "none";}?>;}
+display:<?php if($page['url_slug']=='features' || $page['url_slug']=='reviews'){ echo "none";}?>;}
 </style>
 
 

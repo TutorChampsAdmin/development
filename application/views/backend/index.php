@@ -50,7 +50,7 @@
                 <div class="container">
                     <div class="row">
                          <div class="col-lg-12 text-center">
-                            <div class="logo"> <a href="index.php"><img src="<?php echo base_url('assets/front/images/logo.png');?>" alt="Logo" 
+                            <div class="logo"> <a href="index.php"><img src="<?php echo base_url('assets/main/images/logo.png');?>" alt="Logo" 
                             style="width: 250px;"></a> </div>
                         </div>
                         <div class="col-lg-12 text-center"> <a class="hiddenanchor" id="signup"></a> <a class="hiddenanchor" id="signin"></a>
@@ -93,7 +93,7 @@
                 </div>
             </section>
         </main>
-        <script src="<?php echo base_url();?>assets/front/js/jquery.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="<?php echo base_url('assets/backend/js/classie.js');?>" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js"></script>  
     </body>
