@@ -14,11 +14,11 @@
 								</div>
 								<div class="form_fields">
 									<div class="upload_MFile">
-										<span class="fileinput-button" id="fileinput-button">
+										<span class="fileinput-button" id="fileinput-buttonFooter">
 								            <span><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i><br><span>Drop your file or Browse</span> </span>
-								            <input type="file"  name="assignment" id="files" multiple accept="image/jpeg, image/png, image/gif," required><br />
+								            <input type="file"  name="assignment" id="filesFooter" data-list="FilelistFooter" class="files" multiple accept="image/jpeg, image/png, image/gif," required><br />
 								        </span>
-								        <output id="Filelist"></output>
+								        <output id="FilelistFooter"></output>
 								    </div>
 								</div>
 							</div>
@@ -38,7 +38,8 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
-  <script src="<?php echo base_url();?>assets/main/js/custom.js"></script>
+  <!-- <script src="<?php echo base_url();?>assets/main/js/custom.js"></script> -->
+  <script src="<?php echo base_url();?>assets/js/custom.js"></script>
 
   
 	<script>

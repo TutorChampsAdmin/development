@@ -443,6 +443,19 @@ form textarea::placeholder{color: #08b07b;}
 .fileinput-button.fileAtached + #Filelist ul li:last-child{margin-bottom: 6px!important;}
 #Filelist ul li:nth-child(1), #Filelist ul li:nth-child(2), #Filelist ul li:nth-child(3), #Filelist ul li:nth-child(4){margin-bottom: 5px!important;} 
 #Filelist ul li:nth-child(5), #Filelist ul li:nth-child(6), #Filelist ul li:nth-child(7), #Filelist ul li:nth-child(8), #Filelist ul li:nth-child(9), #Filelist ul li:nth-child(10){margin: -10px 0 15px!important;} 
+
+.fileinput-button.fileAtached + #FilelistFooter {
+    padding: 0; display: inline-block; width: 100%;
+}
+.fileinput-button.fileAtached + #FilelistFooter ul li{margin-bottom: 55px;
+    margin-top: -52px;}
+.fileinput-button.fileAtached + #FilelistFooter ul li:first-child{margin-left: 82px;}
+.fileinput-button.fileAtached + #FilelistFooter ul li:last-child{margin-bottom: 6px!important;}
+#FilelistFooter ul li:nth-child(1), #FilelistFooter ul li:nth-child(2), #FilelistFooter ul li:nth-child(3), #FilelistFooter ul li:nth-child(4){margin-bottom: 5px!important;} 
+#FilelistFooter ul li:nth-child(5), #FilelistFooter ul li:nth-child(6), #FilelistFooter ul li:nth-child(7), #FilelistFooter ul li:nth-child(8), #FilelistFooter ul li:nth-child(9), #FilelistFooter ul li:nth-child(10){margin: -10px 0 15px!important;} 
+
+
+
 .form_innBox {
     border: 1px solid #08b07b;
     margin-bottom: 30px;

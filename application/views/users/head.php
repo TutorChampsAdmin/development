@@ -102,7 +102,11 @@
 								<li><a id="refer" href="<?php echo base_url(); ?>dashboard/refer"><i class="fa fa-user"></i> Refer & Earn</a></li>
 								<li><a id="faq" href="<?php echo base_url(); ?>dashboard/faq"><i class="fa fa-question-circle"></i> FAQs</a></li>
 								<div class="sidebar_bottomLink">
-									<li><a id="" href="javascript:void(0)"><i class="fa fa-question-circle"></i> Help</a></li>
+									<li>
+										<a href="https://wa.me/+919711569678" target="_blank">
+										<i class="fa fa-question-circle"></i> Help
+									</a>
+									</li>
 									<li><a id="" href="<?php echo base_url('dashboard/logout/');?>"><i class="fa fa-cog"></i> Logout</a></li>
 								</div>
 							</ul>

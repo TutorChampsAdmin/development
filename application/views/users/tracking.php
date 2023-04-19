@@ -34,7 +34,7 @@
 				<div class="upload_MFile">
 					<span class="fileinput-button" id="fileinput-button">
 			            <span><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i><br><span>Drop your file or Browse</span> </span>
-			            <input type="file" name="files" id="files" multiple accept="image/jpeg, image/png, image/gif,"><br />
+			            <input type="file" name="files" id="files" class="files" data-list="Filelist" multiple accept="image/jpeg, image/png, image/gif,"><br />
 			        </span>
 			        <output id="Filelist"></output>
 			    </div>
@@ -56,7 +56,12 @@
 					<label for="24hrs">24 hrs</label>
 					<input type="radio" id="30hrs">
 					<label for="30hrs">30 hrs</label>
-					<input class="input" type="datetime-local" value="<?php echo date('Y-m-d\TH:i:s', strtotime($order[0]['deadline'])); ?>" name="deadline">
+					<?php
+							$dateVal = date('Y-m-d H:i:s');
+							if ($order[0]['deadline'] != "1970-01-01 05:30:00" && $order[0]['deadline'] !="")  
+							   $dateVal = date('Y-m-d H:i:s', strtotime($order[0]['deadline'])); 
+					 ?>
+					<input class="input" type="datetime-local" data-val="<?php echo $order[0]['deadline'] ?>" value="<?php echo $dateVal; ?>" name="deadline">
 				</div>
 			</div>
 			<div class="form_fields">

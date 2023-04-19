@@ -11,6 +11,18 @@ $(document).ready(function()
         
        }
     });
+
+    $("#filesFooter").click(function()
+    {
+      $("#fileinput-buttonFooter").addClass("fileAtached");
+      var Filelist = $("#FilelistFooter").height();
+       if($("#FilelistFooter").height() >= 30){
+          $("#fileinput-buttonFooter").addClass("fileAtached");
+       }
+       else{
+        
+       }
+    });
 });
 
 
@@ -39,6 +51,10 @@ function init() {
     .addEventListener("change", handleFileSelect, false);
 
      document
+    .querySelector("#filesFooter")
+    .addEventListener("change", handleFileSelect, false);
+
+     document
     .querySelector('#refFiles').addEventListener('change', function(event) {
     var output = document.getElementById('FilelistRef'); // Get the output element
     output.innerHTML = ""; // Clear the output element
@@ -60,6 +76,7 @@ function init() {
 
 //the handler for file upload event
 function handleFileSelect(e) {
+  var target  = e.target.getAttribute("data-list")||'Filelist';
   //to make sure the user select file/files
   if (!e.target.files) return;
 
@@ -78,7 +95,7 @@ function handleFileSelect(e) {
         ApplyFileValidationRules(readerEvt);
 
         //Render attachments thumbnails.
-        RenderThumbnail(e, readerEvt);
+        RenderThumbnail(e, readerEvt,target);
 
         //Fill the array of attachment
         FillAttachmentArray(e, readerEvt);
@@ -91,7 +108,7 @@ function handleFileSelect(e) {
     fileReader.readAsDataURL(f);
   }
   document
-    .getElementById("files")
+    .getElementById(target)
     .addEventListener("change", handleFileSelect, false);
 }
 
@@ -223,7 +240,7 @@ function CheckFilesCount(AttachmentArray) {
 }
 
 //Render attachments thumbnails.
-function RenderThumbnail(e, readerEvt) {
+function RenderThumbnail(e, readerEvt,target) {
   var li = document.createElement("li");
   ul.appendChild(li);
   li.innerHTML = [
@@ -242,7 +259,7 @@ function RenderThumbnail(e, readerEvt) {
   div.className = "FileNameCaptionStyle";
   li.appendChild(div);
   div.innerHTML = [readerEvt.name].join("");
-  document.getElementById("Filelist").insertBefore(ul, null);
+  document.getElementById(target).insertBefore(ul, null);
 }
 
 //Fill the array of attachment
