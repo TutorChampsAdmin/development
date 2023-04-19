@@ -185,6 +185,29 @@
 	<script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/main/js/custom.js"></script>
 
+	<script>
+    $("#files").on('change', function () {
+        var file = $('#files')[0].files[0].name;
+        if (file.length > 0) {
+			console.log("file uploaded");
+            $("#description").removeAttr('required');
+        }
+        if (file.length == 0) {
+            $("#description").attr('required',required);
+
+        }
+    })
+	
+    $("#description").on('keyup', function () {
+        var val = $("#description").val();
+        if (val.length > 0) {
+            $("#files").removeAttr('required');
+        }
+        if (val.length == 0) {
+            $("#files").attr('required',true);
+        }
+    })
+</script>
 
 <script>
     
@@ -646,7 +669,7 @@
 			var li = document.createElement("li");
 			ul.appendChild(li);
 			li.innerHTML = [
-				'<div class="img-wrap"> <span class="close">&times;</span>' +
+				'<div class="img-wrap"> <span class="close" id="close">&times;</span>' +
 				'<img class="thumb" src="',
 				e.target.result,
 				'" title="',
