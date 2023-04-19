@@ -34,12 +34,33 @@
 	</div>
  
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<!--<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>-->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
   <script src="<?php echo base_url();?>assets/main/js/custom.js"></script>
+<script>
+	    $("#files").on('change', function () {
+        var file = $('#files')[0].files[0].name;
+        if (file.length > 0) {
+			console.log("file uploaded");
+            $("#desc").removeAttr('required');
+        }
+        if (file.length == 0) {
+            $("#desc").attr('required',required);
 
+        }
+    })
+	
+    $("#desc").on('keyup', function () {
+        var val = $("#desc").val();
+        if (val.length > 0) {
+            $("#files").removeAttr('required');
+        }
+        if (val.length == 0) {
+            $("#files").attr('required',true);
+        }
+    })
+</script>
   
 	<script>
         if ('{{ ordered }}' == 'True'){

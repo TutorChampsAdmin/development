@@ -3,7 +3,8 @@
         value="<?php echo $this->security->get_csrf_hash(); ?>" />
     <div class="form_innBox">
         <div class="form_fields">
-            <textarea class="textarea" name="Details" placeholder="Type your question here" required></textarea>
+            <textarea class="textarea" name="Details" id="description" placeholder="Type your question here"
+                required></textarea>
         </div>
         <div class="form_fields">
             <div class="upload_MFile">
