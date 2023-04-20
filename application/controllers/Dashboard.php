@@ -88,10 +88,10 @@ class Dashboard extends  MY_Controller {
             ];
         $this->load->view('users/tracking',$data);
     }
-    public function home(){
-        $this->load->view('users/home');
-    }
-    public function history(){
+    // public function home(){
+    //     $this->load->view('users/home');
+    // }
+    public function order_history(){
         $orders = $this->User_dashboard->get_orders($this->user_id);
         $LabOrders = $this->User_dashboard->get_lab_orders($this->user_id);
         $user_detail = $this->User_dashboard->get_user_details($this->user_id);
@@ -103,16 +103,16 @@ class Dashboard extends  MY_Controller {
                 ];
         $this->load->view('users/history',$data);
     }
-    public function refer(){
+    public function refer_earn(){
         $this->load->view('users/refer');
     }
 
 
-    public function reward(){
+    public function reward_points(){
         $this->load->view('users/reward');
     }
     
-    public function faq(){
+    public function faqs(){
         $this->load->view('users/faq');
     }
     public function profile(){
