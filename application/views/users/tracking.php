@@ -18,7 +18,7 @@
 <div class="banner_form_con">
 <form class="order_form" action="" method="post"  enctype="multipart/form-data">
 	<input type="hidden" name="order_id" value="<?php echo $order[0]['order_id'];?>" />
-	<div class="first_step opened_Box" style="display:none;">
+	<div class="first_step">
 		<div class="form_head">
 			<span class="pending_step"></span>
 			<i style="display: none;" class="completed_step fa fa-check"></i>
@@ -196,12 +196,12 @@
     $("#live_session").addClass('active');
 </script>
 
- 
+<!--  
 <?php if($order[0]['status']=='Awaiting Confirmation'){ ?>
 <script>
     $(".first_step").css({'display':'block'});
 </script>
-<?php }?>
+<?php }?> -->
 <?php if($order[0]['status']=='Order Confirmed'){ ?>
 <script>
     $(".Second_step").css({'display':'block'});
