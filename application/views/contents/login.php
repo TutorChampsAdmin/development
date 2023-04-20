@@ -149,6 +149,7 @@ input {outline: none;}
 				<div class="loginInner">
 					<div class="loginFormBox">
 						<form action="<?php echo base_url('login/');?>" method="POST" id="login_form">
+                            <input type="hidden" name="login" value="login" />
 						      <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>" />
 							<div class="login_inn">
 								<div>

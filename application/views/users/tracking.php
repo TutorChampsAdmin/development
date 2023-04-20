@@ -36,7 +36,22 @@
 			            <span><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i><br><span>Drop your file or Browse</span> </span>
 			            <input type="file" name="files" id="files" class="files" data-list="Filelist" multiple accept="image/jpeg, image/png, image/gif,"><br />
 			        </span>
-			        <output id="Filelist"></output>
+			        <output id="Filelist">
+			        	 <?php 
+							if($order[0]['assignment'])
+							{
+							   echo '<ul class="thumb-Images" id="imgList"><li>
+							   <div class="img-wrap"> 
+							   <span class="close">×</span>
+							   <img class="thumb" src="'.base_url().'media/'.$order[0]['assignment'].'" title="TicketCancle.PNG" data-id="TicketCancle.PNG">
+							   </div>
+							   <div class="FileNameCaptionStyle">TicketCancle.PNG
+							   </div>
+							   </li>
+							   </ul>';
+							}
+			        	 ?>
+			        </output>
 			    </div>
 			</div>
 			<!--<div class="form_fields">-->
@@ -46,23 +61,23 @@
 			<div class="form_fields">
 				<label>Set Deadline</label>
 				<div class="deadline_con">
-					<input type="radio" id="6hrs">
-					<label for="6hrs">6 hrs</label>
-					<input type="radio" id="12hrs">
-					<label for="12hrs">12 hrs</label>
-					<input type="radio" id="18hrs">
-					<label for="18hrs">18 hrs</label>
-					<input type="radio" id="24hrs">
-					<label for="24hrs">24 hrs</label>
-					<input type="radio" id="30hrs">
-					<label for="30hrs">30 hrs</label>
-					<?php
-							$dateVal = date('Y-m-d H:i:s');
-							if ($order[0]['deadline'] != "1970-01-01 05:30:00" && $order[0]['deadline'] !="")  
-							   $dateVal = date('Y-m-d H:i:s', strtotime($order[0]['deadline'])); 
-					 ?>
-					<input class="input" type="datetime-local" data-val="<?php echo $order[0]['deadline'] ?>" value="<?php echo $dateVal; ?>" name="deadline">
-				</div>
+    <input type="radio" id="6hrs" >
+    <label for="6hrs" name="deadlineOption">6 hrs</label>
+    <input type="radio" id="12hrs" >
+    <label for="12hrs" name="deadlineOption">12 hrs</label>
+    <input type="radio" id="18hrs" >
+    <label for="18hrs" name="deadlineOption">18 hrs</label>
+    <input type="radio" id="24hrs" >
+    <label for="24hrs" name="deadlineOption">24 hrs</label>
+    <input type="radio" id="30hrs" >
+    <label for="30hrs" name="deadlineOption">30 hrs</label>
+    <?php
+        $dateVal = date('Y-m-d H:i:s');
+        if ($order[0]['deadline'] != "1970-01-01 05:30:00" && $order[0]['deadline'] !="")
+            $dateVal = date('Y-m-d H:i:s', strtotime($order[0]['deadline'])); 
+    ?>
+    <input class="input" type="datetime-local" data-val="<?php echo $order[0]['deadline'] ?>" value="<?php echo $dateVal; ?>" name="deadline" id="deadlineInput">
+</div>
 			</div>
 			<div class="form_fields">
 				<label>Reference Files</label>
@@ -76,7 +91,22 @@
 			            <input type="file" name="refFiles" id="refFiles" multiple accept="image/jpeg, image/png, image/gif,">
 			            <br />
 			        </span>
-			        <output id="FilelistRef"></output>
+			        <output id="FilelistRef">
+			        	<?php 
+							if($order[0]['ref_files'])
+							{
+							   echo '<ul class="thumb-Images" id="imgList"><li>
+							   <div class="img-wrap"> 
+							   <span class="close">×</span>
+							   <img class="thumb" src="'.base_url().'media/'.$order[0]['ref_files'].'" title="TicketCancle.PNG" data-id="TicketCancle.PNG">
+							   </div>
+							   <div class="FileNameCaptionStyle">TicketCancle.PNG
+							   </div>
+							   </li>
+							   </ul>';
+							}
+			        	 ?>
+			        </output>
 			    </div>
 			</div>
 			<div class="text-center mt-2">
