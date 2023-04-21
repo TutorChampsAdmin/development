@@ -454,6 +454,7 @@ form textarea::placeholder{color: #08b07b;}
 #FilelistFooter ul li:nth-child(1), #FilelistFooter ul li:nth-child(2), #FilelistFooter ul li:nth-child(3), #FilelistFooter ul li:nth-child(4){margin-bottom: 5px!important;} 
 #FilelistFooter ul li:nth-child(5), #FilelistFooter ul li:nth-child(6), #FilelistFooter ul li:nth-child(7), #FilelistFooter ul li:nth-child(8), #FilelistFooter ul li:nth-child(9), #FilelistFooter ul li:nth-child(10){margin: -10px 0 15px!important;} 
 
+.selected{background-color: blue !important;}
 
 
 .form_innBox {

@@ -76,7 +76,7 @@ function init() {
 
 //the handler for file upload event
 function handleFileSelect(e) {
-  var target  = e.target.getAttribute("data-list")||'Filelist';
+  var target  = e.target.getAttribute("data-list")||'Filelist';//
   //to make sure the user select file/files
   if (!e.target.files) return;
 
@@ -275,4 +275,58 @@ function FillAttachmentArray(e, readerEvt) {
     FileSizeInBytes: readerEvt.size
   };
   arrCounter = arrCounter + 1;
+}
+
+
+
+// JavaScript code
+// Add event listeners to the radio buttons
+document.getElementById('6hrs').addEventListener('click', updateDeadline);
+document.getElementById('12hrs').addEventListener('click', updateDeadline);
+document.getElementById('18hrs').addEventListener('click', updateDeadline);
+document.getElementById('24hrs').addEventListener('click', updateDeadline);
+document.getElementById('30hrs').addEventListener('click', updateDeadline);
+
+// Function to update the deadline value based on the selected radio button
+function updateDeadline(event) {
+    const selectedOption = event.target.id; // Get the ID of the selected radio button
+    const currentDate = new Date(); // Get the current date and time
+    let hoursToAdd = 0;
+    
+    // Determine the number of hours to add based on the selected radio button
+    switch (selectedOption) {
+        case '6hrs':
+            hoursToAdd = 6;
+            break;
+        case '12hrs':
+            hoursToAdd = 12;
+            break;
+        case '18hrs':
+            hoursToAdd = 18;
+            break;
+        case '24hrs':
+            hoursToAdd = 24;
+            break;
+        case '30hrs':
+            hoursToAdd = 30;
+            break;
+        default:
+            break;
+    }
+    
+    // Calculate the new deadline by adding the hours to the current date
+    const newDeadline = new Date(currentDate.getTime() + (hoursToAdd * 60 * 60 * 1000));
+    const deadlineInput = document.getElementById('deadlineInput');
+    const labels = document.getElementsByTagName('label');
+    
+    // Update the value of the deadline input field
+    deadlineInput.value = newDeadline.toISOString().slice(0, 16); // Format the date as "YYYY-MM-DDTHH:mm"
+    
+    // Remove the "selected" class from all labels
+    for (let i = 0; i < labels.length; i++) {
+        labels[i].classList.remove('selected');
+    }
+    
+    // Add the "selected" class to the selected label
+    event.target.nextElementSibling.classList.add('selected');
 }

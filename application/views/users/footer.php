@@ -38,7 +38,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
   <script src="<?php echo base_url();?>assets/js/custom.js"></script>
-  <script src="<?php echo base_url();?>assets/main/js/custom.js"></script>
+  <!-- <script src="<?php echo base_url();?>assets/main/js/custom.js"></script> -->
 <script>
 	    $("#files").on('change', function () {
         var file = $('#files')[0].files[0].name;
@@ -66,8 +66,6 @@
         if ('{{ ordered }}' == 'True'){
 			$("#check").click()
 		}
-		console.log($("#checkbox").checked)
-
 
 		$("#home").click(function () {
 			$(".homeContant").addClass("active_");
