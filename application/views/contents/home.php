@@ -9,7 +9,7 @@
 		bottom: 0;
 		width: 330px;
 		height: 432px;
-		background: url(<?php echo base_url();?>assets/front/image/banner_img.png);
+		background: url(<?php echo base_url();?>assets/main/images/banner_img.png);
 		background-size: cover;
 	}
 </style>
