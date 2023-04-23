@@ -258,19 +258,25 @@ class Orders extends CI_Controller {
             $att_data        = array();
        
             $files           = $_FILES;
-            $filesCount      = count($_FILES['comments_att']['name']);
-
+            $filesCount      = count($_FILES['comments_att']);
            for ($i = 0; $i < $filesCount; $i++) {
                 $this->load->library('upload');
-                $_FILES['comments_att']['name'] = $files['comments_att']['name'][$i];
-                $_FILES['comments_att']['type'] = $files['comments_att']['type'][$i];
-                $_FILES['comments_att']['tmp_name'] = $files['comments_att']['tmp_name'][$i];
-                $_FILES['comments_att']['error'] = $files['comments_att']['error'][$i];
-                $_FILES['comments_att']['size'] = $files['comments_att']['size'][$i];
+
+			$image_name_arr            = explode('.',$files['comments_att']['name']);
+			$image_name                = str_replace(' ', '_', $image_name_arr['0']);
+			$newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
+
+
+
+                $_FILES['comments_att']['name'] = $files['comments_att']['name'];
+                $_FILES['comments_att']['type'] = $files['comments_att']['type'];
+                $_FILES['comments_att']['tmp_name'] = $files['comments_att']['tmp_name'];
+                $_FILES['comments_att']['error'] = $files['comments_att']['error'];
+                $_FILES['comments_att']['size'] = $files['comments_att']['size'];
                 $config['upload_path'] = UPLOAD_DIR  ;
                 $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp|avi|csv|dc|dx|pdf|ppt|pptx|txt|xls|xlsx|mp3|mkv|mp4';
 
-                $config['file_name'] = $files['comments_att']['name'][$i];
+                $config['file_name'] = $newFileName;
                
                 $this->upload->initialize($config);
                 if (!$this->upload->do_upload('comments_att')) {

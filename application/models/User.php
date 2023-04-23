@@ -203,8 +203,10 @@ class User extends CI_Model{
             $whereExpert = ' AND (o.added_by = "'.$current_uid.'" OR o.to_customer = "1") '; 
         }
         $query = $this->db->query('SELECT o.*,u.username,
-                                 GROUP_CONCAT( oa.file_path ORDER BY oa.added_on) AS attachment_url,
-                                 GROUP_CONCAT( oa.file_name ORDER BY oa.added_on) AS actual_file_name
+            oa.file_path AS attachment_url,oa.file_name AS actual_file_name
+
+                                 -- GROUP_CONCAT( oa.file_path ORDER BY oa.added_on) AS attachment_url,
+                                 -- GROUP_CONCAT( oa.file_name ORDER BY oa.added_on) AS actual_file_name
                                FROM order_comments o
                                LEFT JOIN user u on u.id = o.added_by
                                LEFT JOIN order_attachments oa ON o.cmt_id = oa.comment_id

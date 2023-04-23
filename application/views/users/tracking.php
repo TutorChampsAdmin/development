@@ -235,6 +235,7 @@
 <?php if($order[0]['status']=='Order Confirmed'){ ?>
 <script>
     $(".Second_step").css({'display':'block'});
+
     $("#second_stepNext_btn").click();
     $("#progressbar li:nth-child(1)").addClass("active");
 	$("#progressbar li:nth-child(2)").addClass("active");

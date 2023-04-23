@@ -221,7 +221,7 @@ body.modal-open{overflow: unset!important;}
                         <div class="attach_file">
                             <div class="form-group">
                                 <i class="fa fa-paperclip" aria-hidden="true"></i>
-                                <input type="file" name="comments_att" class="form-control" multiple id="comments_att">
+                                <input type="file" name="comments_att" class="form-control" multiple id="comments_att" onchange="submitFormOnFileSelect()">
                                 <span class="err" style="color: #f00;" id="comments_att_err"></span>
                             </div>
                         </div>
@@ -246,7 +246,7 @@ body.modal-open{overflow: unset!important;}
                             </div>
                         <?php } ?>
                         <div class="msz_box">
-                            <textarea class="form-control" name="sendcomments" id="sendcomments" rows="1" placeholder="Type a message.."></textarea>
+                            <textarea class="form-control" name="sendcomments" id="sendcomments" rows="1" placeholder="Type a message.." onkeydown="submitFormOnEnter(event)"></textarea>
                             <span class="err" style="color: #f00;" id="sendcomments_err"></span>
                         </div>
                         <div class="send_btn">
@@ -265,8 +265,16 @@ body.modal-open{overflow: unset!important;}
             $('#myModal').toggleClass('closeChat');
         } 
         
+            function submitFormOnFileSelect() {
+                check_comment_form(); // Submit the form
+            }
         
-        
+            function submitFormOnEnter(event) {
+                if (event.keyCode === 13) { // 13 is the key code for the enter key
+                    event.preventDefault(); // Prevent the default behavior of the enter key
+                    check_comment_form(); // Submit the form
+                }
+            }
          function show_order_details(lead_id,order_id,subjectname=''){
              $('.loader').show();
              $('#CommentsLists').html('');
