@@ -37,7 +37,6 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
-  <!-- <script src="<?php echo base_url();?>assets/main/js/custom.js"></script> -->
   <script src="<?php echo base_url();?>assets/js/custom.js"></script>
   <!-- <script src="<?php echo base_url();?>assets/main/js/custom.js"></script> -->
 <script>

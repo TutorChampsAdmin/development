@@ -24,7 +24,7 @@
         position: fixed;
         width: 100%;
         height: 100vh;
-        background: #fff url('<?php echo base_url();?>assets/front/images/loader.gif') no-repeat center  ;
+        background: #fff url('<?php echo base_url();?>assets/main/images/loader.gif') no-repeat center  ;
         z-index: 999;
         display: none;
         opacity: 0.7;
@@ -168,7 +168,7 @@
 		}
 
 		.signin {
-			background: url(<?php echo base_url();?>assets/front/image/signUp-bg.jpg);
+			background: url(<?php echo base_url();?>assets/main/images/signUp-bg.jpg);
 			background-size: cover;
 			background-repeat: no-repeat;
 			padding: 100px 0;
@@ -369,15 +369,11 @@
 		</div>
 	</div>
 
-    <script src="<?php echo base_url();?>assets/front/js/jquery.js"></script>
-
-
-	<!--<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>-->
+    <script src="<?php echo base_url();?>assets/main/js/jquery.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/css/intlTelInput.css" />
 	<script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
-    <script src="<?php echo base_url();?>assets/front/js/jquery.js"></script>
     
     <script>
         $('#sign_up').submit(function(e){
