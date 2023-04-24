@@ -43,7 +43,7 @@
 							   echo '<ul class="thumb-Images" id="imgList"><li>
 							   <div class="img-wrap"> 
 							   <span class="close">×</span>
-							   <img class="thumb" src="'.base_url().'media/'.$order[0]['assignment'].'" title="TicketCancle.PNG" data-id="TicketCancle.PNG">
+							   <img class="thumb" src="'.base_url().$order[0]['assignment'].'" title="TicketCancle.PNG" data-id="TicketCancle.PNG">
 							   </div>
 							   <div class="FileNameCaptionStyle">TicketCancle.PNG
 							   </div>
@@ -98,7 +98,7 @@
 							   echo '<ul class="thumb-Images" id="imgList"><li>
 							   <div class="img-wrap"> 
 							   <span class="close">×</span>
-							   <img class="thumb" src="'.base_url().'media/'.$order[0]['ref_files'].'" title="TicketCancle.PNG" data-id="TicketCancle.PNG">
+							   <img class="thumb" src="'.base_url().$order[0]['ref_files'].'" title="TicketCancle.PNG" data-id="TicketCancle.PNG">
 							   </div>
 							   <div class="FileNameCaptionStyle">TicketCancle.PNG
 							   </div>
