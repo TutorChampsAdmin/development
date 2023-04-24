@@ -107,7 +107,7 @@ class Home extends CI_Controller {
 					$this->session->set_userdata('isClientLoggedIn',TRUE);
         			$this->session->set_userdata('client_user_id',$userData['id']);
         			$this->session->set_userdata('logged_in_id',$userData['id']);
-					$this->session->set_userdata('userEmail',$userData['email']);
+					$this->session->set_userdata('userEmail',$email_id);
         			$this->session->set_userdata('logged_in_role','8');
 
         			$this->User_dashboard->update_user(array('id' => $userData['id']), array('last_login' => date('Y-m-d H:i:s')));
@@ -338,6 +338,7 @@ class Home extends CI_Controller {
         			$this->session->set_userdata('client_user_id',$insert);
         			$this->session->set_userdata('logged_in_id',$insert);
         			$this->session->set_userdata('logged_in_role','8');
+					$this->session->set_userdata('userEmail',$this->input->post('email'));
         			$this->User_dashboard->update_user(array('id' => $insert), array('last_login' => date('Y-m-d H:i:s')));
 		    		$dataArr = [
 		    					'user_id' 	=> $insert,

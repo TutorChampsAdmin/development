@@ -101,12 +101,12 @@
 												<input type="checkbox" id="EmailNotif" name="EmailNotif" value="EmailNotif" checked> Get Email Notifications
 											</label>
 										</div>
-										<div class="form_fields">
+										<!-- <div class="form_fields">
 								     		<label for="WhatsappNotif">
 								    			<input type="checkbox" id="WhatsappNotif" name="WhatsappNotif" value="1" <?php if($user_detail->whatsAppNotification=='1') echo "checked" ?> > Get Whatsapp Notifications
 								     		</label>
 											</div>
-								     	</div>
+								     	</div> -->
 
 								      		<div class="text-center mt-4">
 												<button id="" type="submit" class="r_btn">Save Details</button>
