@@ -32,6 +32,9 @@
 			</div>
 		</div>
 	</div>
+	<video id="notification_Audio" name="media" style="display: none;">
+    <source src="<?php echo base_url();?>assets/backend/notification.mp3" type="audio/mpeg">
+</video>
  
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -225,6 +228,40 @@
 				}
 			})
 		}
+
+
+		function get_notifications(){		    
+		    $.ajax({
+		        type        : 'GET',
+		        url         : "<?php echo base_url('dashboard/get_notifications');?>",
+		        // dataType    : 'json',
+		        // data        : {},
+		        success     : function(response)
+		        { 	
+		        	// $('#notification_Audio')[0].play();
+		        	const data = JSON.parse(response);  
+					let htmlRes = ""; // Step 1: Create variable to store generated HTML 
+					$('.notiF_count').html(data.length);
+					$.each(data, function(index, notification) { // Step 2: Use $.each() to iterate through response
+
+					htmlRes += '<li><a href="<?php echo base_url(); ?>dashboard/tracking/' + notification.ref_no.toLowerCase() + '" class="notifications" data-ref="" onclick="updateNotification(' + notification.id + ')">' +
+					'<div><img src="<?php echo base_url();?>assets/main/images/accurate-solutions.png"></div>' +
+					'<div class="noti_txt">' +
+					'<span>' + notification.ref_type + ' ' + notification.ref_no + '</span>' +
+					'<span>' + notification.message + '</span>' +
+					'<span class="notif_time">' + notification.updated_at + '</span>' +
+					'</div></a></li>'; // Concatenate HTML string for each notification
+					});
+					$('.notiF_drop_box').html(htmlRes); // Step 3: Append generated HTML to notiF_drop_box	        	 
+		             
+		        }
+		    });
+		    
+		} 
+		$(document).ready(function(){
+			// setTimeout(setcount, 5000);
+			setInterval(function(){ get_notifications();}, 10000);
+		});
 		</script>
 		
 		

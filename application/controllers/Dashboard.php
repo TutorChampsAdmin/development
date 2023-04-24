@@ -32,6 +32,18 @@ class Dashboard extends  MY_Controller {
                 ];
         $this->load->view('users/home',$data);
     }
+    public function get_notifications(){
+        
+        $user_id = $this->session->userdata('client_user_id');        
+        $this->db->order_by('id', 'desc');
+        $query = $this->db->get_where('notifications', array('user_id' => $user_id,'is_seen'=>'0'));
+        $result = $query->result();        
+        $data['notifications'] = $result;
+
+        print_r(json_encode($result));
+        exit;
+        // die($data['notifications']);
+    }
 
     public function tracking($order_id){
        

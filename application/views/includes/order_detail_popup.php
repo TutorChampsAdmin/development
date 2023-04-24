@@ -226,7 +226,7 @@ body.modal-open{overflow: unset!important;}
                             </div>
                         </div>
                         <?php if($this->session->userdata('logged_in_role') != '8'){ ?>
-                            <div class="col-md-3">
+                            <!-- <div class="col-md-3">
                                 <div class="form-group">
                                     <div class="checkbox" style="float: right;">
                                         <label>
@@ -243,7 +243,7 @@ body.modal-open{overflow: unset!important;}
                                         </label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         <?php } ?>
                         <div class="msz_box">
                             <textarea class="form-control" name="sendcomments" id="sendcomments" rows="1" placeholder="Type a message.." onkeydown="submitFormOnEnter(event)"></textarea>

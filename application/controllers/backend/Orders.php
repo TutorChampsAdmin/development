@@ -18,7 +18,6 @@ class Orders extends CI_Controller {
 	}
 	
 	public function index($id = ''){   
-        
         if($this->input->get('get_list')){
         	$rowperpage = 30;
 			$postData = json_decode($this->input->get('data'));

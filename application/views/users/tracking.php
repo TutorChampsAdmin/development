@@ -235,8 +235,11 @@
 <?php if($order[0]['status']=='Order Confirmed'){ ?>
 <script>
     $(".Second_step").css({'display':'block'});
-
+    $(".Availability_step").css({'display':'block'});
     $("#second_stepNext_btn").click();
+
+    $('.form_innBox').addClass('hide');
+
     $("#progressbar li:nth-child(1)").addClass("active");
 	$("#progressbar li:nth-child(2)").addClass("active");
 	$("#progressbar li:nth-child(3)").addClass("active");
@@ -248,7 +251,12 @@
 <?php if($order[0]['status']=='Assignment In progress'){ ?>
 <script>
     $(".third_step").css({'display':'block'});
+    $(".Availability_step").css({'display':'block'});
+    $('.Second_step').css({'display':'block'});
+
     $("#third_stepNext_btn").click();
+
+    $('.form_innBox').addClass('hide');
 
     $("#progressbar li:nth-child(1)").addClass("active");
 	$("#progressbar li:nth-child(2)").addClass("active");
@@ -261,8 +269,16 @@
 
 <?php if($order[0]['status']=='Assignment Completed'){ ?>
 <script>
-   $(".four_step").css({'display':'block'});
+	$(".four_step").css({'display':'block'});
+	$(".Availability_step").css({'display':'block'});
+	$('.Second_step').css({'display':'block'});
+	$('.third_step').css({'display':'block'});	
+
+
+
     $("#FeedbackToggle").click();
+
+    $('.form_innBox').addClass('hide');
 	$("#progressbar li:nth-child(1)").addClass("active");
 	$("#progressbar li:nth-child(2)").addClass("active");
 	$("#progressbar li:nth-child(3)").addClass("active");
@@ -276,6 +292,7 @@
 <script>
 	$(".Availability_step").css({'display':'block'});
    $(".first_step").css({'display':'block'});
+   
    $("#availability_stepNext_btn").click();
     $("#next").click();
     $("#live_session").addClass('active');
