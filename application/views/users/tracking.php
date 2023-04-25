@@ -16,7 +16,7 @@
 <li>Give Feedback</li>
 </ul>
 <div class="banner_form_con">
-<form class="order_form" action="" method="post"  enctype="multipart/form-data">
+<form class="order_form" action="" method="post"  enctype="multipart/form-data" novalidate>
 	<input type="hidden" name="order_id" value="<?php echo $order[0]['order_id'];?>" />
 	<div class="first_step">
 		<div class="form_head">
@@ -76,7 +76,7 @@
         if ($order[0]['deadline'] != "1970-01-01 05:30:00" && $order[0]['deadline'] !="")
             $dateVal = date('Y-m-d H:i:s', strtotime($order[0]['deadline'])); 
     ?>
-    <input class="input" type="datetime-local" data-val="<?php echo $order[0]['deadline'] ?>" value="<?php echo $dateVal; ?>" name="deadline" id="deadlineInput">
+    <input class="input" type="datetime-local" data-val="<?php echo $dateVal ?>" value="<?php echo $dateVal; ?>" name="deadline" id="deadlineInput">
 </div>
 			</div>
 			<div class="form_fields">

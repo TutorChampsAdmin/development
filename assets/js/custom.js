@@ -318,10 +318,20 @@ function updateDeadline(event) {
     const newDeadline = new Date(currentDate.getTime() + (hoursToAdd * 60 * 60 * 1000));
     const deadlineInput = document.getElementById('deadlineInput');
     const labels = document.getElementsByTagName('label');
-    
-    // Update the value of the deadline input field
-    deadlineInput.value = newDeadline.toISOString().slice(0, 16); // Format the date as "YYYY-MM-DDTHH:mm"
-    
+
+    // // Update the value of the deadline input field
+    // var datetime = newDeadline.toISOString().slice(0, -8); // Format the date as "YYYY-MM-DDTHH:mm"
+    // datetime += "T" + newDeadline.getHours().toString().padStart(2, '0') + ":" + newDeadline.getMinutes().toString().padStart(2, '0');
+
+    // Convert the current date and time to local time string in the correct format
+    var year = newDeadline.getFullYear();
+    var month = (newDeadline.getMonth() + 1).toString().padStart(2, '0');
+    var day = newDeadline.getDate().toString().padStart(2, '0');
+    var hours = newDeadline.getHours().toString().padStart(2, '0');
+    var minutes = newDeadline.getMinutes().toString().padStart(2, '0');
+    var seconds = newDeadline.getSeconds().toString().padStart(2, '0'); // Add seconds component
+    var localDateTime = year + "-" + month + "-" + day + "T" + hours + ":" + minutes+":" + seconds;;
+    deadlineInput.value = localDateTime;
     // Remove the "selected" class from all labels
     for (let i = 0; i < labels.length; i++) {
         labels[i].classList.remove('selected');
