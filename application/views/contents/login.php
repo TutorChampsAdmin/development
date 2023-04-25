@@ -75,7 +75,7 @@ input {outline: none;}
     width: 45px;
     height: 45px;}
 .check_sec .cstm_ser_box .left_icon i{font-size: 24px;}
-.login{background: url(<?php echo base_url();?>assets/front/image/signUp-bg.jpg); background-size: cover; background-repeat: no-repeat; padding: 100px 0; background-position: top left; min-height: 100vh;
+.login{background: url(<?php echo base_url();?>assets/main/images/signUp-bg.jpg); background-size: cover; background-repeat: no-repeat; padding: 100px 0; background-position: top left; min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;}
@@ -219,7 +219,7 @@ input {outline: none;}
 
 
 
-<script src="<?php echo base_url();?>assets/front/js/jquery.js"></script>
+<script src="<?php echo base_url();?>assets/main/js/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
