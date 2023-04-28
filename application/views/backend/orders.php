@@ -477,6 +477,10 @@ function get_order_list(rowno, create_page)
                     var regX = /(<([^>]+)>)/ig;
                     var des = orders[i].description.replace(regX, "").substr(0,35);
                     var description = `<span title="`+orders[i].description+`">`+des+`...</span>`;
+                    var deadlineVal = orders[i].deadline;
+                    // (orders[i].deadline != "1970-01-01 05:30:00" && orders[i].deadline !="")?new Date(currentDate.getTime() + (hoursToAdd * 60 * 60 * 1000)):orders[i].deadline;
+
+                    var calender = `<input class="input" type="datetime-local" data-val="`+deadlineVal+`" value="`+deadlineVal+`" name="deadline" id="deadlineInput" >`;
                     page_list += `<tr>
                              <td>`+sr+`</td>
                             <td>`+orders[i].order_id+`</td>
@@ -484,7 +488,7 @@ function get_order_list(rowno, create_page)
                             <td><a href="`+file+`" target="_blank">`+preview+`</a> </td>
                             <td><a href="`+refFile+`" target="_blank">`+prev+`</a> </td>
                             <td>`+checkOrderSubject(orders[i].id,orders[i].subject)+`</td>
-                            <td>`+orders[i].deadline+`</td>
+                            <td>`+calender+`</td>
                             <td>`+country+`</td>
                             <td><select id="orderStatus`+orders[i].id+`" onchange="change_order_status(`+orders[i].id+`,'`+orders[i].first_name+`','`+orders[i].email+`','`+orders[i].order_id+`')" style="border:none">
                                 <option value="Awaiting Confirmation" `+acon_selected+`>Awaiting Confirmation</option>

@@ -88,7 +88,6 @@ class Dashboard extends  MY_Controller {
                 
             }
             $this->load->helper('url');
-            $data['title'] = 'My Website';
             $this->output->set_header('title: ' . $data['title']);
             $this->db->update('orders', $data, $where);
         } 
