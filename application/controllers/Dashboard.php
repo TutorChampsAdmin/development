@@ -46,7 +46,6 @@ class Dashboard extends  MY_Controller {
     }
 
     public function tracking($order_id){
-       
         if($this->input->post('order_id'))
         {
             $where = ['order_id'=>$this->input->post('order_id')];
@@ -55,15 +54,15 @@ class Dashboard extends  MY_Controller {
                 'description'=>$this->input->post('description'),
                 'deadline'=>($this->input->post('deadline'))?date('Y-m-d H:i:s', strtotime($this->input->post('deadline'))):null
             ];
-            if(isset($_FILES['files']) && $_FILES['files']['name'] != ''){     
+            if(isset($_FILES['files']) && $_FILES['files']['name'] != ''){
                 $image_name_arr            = explode('.', $_FILES['files']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = './media/student';
+                $config['upload_path']     = UPLOAD_DIR.'student';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
-                $config['allowed_types']   = '*';      
-                $this->upload->initialize($config);               
+                $config['allowed_types']   = '*'; 
+                $this->upload->initialize($config);
                 if($this->upload->do_upload('files')){
                     $data['assignment'] = 'media/student/'.$newFileName;
                 }else{
@@ -71,16 +70,16 @@ class Dashboard extends  MY_Controller {
                 }
             }
             if(isset($_FILES['refFiles']) && $_FILES['refFiles']['name'] != ''){
-                
+
                 $image_name_arr            = explode('.', $_FILES['refFiles']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = './media/student/';
+                $config['upload_path']     = UPLOAD_DIR.'student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
                 $this->upload->initialize($config);
-                if($this->upload->do_upload('files')){
+                if($this->upload->do_upload('refFiles')){
                     $data['ref_files'] = 'media/student/'.$newFileName;
                 }else{
                     #print_r($this->upload->display_errors());
@@ -152,7 +151,7 @@ class Dashboard extends  MY_Controller {
                 $image_name_arr            = explode('.', $_FILES['profile']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = './media/student/';
+                $config['upload_path']     = UPLOAD_DIR.'student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
@@ -224,7 +223,7 @@ class Dashboard extends  MY_Controller {
                 $image_name_arr            = explode('.', $_FILES['assignment']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = './media/student/';
+                $config['upload_path']     = UPLOAD_DIR.'student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
@@ -241,7 +240,7 @@ class Dashboard extends  MY_Controller {
                 $image_name_arr            = explode('.', $_FILES['reference_material']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = './media/student/';
+                $config['upload_path']     = UPLOAD_DIR.'student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
@@ -312,7 +311,7 @@ class Dashboard extends  MY_Controller {
                 $image_name_arr            = explode('.', $_FILES['assignment']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = './media/student/';
+                $config['upload_path']     = UPLOAD_DIR.'student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
@@ -329,7 +328,7 @@ class Dashboard extends  MY_Controller {
                 $image_name_arr            = explode('.', $_FILES['reference_material']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = './media/student/';
+                $config['upload_path']     = UPLOAD_DIR.'student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
@@ -371,7 +370,7 @@ class Dashboard extends  MY_Controller {
                 $image_name_arr            = explode('.', $_FILES['report_guidline']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = './media/student/';
+                $config['upload_path']     = UPLOAD_DIR.'student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
@@ -388,7 +387,7 @@ class Dashboard extends  MY_Controller {
                 $image_name_arr            = explode('.', $_FILES['lab_manual']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = './media/student/';
+                $config['upload_path']     = UPLOAD_DIR.'student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      
@@ -405,7 +404,7 @@ class Dashboard extends  MY_Controller {
                 $image_name_arr            = explode('.', $_FILES['reference_material']['name']);
                 $image_name                = str_replace(' ', '_', $image_name_arr['0']);
                 $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
-                $config['upload_path']     = './media/student/';
+                $config['upload_path']     = UPLOAD_DIR.'student/';
                 $config['file_name']       = $newFileName;
                 #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
                 $config['allowed_types']   = '*';      

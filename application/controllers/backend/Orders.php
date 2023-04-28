@@ -110,6 +110,13 @@ class Orders extends CI_Controller {
 		
 		die('Yes');
 	}
+	public function change_order_deadline(){
+	    $id = trim($this->input->post('id'));
+	    $deadline = trim($this->input->post('deadline'));
+		$this->User->update_order(array('id' => $id),array('deadline' => date('Y-m-d H:i:s', strtotime($deadline))));
+		
+		die('Yes');
+	}
 
 
 	public function send_notification_customers($to,$subject,$message){

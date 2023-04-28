@@ -477,10 +477,11 @@ function get_order_list(rowno, create_page)
                     var regX = /(<([^>]+)>)/ig;
                     var des = orders[i].description.replace(regX, "").substr(0,35);
                     var description = `<span title="`+orders[i].description+`">`+des+`...</span>`;
-                    var deadlineVal = orders[i].deadline;
+                    var deadlineVal = (orders[i].deadline==null || orders[i].deadline=="1970-01-01 05:30:00")?null:orders[i].deadline;
+                     
                     // (orders[i].deadline != "1970-01-01 05:30:00" && orders[i].deadline !="")?new Date(currentDate.getTime() + (hoursToAdd * 60 * 60 * 1000)):orders[i].deadline;
 
-                    var calender = `<input class="input" type="datetime-local" data-val="`+deadlineVal+`" value="`+deadlineVal+`" name="deadline" id="deadlineInput" >`;
+                    var calender = `<input class="input" type="datetime-local" data-val="`+deadlineVal+`" value="`+deadlineVal+`" name="deadline" id="deadlineInput_${i}" onchange="updateDeadLine(`+orders[i].id+`,`+i+`)" >`;
                     page_list += `<tr>
                              <td>`+sr+`</td>
                             <td>`+orders[i].order_id+`</td>
@@ -532,6 +533,27 @@ function get_order_list(rowno, create_page)
 }
 
 
+function updateDeadLine(id,i) {
+  const deadlineInput = document.getElementById(`deadlineInput_${i}`);
+  const selectedDate = deadlineInput.value;
+  console.log(`Deadline selected for item ${i}: ${selectedDate}`);
+  // Perform any other actions you need to take
+   if(confirm('Are you sure to change the order deadline date.')){
+        $.ajax({
+            type        : 'POST',
+            url         : "<?php echo base_url(BACKEND_FOLDER.'/orders/change_order_deadline');?>",
+            dataType    : 'json',
+            data        : {'deadline' : selectedDate,'id' : id},
+            success     : function(response)
+            {
+                alert('deadline Changed successfuly.');
+                $('#statusChangeTxt').html('deadline update successfuly.');                
+            }
+        });
+        alert('deadline Changed successfuly.');
+        $('#statusChangeTxt').html('deadline update successfuly.'); 
+    }
+}
 function change_order_status(id,name,email,orderID,subject){
     if(confirm('Are you sure to change the order status.')){
         var status = $('#orderStatus'+id).val();
