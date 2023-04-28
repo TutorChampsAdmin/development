@@ -75,7 +75,7 @@ class Pages extends CI_Controller {
             $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
             $config['upload_path']     = './media/pages/';
             $config['file_name']       = $newFileName;
-            $config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
+            $config['allowed_types']   = 'gif|jpg|png|jpeg|bmp|webp';      
             $this->upload->initialize($config);
             if($this->upload->do_upload('banner_image')){
             	$data['banner_image']  = 'media/pages/'.$newFileName;
@@ -157,7 +157,7 @@ class Pages extends CI_Controller {
             $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
             $config['upload_path']     = './media/pages/';
             $config['file_name']       = $newFileName;
-            $config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
+            $config['allowed_types']   = 'gif|jpg|png|jpeg|bmp|webp';      
             $this->upload->initialize($config);
             if($this->upload->do_upload('banner_image')){
             	$data['banner_image']  = 'media/pages/'.$newFileName;
