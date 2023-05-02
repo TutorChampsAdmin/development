@@ -239,11 +239,13 @@
 		        success     : function(response)
 		        { 	
 		        	// $('#notification_Audio')[0].play();
-		        	const data = JSON.parse(response);  
+		        	const data = JSON.parse(response);		        	
 					let htmlRes = ""; // Step 1: Create variable to store generated HTML 
 					$('.notiF_count').html(data.length);
 					$.each(data, function(index, notification) { // Step 2: Use $.each() to iterate through response
-
+					// console.log('notification=>',index,notification);
+						console.log('notification.is_reloaded=>',notification.is_reloaded);
+					if(notification.is_reloaded==="0") reloadWindow(notification.id);
 					htmlRes += '<li><a href="<?php echo base_url(); ?>dashboard/tracking/' + notification.ref_no.toLowerCase() + '" class="notifications" data-ref="" onclick="updateNotification(' + notification.id + ')">' +
 					'<div><img src="<?php echo base_url();?>assets/main/images/accurate-solutions.png"></div>' +
 					'<div class="noti_txt">' +
@@ -258,6 +260,19 @@
 		    });
 		    
 		} 
+		function reloadWindow(id){
+			$.ajax({
+		        type        : 'GET',
+		        url         : "<?php echo base_url('dashboard/set_reload/');?>"+id,
+		        // dataType    : 'json',
+		        // data        : {},
+		        success     : function(response)
+		        {
+		        	// const data = JSON.parse(response); 
+		        	window.location.href="";
+		        }
+		    });
+		}
 		$(document).ready(function(){
 			// setTimeout(setcount, 5000);
 			setInterval(function(){ get_notifications();}, 10000);

@@ -44,6 +44,12 @@ class Dashboard extends  MY_Controller {
         exit;
         // die($data['notifications']);
     }
+    public function set_reload($id){ 
+        $this->db->update('notifications', ['is_reloaded'=>'1'], ['id'=>$id]); 
+        print_r(json_encode(true));
+        exit;
+        // die($data['notifications']);
+    }
 
     public function tracking($order_id){
         if($this->input->post('order_id'))
