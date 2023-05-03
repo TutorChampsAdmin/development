@@ -117,6 +117,7 @@ table.table.orderAdminP.custom-table p {
                                     <th>Country</th>
                                     <th>Status</th>
                                     <th>Float</th>
+                                    <th>Upload Assignment</th>
                                     <th style="width:110px;">Assigned</th>
                                     <!--<th>Added On</th>-->
                                     <th>Chat</th>
@@ -482,6 +483,7 @@ function get_order_list(rowno, create_page)
                     // (orders[i].deadline != "1970-01-01 05:30:00" && orders[i].deadline !="")?new Date(currentDate.getTime() + (hoursToAdd * 60 * 60 * 1000)):orders[i].deadline;
 
                     var calender = `<input class="input" type="datetime-local" data-val="`+deadlineVal+`" value="`+deadlineVal+`" name="deadline" id="deadlineInput_${i}" onchange="updateDeadLine(`+orders[i].id+`,`+i+`)" >`;
+                    var SubmitAssignment = `<input class="input" type="file"   name="submit_assignment_${i}" id="submit_assignment_${i}" onchange="handleFileSelect(${i},${orders[i].id})" >`
                     page_list += `<tr>
                              <td>`+sr+`</td>
                             <td>`+orders[i].order_id+`</td>
@@ -502,6 +504,7 @@ function get_order_list(rowno, create_page)
                                 <option value="Refunded" `+refund+`>Refunded</option>
                             </select></td>
                             <td id="floatOption`+orders[i].id+`">`+floatMenu+`</td>
+                            <td>`+SubmitAssignment+`</td>
                             <td id="tutotName`+orders[i].id+`">`+assigned+`</td>
                             <td><img src="<?php echo base_url('assets/backend/images/chat.png')?>" style="width: 35px;" onclick="show_order_details(`+orders[i].id+`,'`+orders[i].order_id+`','`+orders[i].subject+`')"></td>
                             
@@ -532,6 +535,27 @@ function get_order_list(rowno, create_page)
     });
 }
 
+function handleFileSelect(id,orders_id) {
+  const file = document.getElementById('submit_assignment_'+id).files[0];
+
+  const form_data = new FormData();
+  form_data.append('assignment_file', file);
+  form_data.append('id', orders_id);
+        $.ajax({
+            type        : 'POST', 
+            url         : "<?php echo base_url(BACKEND_FOLDER.'/orders/upload_assignment');?>",
+            data        : form_data,
+            contentType : false,
+            cache       : false,
+            processData : false,
+            success     : function(response)
+            {   
+                 
+                alert('Assignment uploaded successfuly.');
+            }
+        });
+   
+}
 
 function updateDeadLine(id,i) {
   const deadlineInput = document.getElementById(`deadlineInput_${i}`);

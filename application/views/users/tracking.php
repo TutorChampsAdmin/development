@@ -124,16 +124,7 @@
 			<div class="assignmentProgressBox">
 				<h4><div class="assignmentProgress"></div>We Checking Tutor Availability</h4>
 				<p>Please Be Patient.</p>
-			</div>
-			<div class="assignmSolve">
-				<div>
-					<h4><i class="fas fa-check-circle"></i> Assignment Solved</h4>
-					<p>Please download the solution. If you have any queries regarding the solution, please let us know through chat.</p>
-				</div>
-				<div>
-					<a class="r_btn" href="#">Download solution</a>
-				</div>
-			</div>
+			</div>			 
 		</div>
 	</div>
 
@@ -162,19 +153,26 @@
 			<h3>Assignment In Progress <i class="fa fa-chevron-down"></i> <input type="button" id="third_stepNext_btn" class="toogelBtn" value=""></h3>
 		</div>
 		<div class="form_innBox">
+           <?php 
+           if($order[0]['summited_assignment']=="" || $order[0]['summited_assignment']==null)//reference_material
+           { ?>
 			<div class="assignmentProgressBox">
 				<h4><div class="assignmentProgress"></div> Assignment in Progress</h4>
 				<p>Your payment has been received. Tutors have initiated the work on your assignment.</p>
 			</div>
-			<div class="assignmSolve">
+		<?php } else { ?>
+           <div class="assignmSolve1">
 				<div>
 					<h4><i class="fas fa-check-circle"></i> Assignment Solved</h4>
 					<p>Please download the solution. If you have any queries regarding the solution, please let us know through chat.</p>
 				</div>
 				<div>
-					<a class="r_btn" href="#">Download solution</a>
+					<a class="r_btn"  href="<?php echo base_url().$order[0]['summited_assignment'] ?>" target="_blnak">Download solution</a>
 				</div>
 			</div>
+		<?php } ?>
+
+			
 		</div>
 	</div>
 	<div class="four_step" style="display:none;">

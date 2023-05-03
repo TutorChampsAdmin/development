@@ -117,6 +117,29 @@ class Orders extends CI_Controller {
 		
 		die('Yes');
 	}
+  public function upload_assignment(){
+
+
+             if(isset($_FILES['assignment_file']) && $_FILES['assignment_file']['name'] != '' ){
+             	$id = trim($this->input->post('id'));
+                $image_name_arr            = explode('.', $_FILES['assignment_file']['name']);
+                $image_name                = str_replace(' ', '_', $image_name_arr['0']);
+                $newFileName               = $image_name.'_'.time().'.'.$image_name_arr['1'];
+                $config['upload_path']     = UPLOAD_DIR.'student/';
+                $config['file_name']       = $newFileName;
+                #$config['allowed_types']   = 'gif|jpg|png|jpeg|bmp';      
+                $config['allowed_types']   = '*';      
+                $this->upload->initialize($config);
+                if($this->upload->do_upload('assignment_file')){
+                    $data['summited_assignment'] = 'media/student/'.$newFileName;
+                }else{
+                    #print_r($this->upload->display_errors());
+                }
+            $data['completion_date'] = date('Y-m-d H:i:s');
+	        $this->User->update_order(array('id' => $id),$data);
+            }
+		die('Yes');
+	}
 
 
 	public function send_notification_customers($to,$subject,$message){
