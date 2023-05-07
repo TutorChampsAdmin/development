@@ -15,8 +15,8 @@
 <li>Assignment In Progress</li>
 <li>Give Feedback</li>
 </ul>
+<form class="order_form" id="order_form" action="" method="post"  enctype="multipart/form-data"  novalidate>
 <div class="banner_form_con">
-<form class="order_form" action="" method="post"  enctype="multipart/form-data" novalidate>
 	<input type="hidden" name="order_id" value="<?php echo $order[0]['order_id'];?>" />
 	<div class="first_step">
 		<div class="form_head">
@@ -27,7 +27,7 @@
 		<div class="form_innBox">
 			<div class="form_fields">
 				<label>Description:</label>
-				<textarea class="textarea" name="description" id="description" placeholder="Description"><?php echo $order[0]['description'];?> </textarea>
+				<textarea class="textarea readonlyControler" name="description" id="description" placeholder="Description"><?php echo $order[0]['description'];?> </textarea>
 			</div>
 			<div class="form_fields">
 				<label>Question Files</label>
@@ -110,10 +110,13 @@
 			    </div>
 			</div>
 			<div class="text-center mt-2">
+				<?php if($order[0]['status']=='Awaiting Confirmation' && $order[0]['status']=='Checking Tutor Availability'){ ?>
 				<button id="Submit"type="submit" class="r_btn">Submit</button>
+			<?php } ?>
 			</div>
 		</div>
 	</div> 
+<!-- </form> -->
 	<div class="Availability_step" style="display:none;">
 		<div class="form_head">
 			<span class="pending_step"></span>
@@ -206,8 +209,9 @@
 			</div>
 		</div>
 	</div>
-</form>
+
 </div>
+</form>
 </div>
 </div>
 </div>
@@ -298,5 +302,14 @@
 		$("#progressbar li").removeClass("active");
 		$("#progressbar li:nth-child(1)").addClass("active");
 		$("#progressbar li:nth-child(2)").addClass("active");
+</script>
+<?php }?>
+
+<?php if($order[0]['status']!='Awaiting Confirmation' && $order[0]['status']!='Checking Tutor Availability'){ ?>
+<script> 
+  const formElements = document.querySelectorAll('#order_form .readonlyControler');
+  for (const element of formElements) {
+    element.setAttribute('readonly', '');
+  }
 </script>
 <?php }?>

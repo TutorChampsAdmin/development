@@ -354,7 +354,7 @@ $(document).ready(function(){
 });
 
 
-function get_order_list(rowno, create_page)
+function get_order_list(rowno, create_page,openChat=false)
 {   
     $('.loader').show();
     var search_string = $('#search_string').val();
@@ -405,13 +405,15 @@ function get_order_list(rowno, create_page)
                     var preview = 'NA';
                     if(orders[i].assignment != '' && orders[i].assignment != null){
                         file = base_url+orders[i].assignment;
-                        preview = 'Preview';
+                        const slugCount = orders[i].assignment.split('/')
+                        preview = slugCount[slugCount.length-1].substr(0,20); //'Preview';
                     }
                     var refFile = 'javscript:void(0)';
                     var prev = 'Preview';
-                    if(orders[i].reference_material != '' && orders[i].reference_material != null){
-                        refFile = base_url+orders[i].reference_material;
-                        preview = 'Preview';
+                    if(orders[i].ref_files != '' && orders[i].ref_files != null){
+                        refFile = base_url+orders[i].ref_files;
+                        const slugCount = orders[i].ref_files.split('/')
+                        prev = slugCount[slugCount.length-1].substr(0,20) ;//'Preview';
                     }
                     var country = 'NA';
                     if(orders[i].country != '' && orders[i].country != null){
@@ -483,7 +485,7 @@ function get_order_list(rowno, create_page)
                     // (orders[i].deadline != "1970-01-01 05:30:00" && orders[i].deadline !="")?new Date(currentDate.getTime() + (hoursToAdd * 60 * 60 * 1000)):orders[i].deadline;
 
                     var calender = `<input class="input" type="datetime-local" data-val="`+deadlineVal+`" value="`+deadlineVal+`" name="deadline" id="deadlineInput_${i}" onchange="updateDeadLine(`+orders[i].id+`,`+i+`)" >`;
-                    var SubmitAssignment = `<input class="input" type="file"   name="submit_assignment_${i}" id="submit_assignment_${i}" onchange="handleFileSelect(${i},${orders[i].id})" >`
+                    var SubmitAssignment = `<input class="input" type="file"   name="submit_assignment_${orders[i].id}}" id="submit_assignment_${orders[i].id}" onchange="handleFileSelect(${i},${orders[i].id})" >`
                     page_list += `<tr>
                              <td>`+sr+`</td>
                             <td>`+orders[i].order_id+`</td>
@@ -496,9 +498,8 @@ function get_order_list(rowno, create_page)
                             <td><select id="orderStatus`+orders[i].id+`" onchange="change_order_status(`+orders[i].id+`,'`+orders[i].first_name+`','`+orders[i].email+`','`+orders[i].order_id+`')" style="border:none">
                                 <option value="Awaiting Confirmation" `+acon_selected+`>Awaiting Confirmation</option>
                                 <option value="Checking Tutor Availability" `+check+`>Checking Tutor Availability</option>
-                                <option value="Order Confirmed" `+oc_selected+`>Order Confirmed</option>
+                                ${getConfirmReject(orders[i].status,or_selected,or_selected)}
                                 <option value="Assignment In progress" `+aip_selected+`>Assignment In progress</option>
-                                <option value="Order Rejected" `+or_selected+`>Order Rejected</option>
                                 <option value="Review Your Assignment" `+rya_selected+`>Review Your Assignment</option>
                                 <option value="Assignment Completed" `+ac_selected+`>Assignment Completed</option>
                                 <option value="Refunded" `+refund+`>Refunded</option>
@@ -513,6 +514,8 @@ function get_order_list(rowno, create_page)
                 if(create_page && total > perpage){
                     $('#pagination').show(); 
                     create_pagination((total/perpage),5);
+                    if(openChat)
+                    show_order_details(`${orders[i].id}`,`${orders[i].order_id}`,`${orders[i].subject}`)
                 }
                 
             }
@@ -534,10 +537,14 @@ function get_order_list(rowno, create_page)
         }
     });
 }
+const getConfirmReject=(status,oc_selected,or_selected)=>{
+return `${(status == 'Awaiting Confirmation'||status == 'Checking Tutor Availability')?`<option value="Order Confirmed" `+oc_selected+`>Order Confirmed</option>
+                                     <option value="Order Rejected" `+or_selected+`>Order Rejected</option>
+                                `:''}`
+}
 
 function handleFileSelect(id,orders_id) {
   const file = document.getElementById('submit_assignment_'+id).files[0];
-
   const form_data = new FormData();
   form_data.append('assignment_file', file);
   form_data.append('id', orders_id);
@@ -581,7 +588,8 @@ function updateDeadLine(id,i) {
 function change_order_status(id,name,email,orderID,subject){
     if(confirm('Are you sure to change the order status.')){
         var status = $('#orderStatus'+id).val();
-        console.log(status);
+        if(status=="Review Your Assignment")  document.getElementById('submit_assignment_'+id).click();
+
         $.ajax({
             type        : 'POST',
             url         : "<?php echo base_url(BACKEND_FOLDER.'/orders/order-status-change/');?>"+id,
@@ -762,7 +770,7 @@ function get_order_counts(){
             var newOrderCount = parseInt(response);
             if(newOrderCount > preOrderCount ){
                 $('#notification_Audio')[0].play();
-                get_order_list(0, true); 
+                get_order_list(0, true,true); 
                 $('#preOrderCount').val(newOrderCount);
             }
         }
