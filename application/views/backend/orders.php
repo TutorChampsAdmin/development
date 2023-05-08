@@ -485,7 +485,7 @@ function get_order_list(rowno, create_page,openChat=false)
                     // (orders[i].deadline != "1970-01-01 05:30:00" && orders[i].deadline !="")?new Date(currentDate.getTime() + (hoursToAdd * 60 * 60 * 1000)):orders[i].deadline;
 
                     var calender = `<input class="input" type="datetime-local" data-val="`+deadlineVal+`" value="`+deadlineVal+`" name="deadline" id="deadlineInput_${i}" onchange="updateDeadLine(`+orders[i].id+`,`+i+`)" >`;
-                    var SubmitAssignment = `<input class="input" type="file"   name="submit_assignment_${orders[i].id}}" id="submit_assignment_${orders[i].id}" onchange="handleFileSelect(${i},${orders[i].id})" >`
+                    var SubmitAssignment = `<input class="input" type="file"   name="submit_assignment_${orders[i].id}" id="submit_assignment_${orders[i].id}" onchange="handleFileSelect(${i},${orders[i].id})" >`
                     page_list += `<tr>
                              <td>`+sr+`</td>
                             <td>`+orders[i].order_id+`</td>
@@ -544,7 +544,7 @@ return `${(status == 'Awaiting Confirmation'||status == 'Checking Tutor Availabi
 }
 
 function handleFileSelect(id,orders_id) {
-  const file = document.getElementById('submit_assignment_'+id).files[0];
+  const file = document.getElementById('submit_assignment_'+orders_id).files[0];
   const form_data = new FormData();
   form_data.append('assignment_file', file);
   form_data.append('id', orders_id);

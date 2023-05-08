@@ -110,7 +110,7 @@
 			    </div>
 			</div>
 			<div class="text-center mt-2">
-				<?php if($order[0]['status']=='Awaiting Confirmation' && $order[0]['status']=='Checking Tutor Availability'){ ?>
+				<?php if($order[0]['status']=='Awaiting Confirmation' || $order[0]['status']=='Checking Tutor Availability'){ ?>
 				<button id="Submit"type="submit" class="r_btn">Submit</button>
 			<?php } ?>
 			</div>
@@ -153,7 +153,8 @@
 		<div class="form_head">
 			<span class="pending_step"></span>
 			<i style="display: none;" class="completed_step fa fa-check"></i>
-			<h3>Assignment In Progress <i class="fa fa-chevron-down"></i> <input type="button" id="third_stepNext_btn" class="toogelBtn" value=""></h3>
+			<h3><?php echo ($order[0]['summited_assignment'] == "" || $order[0]['summited_assignment'] == null) ? "Assignment In Progress" : "Review Your Assignment"; ?>
+			 <i class="fa fa-chevron-down"></i> <input type="button" id="third_stepNext_btn" class="toogelBtn" value=""></h3>
 		</div>
 		<div class="form_innBox">
            <?php 
@@ -250,7 +251,7 @@
 
 
 
-<?php if($order[0]['status']=='Assignment In progress'){ ?>
+<?php if($order[0]['status']=='Assignment In progress' || $order[0]['status']=='Review Your Assignment'){ ?>
 <script>
     $(".third_step").css({'display':'block'});
     $(".Availability_step").css({'display':'block'});
