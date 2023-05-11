@@ -18,6 +18,7 @@
 <form class="order_form" id="order_form" action="" method="post"  enctype="multipart/form-data"  novalidate>
 <div class="banner_form_con">
 	<input type="hidden" name="order_id" value="<?php echo $order[0]['order_id'];?>" />
+	<input type="hidden" name="current_status" value="<?php echo $order[0]['status'];?>" />
 	<div class="first_step">
 		<div class="form_head">
 			<span class="pending_step"></span>
@@ -172,6 +173,16 @@
 				</div>
 				<div>
 					<a class="r_btn"  href="<?php echo base_url().$order[0]['summited_assignment'] ?>" target="_blnak">Download solution</a>
+					<?php if($order[0]['status']!=='Assignment Completed'){ ?>
+					<span 
+					id="countdown" 
+					data-id=<?php echo $order[0]['id']; ?> 
+					data-orderId=<?php echo $order[0]['order_id'] ; ?> 
+					data-cstatus="<?php echo $order[0]['status']; ?>"
+					></span>
+					<button id="ok_btn" type="button" class="r_btn" onclick="updateStatus()">Accept</button>
+				    <?php } ?>
+					
 				</div>
 			</div>
 		<?php } ?>
@@ -185,8 +196,8 @@
 			<i style="display: none;" class="completed_step fa fa-check"></i>
 			<h3>Rate & Feedback <i class="fa fa-chevron-down"></i> <input type="button" id="FeedbackToggle" class="toogelBtn" value=""></h3>
 		</div>
-
 		<div class="form_innBox">
+			<?php if($order[0]['review']=="" && $order[0]['rate']==null) {?>
 		<h4>Rate us now</h4>
 		<p>Thank you for taking help from us. Please write feedback that will help to improve our process.</p>
           <div class="star-rating star_rating">
@@ -203,11 +214,14 @@
           </div>
 			<div class="form_fields">
 				<label>Your review *</label>
-				<textarea class="textarea" placeholder="Write your feedback here"></textarea>
+				<textarea class="textarea" name="review" placeholder="Write your feedback here"></textarea>
 			</div>
 			<div class="text-center mt-2">
-				<button id="Submit"type="submit" class="r_btn">Submit</button>
+				<button id="Submit"type="submit" onclick="submitFeedback()" class="r_btn">Submit</button>
 			</div>
+			<?php } else{ ?>
+				<h4>Thanks For Your Valuable Feedback</h4>
+			<?php }  ?>
 		</div>
 	</div>
 
@@ -314,3 +328,51 @@
   }
 </script>
 <?php }?>
+<script>
+// Add a click event listener to the "OK" button
+$(document).ready(function()
+{
+  // Start the 6-hour countdown
+  var countDownDate = new Date("<?php echo $order[0]['completion_date'] ?>").getTime() + (6 * 60 * 60 * 1000); // 6 hours from now
+    var x = setInterval(function() {//data('H:m:s',strtotime()
+    var now = new Date().getTime(); 
+    var distance = countDownDate - now;
+    // console.log('distance=>',distance);    
+
+    // Calculate hours, minutes, and seconds
+    var hours = Math.floor(distance / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // Update the countdown element with the remaining time
+    var countdownElem = document.getElementById("countdown");
+    if(countdownElem) countdownElem.innerHTML = "Time remaining: " + hours + "h " + minutes + "m " + seconds + "s ";
+
+    // If the countdown is finished, display a message
+    if (distance < 0) {
+      clearInterval(x);
+       $('#ok_btn').addClass('d-none')
+       updateStatus();
+      countdownElem.innerHTML = "Time's up!";
+    }
+  }, 1000);
+});
+
+const updateStatus=()=>{
+	const id = $('#countdown').attr('data-id');
+	const order_id = $('#countdown').attr('data-orderId');
+	const currentStatus = $('#countdown').attr('data-cstatus');
+	if(currentStatus =="Assignment Completed") return; 
+	const status ="Assignment Completed";	 
+	      $.ajax({
+            type        : 'POST',
+            url         : "<?php echo base_url(BACKEND_FOLDER.'/orders/order-status-change/');?>"+id,
+            dataType    : 'json',
+            data        : {'status' :`${status}`,'orderID' : `${order_id}`},
+            success     : function(response)
+            {
+               
+            }
+        });
+}
+
+</script>

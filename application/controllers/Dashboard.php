@@ -53,7 +53,7 @@ class Dashboard extends  MY_Controller {
 
     public function tracking($order_id){
         // $this->load->helper('common_helper');
-        if($this->input->post('order_id'))
+        if($this->input->post('order_id') && $this->input->post('current_status')!=="Assignment Completed")
         {
             $where = ['order_id'=>$this->input->post('order_id')];
            $data = [
@@ -98,6 +98,9 @@ class Dashboard extends  MY_Controller {
             $this->db->update('orders', $data, $where);
         }
         elseif ($this->input->post('review')) {
+            $where = ['order_id'=>$this->input->post('order_id')];
+            $data =['rate'=>$this->input->post('rate') ,'review'=>$this->input->post('review')];
+            $this->db->update('orders', $data, $where);
          } 
 
         $ord = $this->User_dashboard->get_order($this->user_id,$order_id);
