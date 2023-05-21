@@ -397,6 +397,7 @@
                     if(response.status=='error'){
                         var content = response.msg
                         $('#error_msg').text(content);
+						console.log(content);
                         console.log("error");
                     }
                     else{
